@@ -71,39 +71,31 @@
             box-shadow: 0 6px 14px rgba(244, 162, 54, 0.35);
         }
 
-        /* ===== HEADER ===== */
+        /* ===== HEADER (SCROLLS AWAY WITH PAGE) ===== */
         header {
-            background: var(--primary);
-            color: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border-bottom: 1px solid #e2e8f0;
         }
         .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.8rem 0;
+            padding: 0.6rem 0;
             flex-wrap: wrap;
         }
-        .logo h1 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #fff;
+        .logo-img {
+            max-height: 100px;
+            width: auto;
+            display: block;
+            transition: opacity 0.2s;
         }
-        .logo h1 span {
-            color: var(--gold);
+        .logo-img:hover {
+            opacity: 0.85;
         }
-        .logo .tagline {
-            font-size: 0.7rem;
-            font-weight: 400;
-            color: #b0c4de;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
+
+        /* Desktop Navigation (Black) */
         .nav-desktop ul {
             display: flex;
             list-style: none;
@@ -111,7 +103,7 @@
             align-items: center;
         }
         .nav-desktop a {
-            color: #e2e8f0;
+            color: #000000;
             font-weight: 500;
             font-size: 1rem;
             transition: color 0.2s;
@@ -122,8 +114,8 @@
         }
         .nav-desktop .lang-btn {
             background: transparent;
-            border: 1px solid var(--gold);
-            color: #fff;
+            border: 1px solid #000000;
+            color: #000000;
             padding: 0.2rem 0.8rem;
             border-radius: 30px;
             cursor: pointer;
@@ -132,8 +124,8 @@
             transition: all 0.2s;
         }
         .nav-desktop .lang-btn:hover {
-            background: var(--gold);
-            color: var(--primary);
+            background: #000000;
+            color: #ffffff;
         }
 
         /* Mobile Header */
@@ -147,7 +139,7 @@
             background: none;
             border: none;
             font-size: 2rem;
-            color: #fff;
+            color: #000000;
             cursor: pointer;
             padding: 0 4px;
         }
@@ -156,14 +148,18 @@
         }
         .mobile-lang {
             background: transparent;
-            border: 1px solid var(--gold);
-            color: #fff;
+            border: 1px solid #000000;
+            color: #000000;
             padding: 0.2rem 0.8rem;
             border-radius: 30px;
             cursor: pointer;
             font-weight: 600;
             font-size: 0.85rem;
             margin-right: 0.8rem;
+        }
+        .mobile-lang:hover {
+            background: #000000;
+            color: #ffffff;
         }
         @media (max-width: 768px) {
             .nav-desktop {
@@ -172,15 +168,12 @@
             .mobile-header {
                 display: flex;
             }
-            .logo h1 {
-                font-size: 1.1rem;
-            }
-            .logo .tagline {
-                font-size: 0.55rem;
+            .logo-img {
+                max-height: 60px;
             }
         }
 
-        /* Mobile Slide Menu */
+        /* Mobile Slide Menu (White Background, Black Text) */
         .mobile-menu {
             display: none;
             position: fixed;
@@ -188,24 +181,28 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: var(--primary);
+            background: #ffffff;
             z-index: 99;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 1.5rem;
             padding: 2rem;
-            top: 72px;
-            height: calc(100vh - 72px);
+            top: 70px;
+            height: calc(100vh - 70px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
         .mobile-menu a {
-            color: #fff;
+            color: #000000;
             font-size: 1.5rem;
             font-weight: 500;
             transition: color 0.2s;
+            padding: 0.5rem 1rem;
         }
         .mobile-menu a:hover {
             color: var(--gold);
+            background: #f5f5f5;
+            border-radius: 8px;
         }
         .mobile-menu.open {
             display: flex;
@@ -313,29 +310,8 @@
             letter-spacing: 0.5px;
             margin-top: 0.5rem;
         }
-        .nmelody-acronym {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.6rem 2rem;
-            margin-top: 1rem;
-        }
-        .nmelody-acronym-item {
-            display: flex;
-            align-items: baseline;
-            gap: 0.3rem;
-            font-size: 0.95rem;
-        }
-        .nmelody-acronym-item .letter {
-            font-weight: 700;
-            color: var(--gold-dark);
-            font-size: 1.1rem;
-            min-width: 20px;
-        }
         @media (max-width: 768px) {
             .nmelody-grid {
-                grid-template-columns: 1fr;
-            }
-            .nmelody-acronym {
                 grid-template-columns: 1fr;
             }
         }
@@ -489,7 +465,11 @@
             font-size: 1.1rem;
             margin-bottom: 0.8rem;
         }
-        .footer-grid p,
+        .footer-grid p {
+            font-size: 0.95rem;
+            color: #b0c4de;
+            line-height: 1.8;
+        }
         .footer-grid a {
             font-size: 0.95rem;
             color: #b0c4de;
@@ -579,13 +559,14 @@
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
+    <!-- ===== HEADER (SCROLLS AWAY) ===== -->
     <header>
         <div class="container header-inner">
             <!-- Desktop Nav -->
             <div class="logo">
-                <h1>Global Academy <span>of Education Research</span></h1>
-                <div class="tagline">Mathematics Education · Research · Training · Consultancy</div>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                </a>
             </div>
             <nav class="nav-desktop">
                 <ul>
@@ -601,7 +582,9 @@
             <!-- Mobile Header -->
             <div class="mobile-header">
                 <div class="logo">
-                    <h1>Global Academy <span>of Ed. Research</span></h1>
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                    </a>
                 </div>
                 <div style="display:flex; align-items:center;">
                     <button class="mobile-lang" id="langToggleMobile">ने</button>
@@ -652,32 +635,12 @@
                     <p>N‑MELODY is a pedagogical framework that integrates <strong>Critical Pedagogy, Reflective Practice, and Transformative Education</strong> to create socially just, culturally relevant, and deeply engaging mathematics learning experiences.</p>
                     <p>It was developed through Dr. Parajuli's doctoral research and extensive classroom practice, bridging the gap between traditional cultural knowledge and modern educational theory.</p>
                     <span class="badge">⭐ Signature Framework</span>
-
-                    <div class="nmelody-acronym">
-                        <div class="nmelody-acronym-item"><span class="letter">N</span> – Nepal / Numeracy / Nurturing</div>
-                        <div class="nmelody-acronym-item"><span class="letter">M</span> – Mathematics / Modelling</div>
-                        <div class="nmelody-acronym-item"><span class="letter">E</span> – Ethnomathematics / Engagement</div>
-                        <div class="nmelody-acronym-item"><span class="letter">L</span> – Learning / Local Knowledge</div>
-                        <div class="nmelody-acronym-item"><span class="letter">O</span> – Open Lab / Observation</div>
-                        <div class="nmelody-acronym-item"><span class="letter">D</span> – Development / Diversity</div>
-                        <div class="nmelody-acronym-item"><span class="letter">Y</span> – Yoga (Harmony) / Youth</div>
-                    </div>
                 </div>
                 <div class="nmelody-card" id="nmelodyNp" style="display:none;">
                     <h3><span>N‑MELODY</span> के हो?</h3>
                     <p>N‑MELODY एउटा शैक्षिक ढाँचा हो जसले <strong>आलोचनात्मक शिक्षाशास्त्र, चिन्तनशील अभ्यास र रूपान्तरणकारी शिक्षा</strong>लाई एकीकृत गर्दछ, जसले सामाजिक रूपमा न्यायसंगत, सांस्कृतिक रूपमा सान्दर्भिक र गहन रूपमा संलग्न गणित सिकाइ अनुभवहरू सिर्जना गर्दछ।</p>
                     <p>यो डा. पराजुलीको डाक्टरेट अनुसन्धान र व्यापक कक्षा अभ्यास मार्फत विकसित गरिएको हो, जसले परम्परागत सांस्कृतिक ज्ञान र आधुनिक शैक्षिक सिद्धान्तबीचको सेतुको रूपमा काम गर्दछ।</p>
                     <span class="badge">⭐ स्वामित्वपूर्ण ढाँचा</span>
-
-                    <div class="nmelody-acronym">
-                        <div class="nmelody-acronym-item"><span class="letter">N</span> – नेपाल / न्युमेरसी / पोषण</div>
-                        <div class="nmelody-acronym-item"><span class="letter">M</span> – गणित / मोडेलिङ</div>
-                        <div class="nmelody-acronym-item"><span class="letter">E</span> – नृजातीय गणित / संलग्नता</div>
-                        <div class="nmelody-acronym-item"><span class="letter">L</span> – सिकाइ / स्थानीय ज्ञान</div>
-                        <div class="nmelody-acronym-item"><span class="letter">O</span> – खुला प्रयोगशाला / अवलोकन</div>
-                        <div class="nmelody-acronym-item"><span class="letter">D</span> – विकास / विविधता</div>
-                        <div class="nmelody-acronym-item"><span class="letter">Y</span> – योग (सद्भाव) / युवा</div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -830,7 +793,7 @@
                 </div>
                 <div class="project-card">
                     <h4>📖 Connecting Vedic, Ethno, and School Mathematics</h4>
-                    <p>Ongoing research and curriculum development based on Dr. Parajuli’s doctoral work, creating practical classroom resources that bridge traditional and formal mathematics.</p>
+                    <p>Ongoing research and curriculum development based on Dr. Parajuli's doctoral work, creating practical classroom resources that bridge traditional and formal mathematics.</p>
                 </div>
             </div>
             <div id="projectsNp" style="display:none;">
@@ -858,7 +821,7 @@
     <section class="cta-banner" id="ctaEn">
         <div class="container">
             <h2>Interested in Our Research?</h2>
-            <p>Let’s collaborate on research projects, publications, or joint conference initiatives.</p>
+            <p>Let's collaborate on research projects, publications, or joint conference initiatives.</p>
             <a href="contact.html" class="btn-primary">Get in Touch</a>
         </div>
     </section>
@@ -876,17 +839,14 @@
             <div class="footer-grid">
                 <div>
                     <h4>Global Academy of Education Research</h4>
-                    <p>Advancing mathematics education through research, innovation, and culturally responsive pedagogy. Founded by Dr. Kharika Devi Parajuli.</p>
-                    <p style="margin-top:0.6rem;"><strong>📍</strong> Pokhara-30, Dhungepatan, Kaski, Nepal</p>
-                    <p><strong>📧</strong> kharikaparajuli@gmail.com</p>
-                    <p><strong>📞</strong> +977-9846650159</p>
+                    <p><i>Advancing Education Research, Innovation, and Professional Development for a Transformative Future</i></p>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
                         <li><a href="research.html">Research</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>

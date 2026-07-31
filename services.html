@@ -88,39 +88,31 @@
             transform: translateY(-2px);
         }
 
-        /* ===== HEADER ===== */
+        /* ===== HEADER (SCROLLS AWAY WITH PAGE) ===== */
         header {
-            background: var(--primary);
-            color: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border-bottom: 1px solid #e2e8f0;
         }
         .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.8rem 0;
+            padding: 0.6rem 0;
             flex-wrap: wrap;
         }
-        .logo h1 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #fff;
+        .logo-img {
+            max-height: 100px;
+            width: auto;
+            display: block;
+            transition: opacity 0.2s;
         }
-        .logo h1 span {
-            color: var(--gold);
+        .logo-img:hover {
+            opacity: 0.85;
         }
-        .logo .tagline {
-            font-size: 0.7rem;
-            font-weight: 400;
-            color: #b0c4de;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
+
+        /* Desktop Navigation (Black) */
         .nav-desktop ul {
             display: flex;
             list-style: none;
@@ -128,7 +120,7 @@
             align-items: center;
         }
         .nav-desktop a {
-            color: #e2e8f0;
+            color: #000000;
             font-weight: 500;
             font-size: 1rem;
             transition: color 0.2s;
@@ -139,8 +131,8 @@
         }
         .nav-desktop .lang-btn {
             background: transparent;
-            border: 1px solid var(--gold);
-            color: #fff;
+            border: 1px solid #000000;
+            color: #000000;
             padding: 0.2rem 0.8rem;
             border-radius: 30px;
             cursor: pointer;
@@ -149,8 +141,8 @@
             transition: all 0.2s;
         }
         .nav-desktop .lang-btn:hover {
-            background: var(--gold);
-            color: var(--primary);
+            background: #000000;
+            color: #ffffff;
         }
 
         /* Mobile Header */
@@ -164,7 +156,7 @@
             background: none;
             border: none;
             font-size: 2rem;
-            color: #fff;
+            color: #000000;
             cursor: pointer;
             padding: 0 4px;
         }
@@ -173,14 +165,18 @@
         }
         .mobile-lang {
             background: transparent;
-            border: 1px solid var(--gold);
-            color: #fff;
+            border: 1px solid #000000;
+            color: #000000;
             padding: 0.2rem 0.8rem;
             border-radius: 30px;
             cursor: pointer;
             font-weight: 600;
             font-size: 0.85rem;
             margin-right: 0.8rem;
+        }
+        .mobile-lang:hover {
+            background: #000000;
+            color: #ffffff;
         }
         @media (max-width: 768px) {
             .nav-desktop {
@@ -189,15 +185,12 @@
             .mobile-header {
                 display: flex;
             }
-            .logo h1 {
-                font-size: 1.1rem;
-            }
-            .logo .tagline {
-                font-size: 0.55rem;
+            .logo-img {
+                max-height: 60px;
             }
         }
 
-        /* Mobile Slide Menu */
+        /* Mobile Slide Menu (White Background, Black Text) */
         .mobile-menu {
             display: none;
             position: fixed;
@@ -205,24 +198,28 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: var(--primary);
+            background: #ffffff;
             z-index: 99;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 1.5rem;
             padding: 2rem;
-            top: 72px;
-            height: calc(100vh - 72px);
+            top: 70px;
+            height: calc(100vh - 70px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
         .mobile-menu a {
-            color: #fff;
+            color: #000000;
             font-size: 1.5rem;
             font-weight: 500;
             transition: color 0.2s;
+            padding: 0.5rem 1rem;
         }
         .mobile-menu a:hover {
             color: var(--gold);
+            background: #f5f5f5;
+            border-radius: 8px;
         }
         .mobile-menu.open {
             display: flex;
@@ -472,7 +469,11 @@
             font-size: 1.1rem;
             margin-bottom: 0.8rem;
         }
-        .footer-grid p,
+        .footer-grid p {
+            font-size: 0.95rem;
+            color: #b0c4de;
+            line-height: 1.8;
+        }
         .footer-grid a {
             font-size: 0.95rem;
             color: #b0c4de;
@@ -562,13 +563,14 @@
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
+    <!-- ===== HEADER (SCROLLS AWAY) ===== -->
     <header>
         <div class="container header-inner">
             <!-- Desktop Nav -->
             <div class="logo">
-                <h1>Global Academy <span>of Education Research</span></h1>
-                <div class="tagline">Mathematics Education · Research · Training · Consultancy</div>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                </a>
             </div>
             <nav class="nav-desktop">
                 <ul>
@@ -584,7 +586,9 @@
             <!-- Mobile Header -->
             <div class="mobile-header">
                 <div class="logo">
-                    <h1>Global Academy <span>of Ed. Research</span></h1>
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                    </a>
                 </div>
                 <div style="display:flex; align-items:center;">
                     <button class="mobile-lang" id="langToggleMobile">ने</button>
@@ -830,8 +834,8 @@
     <!-- ===== CTA BANNER ===== -->
     <section class="cta-banner" id="ctaEn">
         <div class="container">
-            <h2>Ready to Transform Mathematics Education?</h2>
-            <p>Let’s discuss how we can support your institution with research, training, or consultancy.</p>
+            <h2>Ready to Transform Education Research?</h2>
+            <p>Let's discuss how we can support your institution with research, training, or consultancy.</p>
             <a href="contact.html" class="btn-primary">Get in Touch</a>
         </div>
     </section>
@@ -849,17 +853,14 @@
             <div class="footer-grid">
                 <div>
                     <h4>Global Academy of Education Research</h4>
-                    <p>Advancing mathematics education through research, innovation, and culturally responsive pedagogy. Founded by Dr. Kharika Devi Parajuli.</p>
-                    <p style="margin-top:0.6rem;"><strong>📍</strong> Pokhara-30, Dhungepatan, Kaski, Nepal</p>
-                    <p><strong>📧</strong> kharikaparajuli@gmail.com</p>
-                    <p><strong>📞</strong> +977-9846650159</p>
+                    <p><i>Advancing Education Research, Innovation, and Professional Development for a Transformative Future</i></p>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
                         <li><a href="research.html">Research</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>

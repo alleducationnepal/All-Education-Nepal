@@ -71,39 +71,31 @@
             box-shadow: 0 6px 14px rgba(244, 162, 54, 0.35);
         }
 
-        /* ===== HEADER ===== */
+        /* ===== HEADER (SCROLLS AWAY WITH PAGE) ===== */
         header {
-            background: var(--primary);
-            color: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border-bottom: 1px solid #e2e8f0;
         }
         .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.8rem 0;
+            padding: 0.6rem 0;
             flex-wrap: wrap;
         }
-        .logo h1 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #fff;
+        .logo-img {
+            max-height: 100px;
+            width: auto;
+            display: block;
+            transition: opacity 0.2s;
         }
-        .logo h1 span {
-            color: var(--gold);
+        .logo-img:hover {
+            opacity: 0.85;
         }
-        .logo .tagline {
-            font-size: 0.7rem;
-            font-weight: 400;
-            color: #b0c4de;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
+
+        /* Desktop Navigation (Black) */
         .nav-desktop ul {
             display: flex;
             list-style: none;
@@ -111,7 +103,7 @@
             align-items: center;
         }
         .nav-desktop a {
-            color: #e2e8f0;
+            color: #000000;
             font-weight: 500;
             font-size: 1rem;
             transition: color 0.2s;
@@ -122,8 +114,8 @@
         }
         .nav-desktop .lang-btn {
             background: transparent;
-            border: 1px solid var(--gold);
-            color: #fff;
+            border: 1px solid #000000;
+            color: #000000;
             padding: 0.2rem 0.8rem;
             border-radius: 30px;
             cursor: pointer;
@@ -132,8 +124,8 @@
             transition: all 0.2s;
         }
         .nav-desktop .lang-btn:hover {
-            background: var(--gold);
-            color: var(--primary);
+            background: #000000;
+            color: #ffffff;
         }
 
         /* Mobile Header */
@@ -147,7 +139,7 @@
             background: none;
             border: none;
             font-size: 2rem;
-            color: #fff;
+            color: #000000;
             cursor: pointer;
             padding: 0 4px;
         }
@@ -156,14 +148,18 @@
         }
         .mobile-lang {
             background: transparent;
-            border: 1px solid var(--gold);
-            color: #fff;
+            border: 1px solid #000000;
+            color: #000000;
             padding: 0.2rem 0.8rem;
             border-radius: 30px;
             cursor: pointer;
             font-weight: 600;
             font-size: 0.85rem;
             margin-right: 0.8rem;
+        }
+        .mobile-lang:hover {
+            background: #000000;
+            color: #ffffff;
         }
         @media (max-width: 768px) {
             .nav-desktop {
@@ -172,15 +168,12 @@
             .mobile-header {
                 display: flex;
             }
-            .logo h1 {
-                font-size: 1.1rem;
-            }
-            .logo .tagline {
-                font-size: 0.55rem;
+            .logo-img {
+                max-height: 60px;
             }
         }
 
-        /* Mobile Slide Menu */
+        /* Mobile Slide Menu (White Background, Black Text) */
         .mobile-menu {
             display: none;
             position: fixed;
@@ -188,24 +181,28 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: var(--primary);
+            background: #ffffff;
             z-index: 99;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 1.5rem;
             padding: 2rem;
-            top: 72px;
-            height: calc(100vh - 72px);
+            top: 70px;
+            height: calc(100vh - 70px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
         .mobile-menu a {
-            color: #fff;
+            color: #000000;
             font-size: 1.5rem;
             font-weight: 500;
             transition: color 0.2s;
+            padding: 0.5rem 1rem;
         }
         .mobile-menu a:hover {
             color: var(--gold);
+            background: #f5f5f5;
+            border-radius: 8px;
         }
         .mobile-menu.open {
             display: flex;
@@ -277,65 +274,13 @@
         }
         .contact-grid {
             display: grid;
-            grid-template-columns: 3fr 2fr;
-            gap: 3rem;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        /* Contact Form */
-        .contact-form form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.2rem;
-        }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.3rem;
-        }
-        .form-group label {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-        }
-        .form-group label .required {
-            color: #e53e3e;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 0.7rem 1rem;
-            border: 1px solid #cbd5e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            background: #fff;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 0 3px rgba(244, 162, 54, 0.15);
-        }
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        .form-group .helper-text {
-            font-size: 0.8rem;
-            color: var(--text-light);
-        }
-        .form-submit {
-            margin-top: 0.5rem;
-        }
-
-        /* Contact Details Sidebar */
+        /* Contact Details */
         .contact-details {
             display: flex;
             flex-direction: column;
@@ -343,25 +288,26 @@
         }
         .detail-card {
             background: var(--gray-bg);
-            padding: 1.5rem;
+            padding: 2rem 2rem;
             border-radius: 12px;
-            border-left: 5px solid var(--gold);
+            border-left: 6px solid var(--gold);
+            text-align: center;
         }
         .detail-card .icon {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             display: block;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.5rem;
         }
         .detail-card h4 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--primary);
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.3rem;
         }
         .detail-card p,
         .detail-card a {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-light);
-            line-height: 1.6;
+            line-height: 1.8;
         }
         .detail-card a {
             color: var(--primary);
@@ -369,55 +315,6 @@
         }
         .detail-card a:hover {
             color: var(--gold-dark);
-        }
-
-        /* Map */
-        .map-container {
-            margin-top: 1rem;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-            border: 1px solid #e2e8f0;
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 280px;
-            border: 0;
-            display: block;
-        }
-
-        @media (max-width: 992px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (max-width: 576px) {
-            .contact-section {
-                padding: 2.5rem 0;
-            }
-        }
-
-        /* ===== RESPONSE MESSAGE ===== */
-        .form-response {
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 0.5rem;
-            display: none;
-        }
-        .form-response.success {
-            display: block;
-            background: #c6f6d5;
-            color: #22543d;
-            border: 1px solid #48bb78;
-        }
-        .form-response.error {
-            display: block;
-            background: #fed7d7;
-            color: #742a2a;
-            border: 1px solid #fc8181;
         }
 
         /* ===== CTA BANNER ===== */
@@ -465,7 +362,11 @@
             font-size: 1.1rem;
             margin-bottom: 0.8rem;
         }
-        .footer-grid p,
+        .footer-grid p {
+            font-size: 0.95rem;
+            color: #b0c4de;
+            line-height: 1.8;
+        }
         .footer-grid a {
             font-size: 0.95rem;
             color: #b0c4de;
@@ -555,13 +456,14 @@
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
+    <!-- ===== HEADER (SCROLLS AWAY) ===== -->
     <header>
         <div class="container header-inner">
             <!-- Desktop Nav -->
             <div class="logo">
-                <h1>Global Academy <span>of Education Research</span></h1>
-                <div class="tagline">Mathematics Education · Research · Training · Consultancy</div>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                </a>
             </div>
             <nav class="nav-desktop">
                 <ul>
@@ -577,7 +479,9 @@
             <!-- Mobile Header -->
             <div class="mobile-header">
                 <div class="logo">
-                    <h1>Global Academy <span>of Ed. Research</span></h1>
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                    </a>
                 </div>
                 <div style="display:flex; align-items:center;">
                     <button class="mobile-lang" id="langToggleMobile">ने</button>
@@ -612,74 +516,9 @@
     <section class="contact-section">
         <div class="container">
             <div class="contact-grid">
-                <!-- Left: Form -->
                 <div>
-                    <div class="section-title" id="formTitleEn" style="text-align:left; margin-bottom:1.5rem;">
-                        <h2 style="font-size:1.6rem; margin-bottom:0.2rem;">Send Us a Message</h2>
-                        <p style="text-align:left; margin:0;">We'll respond within 24–48 hours.</p>
-                        <div class="accent-line" style="margin:0.4rem 0 0 0;"></div>
-                    </div>
-                    <div class="section-title" id="formTitleNp" style="display:none; text-align:left; margin-bottom:1.5rem;">
-                        <h2 style="font-size:1.6rem; margin-bottom:0.2rem;">हामीलाई सन्देश पठाउनुहोस्</h2>
-                        <p style="text-align:left; margin:0;">हामी २४–४८ घण्टाभित्र प्रतिक्रिया दिनेछौं।</p>
-                        <div class="accent-line" style="margin:0.4rem 0 0 0;"></div>
-                    </div>
-
-                    <div class="contact-form">
-                        <form id="contactForm" action="#" method="POST">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="name">Your Name <span class="required">*</span></label>
-                                    <input type="text" id="name" name="name" placeholder="e.g., Ram Sharma" required />
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email Address <span class="required">*</span></label>
-                                    <input type="email" id="email" name="email" placeholder="ram@example.com" required />
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="phone">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" placeholder="+977-98XXXXXXXX" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="organization">Organization / Institution</label>
-                                    <input type="text" id="organization" name="organization" placeholder="e.g., XYZ School" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject <span class="required">*</span></label>
-                                <select id="subject" name="subject" required>
-                                    <option value="">— Select an option —</option>
-                                    <option value="inquiry">General Inquiry</option>
-                                    <option value="training">Training Request</option>
-                                    <option value="research">Research Collaboration</option>
-                                    <option value="consultancy">Consultancy / Project</option>
-                                    <option value="event">Event Partnership</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Your Message <span class="required">*</span></label>
-                                <textarea id="message" name="message" placeholder="Please describe your query or project in detail..." required></textarea>
-                                <span class="helper-text">We take your privacy seriously. Your information will not be shared.</span>
-                            </div>
-                            <div id="formResponse" class="form-response"></div>
-                            <div class="form-submit">
-                                <button type="submit" class="btn-primary" id="submitBtn">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Right: Contact Details -->
-                <div>
-                    <div class="section-title" id="detailsTitleEn" style="text-align:left; margin-bottom:1.5rem;">
+                    <div class="section-title" style="text-align:left; margin-bottom:1.5rem;">
                         <h2 style="font-size:1.6rem; margin-bottom:0.2rem;">Contact Information</h2>
-                        <div class="accent-line" style="margin:0.4rem 0 0 0;"></div>
-                    </div>
-                    <div class="section-title" id="detailsTitleNp" style="display:none; text-align:left; margin-bottom:1.5rem;">
-                        <h2 style="font-size:1.6rem; margin-bottom:0.2rem;">सम्पर्क विवरण</h2>
                         <div class="accent-line" style="margin:0.4rem 0 0 0;"></div>
                     </div>
 
@@ -688,35 +527,8 @@
                             <span class="icon">📍</span>
                             <h4>Registered Office</h4>
                             <p>Global Academy of Education Research Private Limited<br />
-                            Golden Nature Secondary Boarding School<br />
-                            Pokhara-30, Dhungepatan, Kaski, Nepal</p>
+                            Dhungepatan, Pokhara Metropolitan City, Ward 20, Kaski District, Gandaki Province, Nepal</p>
                         </div>
-                        <div class="detail-card">
-                            <span class="icon">📧</span>
-                            <h4>Email</h4>
-                            <p><a href="mailto:kharikaparajuli@gmail.com">kharikaparajuli@gmail.com</a></p>
-                        </div>
-                        <div class="detail-card">
-                            <span class="icon">📞</span>
-                            <h4>Phone</h4>
-                            <p><a href="tel:+9779846650159">+977-9846650159</a></p>
-                        </div>
-                        <div class="detail-card">
-                            <span class="icon">🕐</span>
-                            <h4>Working Hours</h4>
-                            <p>Sunday – Friday: 10:00 AM – 5:00 PM (NPT)<br />
-                            Saturday: Closed</p>
-                        </div>
-                    </div>
-
-                    <!-- Google Map -->
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.268443646141!2d83.97162431490424!3d28.10298188269962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995d5957f9c37b1%3A0xb3f1cf19c3abe632!2sGolden%20Nature%20Boarding%20School!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
                     </div>
                 </div>
             </div>
@@ -727,15 +539,15 @@
     <section class="cta-banner" id="ctaEn">
         <div class="container">
             <h2>Let's Work Together</h2>
-            <p>Ready to transform mathematics education? We're here to help.</p>
-            <a href="#contactForm" class="btn-primary" onclick="document.getElementById('contactForm').scrollIntoView({behavior:'smooth'}); return false;">Send Us a Message</a>
+            <p>Ready to transform education research? We're here to help.</p>
+            <a href="mailto:kharikaparajuli@gmail.com" class="btn-primary">Email Us</a>
         </div>
     </section>
     <section class="cta-banner" id="ctaNp" style="display:none;">
         <div class="container">
             <h2>सँगै काम गरौं</h2>
-            <p>गणित शिक्षा रूपान्तरण गर्न तयार हुनुहुन्छ? हामी यहाँ सहायता गर्न तयार छौं।</p>
-            <a href="#contactForm" class="btn-primary" onclick="document.getElementById('contactForm').scrollIntoView({behavior:'smooth'}); return false;">हामीलाई सन्देश पठाउनुहोस्</a>
+            <p>शिक्षा अनुसन्धान रूपान्तरण गर्न तयार हुनुहुन्छ? हामी यहाँ सहायता गर्न तयार छौं।</p>
+            <a href="mailto:kharikaparajuli@gmail.com" class="btn-primary">इमेल गर्नुहोस्</a>
         </div>
     </section>
 
@@ -745,17 +557,14 @@
             <div class="footer-grid">
                 <div>
                     <h4>Global Academy of Education Research</h4>
-                    <p>Advancing mathematics education through research, innovation, and culturally responsive pedagogy. Founded by Dr. Kharika Devi Parajuli.</p>
-                    <p style="margin-top:0.6rem;"><strong>📍</strong> Pokhara-30, Dhungepatan, Kaski, Nepal</p>
-                    <p><strong>📧</strong> kharikaparajuli@gmail.com</p>
-                    <p><strong>📞</strong> +977-9846650159</p>
+                    <p><i>Advancing Education Research, Innovation, and Professional Development for a Transformative Future</i></p>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
                         <li><a href="research.html">Research</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -833,37 +642,6 @@
                 hamburger.textContent = '☰';
                 document.body.style.overflow = '';
             });
-        });
-
-        // ----- CONTACT FORM HANDLING (Demo) -----
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const responseDiv = document.getElementById('formResponse');
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-
-            // Simulate sending (replace with actual form submission)
-            setTimeout(() => {
-                responseDiv.className = 'form-response success';
-                responseDiv.textContent = '✅ Your message has been sent successfully! We will get back to you within 24–48 hours.';
-                submitBtn.textContent = 'Send Message';
-                submitBtn.disabled = false;
-                this.reset();
-            }, 1500);
-
-            // Uncomment the code below for actual form submission using Formspree or similar service
-            // const formData = new FormData(this);
-            // fetch('https://formspree.io/f/yourFormID', {
-            //     method: 'POST',
-            //     body: formData,
-            //     headers: { 'Accept': 'application/json' }
-            // })
-            // .then(response => {
-            //     if (response.ok) { ... }
-            //     else { ... }
-            // })
-            // .catch(error => { ... });
         });
 
         // ----- COOKIE CONSENT -----

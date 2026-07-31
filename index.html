@@ -112,7 +112,7 @@
             flex-wrap: wrap;
         }
         .logo-img {
-            max-height: 65px;
+            max-height: 80px;
             width: auto;
             display: block;
             transition: opacity 0.2s;
@@ -195,7 +195,7 @@
                 display: flex;
             }
             .logo-img {
-                max-height: 50px;
+                max-height: 60px;
             }
         }
 
@@ -379,183 +379,103 @@
             border-radius: 4px;
         }
 
-        /* ===== SERVICES ===== */
-        .services {
-            padding: 4rem 0 3.5rem 0;
+        /* ===== WHY CHOOSE US ===== */
+        .why-section {
+            padding: 4rem 0;
             background: var(--gray-bg);
         }
-        .services-grid {
+        .why-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
         }
-        .service-card {
+        .why-card {
             background: #fff;
             padding: 2rem 1.5rem;
             border-radius: 12px;
+            text-align: center;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
             transition: all 0.25s;
-            border-bottom: 4px solid transparent;
-            text-align: center;
+            border-top: 5px solid var(--gold);
         }
-        .service-card:hover {
+        .why-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
-            border-bottom-color: var(--gold);
         }
-        .service-card .icon {
+        .why-card .icon {
             font-size: 2.8rem;
             display: block;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
-        .service-card h3 {
-            font-size: 1.2rem;
+        .why-card h3 {
+            font-size: 1.1rem;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
-        .service-card p {
+        .why-card p {
             font-size: 0.95rem;
             color: var(--text-light);
             margin-bottom: 0;
         }
-
-        /* ===== ABOUT / FOUNDER ===== */
-        .about-section {
-            padding: 4rem 0;
+        @media (max-width: 992px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        .about-text h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        .about-text h2 span {
-            color: var(--gold);
-        }
-        .about-text p {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-        .about-text .highlight-list {
-            list-style: none;
-            margin: 1.2rem 0;
-        }
-        .about-text .highlight-list li {
-            padding: 0.4rem 0;
-            font-weight: 500;
-            color: var(--text-dark);
-        }
-        .about-text .highlight-list li::before {
-            content: '✓ ';
-            color: var(--mint);
-            font-weight: 700;
-        }
-        .about-founder {
-            background: var(--gray-bg);
-            padding: 2rem;
-            border-radius: 16px;
-            border-left: 6px solid var(--gold);
-        }
-        .about-founder .avatar {
-            font-size: 4rem;
-            margin-bottom: 0.5rem;
-        }
-        .about-founder h3 {
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-bottom: 0.2rem;
-        }
-        .about-founder .title {
-            color: var(--gold-dark);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.8rem;
-        }
-        .about-founder p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-        }
-        @media (max-width: 768px) {
-            .about-grid {
+        @media (max-width: 576px) {
+            .why-grid {
                 grid-template-columns: 1fr;
             }
-            .about-text h2 {
-                font-size: 1.6rem;
-            }
         }
 
-        /* ===== RESEARCH HIGHLIGHT ===== */
-        .research-highlight {
+        /* ===== OUR APPROACH ===== */
+        .approach-section {
             padding: 4rem 0;
-            background: var(--primary);
-            color: #fff;
         }
-        .research-highlight .section-title h2 {
-            color: #fff;
-        }
-        .research-highlight .section-title p {
-            color: #b0c4de;
-        }
-        .research-highlight .section-title .accent-line {
-            background: var(--gold);
-        }
-        .highlight-grid {
+        .approach-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
         }
-        .highlight-card {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(4px);
-            padding: 1.8rem;
+        .approach-step {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: var(--gray-bg);
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: 0.2s;
+            transition: transform 0.25s;
         }
-        .highlight-card:hover {
-            background: rgba(255, 255, 255, 0.1);
+        .approach-step:hover {
+            transform: translateY(-4px);
         }
-        .highlight-card h3 {
-            color: var(--gold);
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        .highlight-card p,
-        .highlight-card li {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-        .highlight-card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .highlight-card ul li {
-            padding: 0.3rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-        .highlight-card ul li:last-child {
-            border-bottom: none;
-        }
-        .highlight-card .badge {
+        .approach-step .step-number {
             display: inline-block;
             background: var(--gold);
             color: var(--primary);
-            font-size: 0.7rem;
             font-weight: 700;
-            padding: 0.2rem 0.8rem;
-            border-radius: 30px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 0.6rem;
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-bottom: 0.6rem;
         }
-        @media (max-width: 768px) {
-            .highlight-grid {
+        .approach-step h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+        .approach-step p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+        @media (max-width: 992px) {
+            .approach-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .approach-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -605,7 +525,11 @@
             font-size: 1.1rem;
             margin-bottom: 0.8rem;
         }
-        .footer-grid p,
+        .footer-grid p {
+            font-size: 0.95rem;
+            color: #b0c4de;
+            line-height: 1.8;
+        }
         .footer-grid a {
             font-size: 0.95rem;
             color: #b0c4de;
@@ -776,151 +700,79 @@
         </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
-    <section class="services">
+    <!-- ===== WHY CHOOSE US ===== -->
+    <section class="why-section">
         <div class="container">
-            <div class="section-title" id="servicesTitleEn">
-                <h2>Our Core Services</h2>
-                <p>Comprehensive solutions designed to advance mathematics education through research, training, and collaboration.</p>
+            <div class="section-title" id="whyTitleEn">
+                <h2>Why Choose Us</h2>
+                <p>What makes Global Academy of Education Research your trusted partner in mathematics education.</p>
                 <div class="accent-line"></div>
             </div>
-            <div class="section-title" id="servicesTitleNp" style="display:none;">
-                <h2>हाम्रा मूल सेवाहरू</h2>
-                <p>अनुसन्धान, तालिम र सहकार्य मार्फत गणित शिक्षाको उन्नतिका लागि व्यापक समाधानहरू।</p>
+            <div class="section-title" id="whyTitleNp" style="display:none;">
+                <h2>किन हामी छनौट गर्ने?</h2>
+                <p>गणित शिक्षामा ग्लोबल एकेडेमी अफ एजुकेसन रिसर्चलाई तपाईंको विश्वसनीय साझेदार बनाउने कुराहरू।</p>
                 <div class="accent-line"></div>
             </div>
 
-            <div class="services-grid">
-                <div class="service-card">
+            <div class="why-grid">
+                <div class="why-card">
+                    <span class="icon">🌍</span>
+                    <h3>Culturally Responsive</h3>
+                    <p>We integrate indigenous knowledge, cultural artifacts, and local practices into mathematics education.</p>
+                </div>
+                <div class="why-card">
                     <span class="icon">🔬</span>
-                    <h3>Research &amp; Innovation</h3>
-                    <p>Ethnomathematics, ethnomodelling, action research, and technology-integrated pedagogical studies.</p>
+                    <h3>Research‑Driven</h3>
+                    <p>Our methods are grounded in rigorous academic research, including ethnomathematics and ethnomodelling.</p>
                 </div>
-                <div class="service-card">
+                <div class="why-card">
                     <span class="icon">🎓</span>
-                    <h3>Teacher Training</h3>
-                    <p>Professional development, ICT integration, GeoGebra workshops, and the N‑MELODY framework.</p>
+                    <h3>Expert Leadership</h3>
+                    <p>Led by Dr. Kharika Devi Parajuli – Ph.D. in Mathematics Education with 24+ years of experience.</p>
                 </div>
-                <div class="service-card">
-                    <span class="icon">🗣️</span>
-                    <h3>Conferences &amp; Events</h3>
-                    <p>National and international conferences, seminars, symposia, and academic talk series.</p>
-                </div>
-                <div class="service-card">
+                <div class="why-card">
                     <span class="icon">🤝</span>
-                    <h3>Consultancy &amp; Projects</h3>
-                    <p>Curriculum development, policy advisory, educational project management, and M&amp;E.</p>
+                    <h3>Global Network</h3>
+                    <p>Collaborations with scholars from Brazil, India, the Philippines, and the USA.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== ABOUT / FOUNDER ===== -->
-    <section class="about-section">
-        <div class="container about-grid">
-            <div class="about-text" id="aboutEn">
-                <h2>Meet Our Founder: <span>Dr. Kharika Devi Parajuli</span></h2>
-                <p>Dr. Parajuli is a highly accomplished mathematics teacher educator with over <strong>24 years</strong> of experience. She holds a Ph.D. in Mathematics Education from Tribhuvan University (2022) and an M.Phil. from Kathmandu University (2017).</p>
-                <p>Her doctoral research, <em>"Connecting Vedic, Ethno, and School Mathematics,"</em> explores how local cultural knowledge and artifacts can be transformed into powerful pedagogical designs. She has published extensively in national and international journals and contributed a chapter to a prestigious <strong>Springer</strong> book on ethnomathematics.</p>
-                <ul class="highlight-list">
-                    <li>Founder &amp; Director, Global Academy of Education Research</li>
-                    <li>Executive Member, Nepal Mathematical Society (Gandaki Province)</li>
-                    <li>Director, Centre for Innovation, Research, Development &amp; Training (CIRDT)</li>
-                    <li>Life Member, Women of Nepal in Mathematical Sciences (WoNiMS)</li>
-                </ul>
-            </div>
-            <div class="about-text" id="aboutNp" style="display:none;">
-                <h2>हाम्री संस्थापक: <span>डा. खरीका देवी पराजुली</span></h2>
-                <p>डा. पराजुली २४ वर्षभन्दा बढी अनुभव भएकी एक प्रख्यात गणित शिक्षक शिक्षिका हुनुहुन्छ। उहाँले त्रिभुवन विश्वविद्यालयबाट गणित शिक्षामा पीएच.डी. (२०२२) र काठमाडौं विश्वविद्यालयबाट एम.फिल. (२०१७) प्राप्त गर्नुभएको छ।</p>
-                <p>उहाँको अनुसन्धान <em>"Connecting Vedic, Ethno, and School Mathematics"</em> ले स्थानीय सांस्कृतिक ज्ञान र कलाकृतिहरूलाई शक्तिशाली शैक्षिक डिजाइनमा कसरी रूपान्तरण गर्न सकिन्छ भन्ने अन्वेषण गर्दछ। उहाँले राष्ट्रिय र अन्तर्राष्ट्रिय जर्नलहरूमा व्यापक रूपमा प्रकाशित गर्नुभएको छ र एथनोम्याथमेटिक्समा <strong>Springer</strong> पुस्तकमा अध्याय योगदान गर्नुभएको छ।</p>
-                <ul class="highlight-list">
-                    <li>संस्थापक तथा निर्देशक, ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च</li>
-                    <li>कार्यकारी सदस्य, नेपाल गणित समाज (गण्डकी प्रदेश)</li>
-                    <li>निर्देशक, सेन्टर फर इनोभेसन, रिसर्च, डेभलपमेन्ट एण्ड ट्रेनिङ (CIRDT)</li>
-                    <li>आजीवन सदस्य, Women of Nepal in Mathematical Sciences (WoNiMS)</li>
-                </ul>
-            </div>
-
-            <div class="about-founder" id="founderEn">
-                <div class="avatar">👩‍🏫</div>
-                <h3>Dr. Kharika Devi Parajuli</h3>
-                <div class="title">Ph.D. (Mathematics Education) · Founder &amp; Director</div>
-                <p>With a unique integration of deep theoretical knowledge, innovative teacher-education practices, and practical classroom expertise, Dr. Parajuli leads the Academy's vision to make mathematics accessible, culturally relevant, and socially just for all learners.</p>
-                <p style="margin-top:0.6rem;"><strong>📧</strong> kharikaparajuli@gmail.com &nbsp;|&nbsp; <strong>📞</strong> +977-9846650159</p>
-            </div>
-            <div class="about-founder" id="founderNp" style="display:none;">
-                <div class="avatar">👩‍🏫</div>
-                <h3>डा. खरीका देवी पराजुली</h3>
-                <div class="title">पीएच.डी. (गणित शिक्षा) · संस्थापक तथा निर्देशक</div>
-                <p>गहन सैद्धान्तिक ज्ञान, नवीन शिक्षक-शिक्षण अभ्यास र व्यावहारिक कक्षा-विशेषज्ञताको अद्वितीय एकीकरणका साथ, डा. पराजुलीले गणितलाई सबै शिक्षार्थीहरूका लागि सुलभ, सांस्कृतिक रूपमा सान्दर्भिक र सामाजिक रूपमा न्यायसंगत बनाउने एकेडेमीको दृष्टिकोणको नेतृत्व गर्नुहुन्छ।</p>
-                <p style="margin-top:0.6rem;"><strong>📧</strong> kharikaparajuli@gmail.com &nbsp;|&nbsp; <strong>📞</strong> +977-9846650159</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== RESEARCH HIGHLIGHT ===== -->
-    <section class="research-highlight">
+    <!-- ===== OUR APPROACH ===== -->
+    <section class="approach-section">
         <div class="container">
-            <div class="section-title" id="researchTitleEn">
-                <h2>Research &amp; Innovations</h2>
-                <p>Our signature frameworks, publications, and ongoing projects.</p>
+            <div class="section-title" id="approachTitleEn">
+                <h2>Our Approach</h2>
+                <p>How we work with you to create lasting impact in mathematics education.</p>
                 <div class="accent-line"></div>
             </div>
-            <div class="section-title" id="researchTitleNp" style="display:none;">
-                <h2>अनुसन्धान र नवप्रवर्तन</h2>
-                <p>हाम्रा स्वामित्वपूर्ण ढाँचाहरू, प्रकाशनहरू र चालू परियोजनाहरू।</p>
+            <div class="section-title" id="approachTitleNp" style="display:none;">
+                <h2>हाम्रो दृष्टिकोण</h2>
+                <p>गणित शिक्षामा दीर्घकालीन प्रभाव सिर्जना गर्न हामी तपाईंसँग कसरी काम गर्दछौं।</p>
                 <div class="accent-line"></div>
             </div>
 
-            <div class="highlight-grid">
-                <div class="highlight-card" id="researchEn">
-                    <h3>🧩 The N‑MELODY Framework</h3>
-                    <p>A proprietary pedagogical model developed by Dr. Parajuli that integrates <strong>Critical Pedagogy, Reflective Practice, and Transformative Education</strong> to create socially just, culturally relevant, and deeply engaging mathematics learning experiences.</p>
-                    <ul>
-                        <li><strong>N</strong> – Nepal / Numeracy / Nurturing</li>
-                        <li><strong>M</strong> – Mathematics / Modelling</li>
-                        <li><strong>E</strong> – Ethnomathematics / Engagement</li>
-                        <li><strong>L</strong> – Learning / Local Knowledge</li>
-                        <li><strong>O</strong> – Open Lab / Observation</li>
-                        <li><strong>D</strong> – Development / Diversity</li>
-                        <li><strong>Y</strong> – Yoga (Harmony) / Youth</li>
-                    </ul>
-                    <span class="badge">Signature Framework</span>
+            <div class="approach-grid">
+                <div class="approach-step">
+                    <div class="step-number">1</div>
+                    <h4>Understand</h4>
+                    <p>We listen to your needs, challenges, and goals through consultation and needs assessment.</p>
                 </div>
-                <div class="highlight-card" id="researchNp" style="display:none;">
-                    <h3>🧩 एन‑मेलोडी (N‑MELODY) ढाँचा</h3>
-                    <p>डा. पराजुलीद्वारा विकसित एक स्वामित्वपूर्ण शैक्षिक मोडेल जसले <strong>आलोचनात्मक शिक्षाशास्त्र, चिन्तनशील अभ्यास र रूपान्तरणकारी शिक्षा</strong>लाई एकीकृत गर्दछ।</p>
-                    <ul>
-                        <li><strong>N</strong> – नेपाल / न्युमेरसी / पोषण</li>
-                        <li><strong>M</strong> – गणित / मोडेलिङ</li>
-                        <li><strong>E</strong> – नृजातीय गणित / संलग्नता</li>
-                        <li><strong>L</strong> – सिकाइ / स्थानीय ज्ञान</li>
-                        <li><strong>O</strong> – खुला प्रयोगशाला / अवलोकन</li>
-                        <li><strong>D</strong> – विकास / विविधता</li>
-                        <li><strong>Y</strong> – योग (सद्भाव) / युवा</li>
-                    </ul>
-                    <span class="badge">स्वामित्वपूर्ण ढाँचा</span>
+                <div class="approach-step">
+                    <div class="step-number">2</div>
+                    <h4>Design</h4>
+                    <p>We develop customized solutions — training programs, curricula, or research studies.</p>
                 </div>
-
-                <div class="highlight-card" id="pubsEn">
-                    <h3>📄 Recent Publications</h3>
-                    <ul>
-                        <li><strong>2025</strong> – <em>Learning mathematics through open lab</em> (Springer Book Chapter)</li>
-                        <li><strong>2024</strong> – <em>Integration of GeoGebra-Designed Models</em> (The Educator Journal)</li>
-                        <li><strong>2023</strong> – <em>Mathematical Knowledge on Changu Narayan Temples</em> (Indonesian Journal of Ethnomathematics)</li>
-                        <li><strong>2023</strong> – <em>Problem of Migrate Children in the Mathematics Classroom</em> (Journal of Mathematics Education)</li>
-                    </ul>
-                    <span class="badge">Peer-Reviewed</span>
+                <div class="approach-step">
+                    <div class="step-number">3</div>
+                    <h4>Implement</h4>
+                    <p>We deliver the solution with hands‑on support, monitoring, and evaluation.</p>
                 </div>
-                <div class="highlight-card" id="pubsNp" style="display:none;">
-                    <h3>📄 हालैका प्रकाशनहरू</h3>
-                    <ul>
-                        <li><strong>२०२५</strong> – <em>Learning mathematics through open lab</em> (Springer पुस्तक अध्याय)</li>
-                        <li><strong>२०२४</strong> – <em>Integration of GeoGebra-Designed Models</em> (The Educator Journal)</li>
-                        <li><strong>२०२३</strong> – <em>Mathematical Knowledge on Changu Narayan Temples</em> (Indonesian Journal of Ethnomathematics)</li>
-                        <li><strong>२०२३</strong> – <em>Problem of Migrate Children in the Mathematics Classroom</em> (Journal of Mathematics Education)</li>
-                    </ul>
-                    <span class="badge">समीक्षक-समीक्षित</span>
+                <div class="approach-step">
+                    <div class="step-number">4</div>
+                    <h4>Transform</h4>
+                    <p>We empower educators and institutions to sustain change and drive innovation.</p>
                 </div>
             </div>
         </div>
@@ -948,17 +800,14 @@
             <div class="footer-grid">
                 <div>
                     <h4>Global Academy of Education Research</h4>
-                    <p>Advancing mathematics education through research, innovation, and culturally responsive pedagogy. Founded by Dr. Kharika Devi Parajuli.</p>
-                    <p style="margin-top:0.6rem;"><strong>📍</strong> Pokhara-30, Dhungepatan, Kaski, Nepal</p>
-                    <p><strong>📧</strong> kharikaparajuli@gmail.com</p>
-                    <p><strong>📞</strong> +977-9846650159</p>
+                    <p><i>Advancing Education Research, Innovation, and Professional Development for a Transformative Future</i></p>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
                         <li><a href="research.html">Research</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>

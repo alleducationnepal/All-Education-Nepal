@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Global Academy of Education Research – Mathematics Education Research, Training &amp; Consultancy</title>
+    <title>Global Academy of Education Research – Mathematics Education Research, Training & Consultancy</title>
     <meta name="description" content="Global Academy of Education Research provides research, teacher training, consultancy, and conferences in mathematics education, ethnomathematics, and culturally responsive pedagogy. Led by Dr. Kharika Devi Parajuli." />
-    <meta name="keywords" content="mathematics education research, teacher training Nepal, ethnomathematics, ethnomodelling, educational consultancy, curriculum development, STEM education, GeoGebra, Dr. Kharika Parajuli" />
+    <meta name="keywords" content="mathematics education research, teacher training Nepal, ethnomathematics, ethnomodelling, educational consultancy, curriculum development, STEM education, GeoGebra, Dr. Kharika Parajuli, Pokhara" />
     <meta name="author" content="Global Academy of Education Research Private Limited" />
-    <link rel="canonical" href="https://globalacademyeduresearch.com/" />
-    <meta property="og:title" content="Global Academy of Education Research – Mathematics Education Research &amp; Training" />
-    <meta property="og:description" content="Advancing mathematics education through research, teacher training, and culturally responsive pedagogy." />
-    <meta property="og:image" content="images/logo.png" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://globalacademyeduresearch.com/index.html" />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="images/favicon.png" />
+    <meta property="og:url" content="https://globalacademyeduresearch.com/" />
+    <meta property="og:title" content="Global Academy of Education Research – Mathematics Education Research & Training" />
+    <meta property="og:description" content="Research, teacher training, consultancy, and conferences in mathematics education, ethnomathematics, and culturally responsive pedagogy." />
+    <meta property="og:image" content="https://globalacademyeduresearch.com/images/logo.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://globalacademyeduresearch.com/" />
+    <meta property="twitter:title" content="Global Academy of Education Research – Mathematics Education Research & Training" />
+    <meta property="twitter:description" content="Research, teacher training, consultancy, and conferences in mathematics education, ethnomathematics, and culturally responsive pedagogy." />
+    <meta property="twitter:image" content="https://globalacademyeduresearch.com/images/logo.png" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
 
     <style>
         /* ===== RESET & BASE ===== */
@@ -88,39 +94,34 @@
             transform: translateY(-2px);
         }
 
-        /* ===== HEADER ===== */
+        /* ===== HEADER (WHITE BACKGROUND) ===== */
         header {
-            background: var(--primary);
-            color: #fff;
+            background: #ffffff;
+            color: #000000;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border-bottom: 1px solid #e2e8f0;
         }
         .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.8rem 0;
+            padding: 0.6rem 0;
             flex-wrap: wrap;
         }
-        .logo h1 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #fff;
+        .logo-img {
+            max-height: 65px;
+            width: auto;
+            display: block;
+            transition: opacity 0.2s;
         }
-        .logo h1 span {
-            color: var(--gold);
+        .logo-img:hover {
+            opacity: 0.85;
         }
-        .logo .tagline {
-            font-size: 0.7rem;
-            font-weight: 400;
-            color: #b0c4de;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
+
+        /* Desktop Navigation (Black) */
         .nav-desktop ul {
             display: flex;
             list-style: none;
@@ -128,18 +129,19 @@
             align-items: center;
         }
         .nav-desktop a {
-            color: #e2e8f0;
+            color: #000000;
             font-weight: 500;
             font-size: 1rem;
             transition: color 0.2s;
         }
-        .nav-desktop a:hover {
+        .nav-desktop a:hover,
+        .nav-desktop a.active {
             color: var(--gold);
         }
         .nav-desktop .lang-btn {
             background: transparent;
-            border: 1px solid var(--gold);
-            color: #fff;
+            border: 1px solid #000000;
+            color: #000000;
             padding: 0.2rem 0.8rem;
             border-radius: 30px;
             cursor: pointer;
@@ -148,8 +150,8 @@
             transition: all 0.2s;
         }
         .nav-desktop .lang-btn:hover {
-            background: var(--gold);
-            color: var(--primary);
+            background: #000000;
+            color: #ffffff;
         }
 
         /* Mobile Header */
@@ -163,7 +165,7 @@
             background: none;
             border: none;
             font-size: 2rem;
-            color: #fff;
+            color: #000000;
             cursor: pointer;
             padding: 0 4px;
         }
@@ -172,14 +174,18 @@
         }
         .mobile-lang {
             background: transparent;
-            border: 1px solid var(--gold);
-            color: #fff;
+            border: 1px solid #000000;
+            color: #000000;
             padding: 0.2rem 0.8rem;
             border-radius: 30px;
             cursor: pointer;
             font-weight: 600;
             font-size: 0.85rem;
             margin-right: 0.8rem;
+        }
+        .mobile-lang:hover {
+            background: #000000;
+            color: #ffffff;
         }
         @media (max-width: 768px) {
             .nav-desktop {
@@ -188,15 +194,12 @@
             .mobile-header {
                 display: flex;
             }
-            .logo h1 {
-                font-size: 1.1rem;
-            }
-            .logo .tagline {
-                font-size: 0.55rem;
+            .logo-img {
+                max-height: 50px;
             }
         }
 
-        /* Mobile Slide Menu */
+        /* Mobile Slide Menu (White Background, Black Text) */
         .mobile-menu {
             display: none;
             position: fixed;
@@ -204,24 +207,28 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: var(--primary);
+            background: #ffffff;
             z-index: 99;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 1.5rem;
             padding: 2rem;
-            top: 72px;
-            height: calc(100vh - 72px);
+            top: 70px;
+            height: calc(100vh - 70px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
         .mobile-menu a {
-            color: #fff;
+            color: #000000;
             font-size: 1.5rem;
             font-weight: 500;
             transition: color 0.2s;
+            padding: 0.5rem 1rem;
         }
         .mobile-menu a:hover {
             color: var(--gold);
+            background: #f5f5f5;
+            border-radius: 8px;
         }
         .mobile-menu.open {
             display: flex;
@@ -482,7 +489,7 @@
             }
         }
 
-        /* ===== PUBLICATIONS / N-MELODY ===== */
+        /* ===== RESEARCH HIGHLIGHT ===== */
         .research-highlight {
             padding: 4rem 0;
             background: var(--primary);
@@ -688,17 +695,18 @@
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
+    <!-- ===== HEADER (WHITE) ===== -->
     <header>
         <div class="container header-inner">
             <!-- Desktop Nav -->
             <div class="logo">
-                <h1>Global Academy <span>of Education Research</span></h1>
-                <div class="tagline">Mathematics Education · Research · Training · Consultancy</div>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                </a>
             </div>
             <nav class="nav-desktop">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="research.html">Research</a></li>
@@ -710,7 +718,9 @@
             <!-- Mobile Header -->
             <div class="mobile-header">
                 <div class="logo">
-                    <h1>Global Academy <span>of Ed. Research</span></h1>
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                    </a>
                 </div>
                 <div style="display:flex; align-items:center;">
                     <button class="mobile-lang" id="langToggleMobile">ने</button>
@@ -848,7 +858,7 @@
         </div>
     </section>
 
-    <!-- ===== RESEARCH HIGHLIGHT (N-MELODY & PUBLICATIONS) ===== -->
+    <!-- ===== RESEARCH HIGHLIGHT ===== -->
     <section class="research-highlight">
         <div class="container">
             <div class="section-title" id="researchTitleEn">
@@ -985,11 +995,9 @@
             currentLang = lang;
             localStorage.setItem('selectedLanguage', lang);
 
-            // Toggle content blocks
             document.querySelectorAll('[id$="En"]').forEach(el => el.style.display = (lang === 'en') ? '' : 'none');
             document.querySelectorAll('[id$="Np"]').forEach(el => el.style.display = (lang === 'ne') ? '' : 'none');
 
-            // Toggle lang buttons text
             document.querySelectorAll('.lang-btn, .mobile-lang').forEach(btn => {
                 btn.textContent = (lang === 'en') ? 'ने' : 'E';
             });
@@ -1001,7 +1009,6 @@
             setLanguage(currentLang === 'en' ? 'ne' : 'en');
         }
 
-        // Init language
         setLanguage(currentLang);
 
         document.querySelectorAll('.lang-btn, .mobile-lang').forEach(btn => {

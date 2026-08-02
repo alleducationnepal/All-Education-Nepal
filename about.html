@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us – Global Academy of Education Research</title>
     <meta name="description" content="Learn about Global Academy of Education Research – our vision, mission, values, and the story of our founder Dr. Kharika Devi Parajuli." />
-    <meta name="keywords" content="about us, mathematics education research, Dr. Kharika Parajuli, ethnomathematics, teacher training Nepal" />
+    <meta name="keywords" content="about us, education research, Dr. Kharika Parajuli, ethnomathematics, teacher training Nepal" />
     <meta name="author" content="Global Academy of Education Research Private Limited" />
     <link rel="canonical" href="https://globalacademyeduresearch.com/about.html" />
     <meta property="og:title" content="About Us – Global Academy of Education Research" />
-    <meta property="og:description" content="Advancing mathematics education through research, teacher training, and culturally responsive pedagogy." />
+    <meta property="og:description" content="Advancing education through research, teacher training, and culturally responsive pedagogy." />
     <meta property="og:image" content="images/logo.png" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -113,6 +113,12 @@
         }
 
         /* Desktop Navigation (Black) */
+        .desktop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
         .nav-desktop ul {
             display: flex;
             list-style: none;
@@ -179,14 +185,14 @@
             color: #ffffff;
         }
         @media (max-width: 768px) {
-            .nav-desktop {
+            .desktop-header {
                 display: none;
             }
             .mobile-header {
                 display: flex;
             }
             .logo-img {
-                max-height: 60px;
+                max-height: 80px;
             }
         }
 
@@ -399,36 +405,6 @@
             gap: 3rem;
             align-items: start;
         }
-        .founder-sidebar {
-            background: var(--gray-bg);
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            border-left: 6px solid var(--gold);
-        }
-        .founder-sidebar .avatar {
-            font-size: 5rem;
-        }
-        .founder-sidebar h3 {
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-top: 0.3rem;
-        }
-        .founder-sidebar .title {
-            color: var(--gold-dark);
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .founder-sidebar .contact-info {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            text-align: left;
-        }
-        .founder-sidebar .contact-info strong {
-            color: var(--primary);
-        }
-
         .founder-main h2 {
             font-size: 2rem;
             color: var(--primary);
@@ -655,21 +631,23 @@
     <header>
         <div class="container header-inner">
             <!-- Desktop Nav -->
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
-                </a>
+            <div class="desktop-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                    </a>
+                </div>
+                <nav class="nav-desktop">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="nav-desktop">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
-                </ul>
-            </nav>
 
             <!-- Mobile Header -->
             <div class="mobile-header">
@@ -698,12 +676,12 @@
     <!-- ===== PAGE HERO ===== -->
     <section class="page-hero">
         <div class="container" id="heroEn">
-            <h1>About <span>Global Academy</span></h1>
-            <p>Learn about our vision, mission, and the story behind our commitment to advancing mathematics education through research, innovation, and culturally responsive pedagogy.</p>
+            <h1>About <span>GAER</span></h1>
+            <p>Learn about our vision, mission, and the story behind our commitment to advancing education through research, innovation, and culturally responsive pedagogy.</p>
         </div>
         <div class="container" id="heroNp" style="display:none;">
-            <h1><span>ग्लोबल एकेडेमी</span> बारे</h1>
-            <p>अनुसन्धान, नवप्रवर्तन र सांस्कृतिक-उत्तरदायी शिक्षाशास्त्र मार्फत गणित शिक्षाको उन्नतिका लागि हाम्रो दृष्टि, मिसन र कथाको बारेमा जान्नुहोस्।</p>
+            <h1><span>GAER</span> बारे</h1>
+            <p>अनुसन्धान, नवप्रवर्तन र सांस्कृतिक-उत्तरदायी शिक्षाशास्त्र मार्फत शिक्षाको उन्नतिका लागि हाम्रो दृष्टि, मिसन र कथाको बारेमा जान्नुहोस्।</p>
         </div>
     </section>
 
@@ -713,25 +691,25 @@
             <div class="about-story" id="storyEn">
                 <div class="about-story-text">
                     <h2>Our <span>Story</span></h2>
-                    <p><strong>Global Academy of Education Research Private Limited</strong> was established with a single, powerful mission: to advance mathematics education through rigorous research, innovative teacher training, and culturally responsive pedagogy. We believe that mathematics is not just a subject—it is a way of understanding the world, deeply connected to culture, art, and everyday life.</p>
-                    <p>Our work is grounded in <strong>Ethnomathematics</strong>—the study of mathematical practices embedded in cultural traditions, artifacts, and lived experiences. By connecting school mathematics with indigenous knowledge systems (Rekhi, Mandap, temple arts, handicrafts), we make learning more meaningful, accessible, and socially just for all students.</p>
-                    <p>Founded by <strong>Dr. Kharika Devi Parajuli</strong>—a distinguished mathematics teacher educator with over 24 years of experience—the Academy bridges the gap between traditional cultural knowledge and modern educational practice. We work with schools, universities, government agencies, and international development partners to design and implement transformative educational initiatives.</p>
+                    <p><strong>Global Academy of Education Research</strong> was established with a single, powerful mission: to advance education through rigorous research, innovative teacher training, and culturally responsive pedagogy. We believe that education is not just a subject—it is a way of understanding the world, deeply connected to culture, art, and everyday life.</p>
+                    <p>We are focused on all the stream of education. Mainly, our work is grounded in ethnomathematics—the study of mathematical practices embedded in cultural traditions, artifacts, and lived experiences. By connecting school mathematics with indigenous knowledge systems, we make learning more meaningful, accessible, and socially just for all students.</p>
+                    <p>Founded by <strong>Dr. Kharika Devi Parajuli</strong>, a distinguished teacher educator with over 24 years of experience, GAER bridges the gap between traditional cultural knowledge and modern educational practice. We work with schools, universities, government agencies, and international development partners to design and implement transformative educational initiatives.</p>
                 </div>
                 <div class="about-story-image">
                     <div class="emoji-big">🧮</div>
-                    <p><strong>Bridging Culture &amp; Mathematics</strong><br />Ethnomathematics · Ethnomodelling · Culturally Responsive Pedagogy</p>
+                    <p><strong>Bridging Culture &amp; Education</strong><br />Ethno-Education · Ethnomodelling · Culturally Responsive Pedagogy</p>
                 </div>
             </div>
             <div class="about-story" id="storyNp" style="display:none;">
                 <div class="about-story-text">
                     <h2>हाम्रो <span>कथा</span></h2>
-                    <p><strong>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड</strong> एउटा शक्तिशाली मिसनका साथ स्थापित गरिएको थियो: कठोर अनुसन्धान, नवीन शिक्षक तालिम र सांस्कृतिक-उत्तरदायी शिक्षाशास्त्र मार्फत गणित शिक्षाको उन्नति गर्ने। हाम्रो मान्यता छ: गणित केवल एक विषय मात्र होइन—यो संसार बुझ्ने एउटा तरिका हो, जुन संस्कृति, कला र दैनिक जीवनसँग गहिरो रूपमा जोडिएको छ।</p>
-                    <p>हाम्रो कार्य <strong>नृजातीय गणित (Ethnomathematics)</strong> मा आधारित छ—सांस्कृतिक परम्पराहरू, कलाकृतिहरू र जीवन अनुभवहरूमा गाडिएको गणितीय अभ्यासहरूको अध्ययन। स्कूल गणितलाई आदिवासी ज्ञान प्रणालीहरू (रेखी, मण्डप, मन्दिर कलाहरू, हस्तकलाहरू) सँग जोडेर, हामी सबै विद्यार्थीहरूका लागि सिकाइलाई अझ अर्थपूर्ण, सुलभ र सामाजिक रूपमा न्यायसंगत बनाउँछौं।</p>
-                    <p><strong>डा. खरीका देवी पराजुली</strong>—२४ वर्षभन्दा बढी अनुभव भएकी एक प्रख्यात गणित शिक्षक शिक्षिका—द्वारा स्थापित, एकेडेमीले परम्परागत सांस्कृतिक ज्ञान र आधुनिक शैक्षिक अभ्यासबीचको सेतुको रूपमा काम गर्दछ। हामी विद्यालय, विश्वविद्यालय, सरकारी निकाय र अन्तर्राष्ट्रिय विकास साझेदारहरूसँग मिलेर परिवर्तनकारी शैक्षिक पहलहरूको डिजाइन र कार्यान्वयन गर्दछौं।</p>
+                    <p><strong>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च</strong> एउटा शक्तिशाली मिसनका साथ स्थापित गरिएको थियो: कठोर अनुसन्धान, नवीन शिक्षक तालिम र सांस्कृतिक-उत्तरदायी शिक्षाशास्त्र मार्फत शिक्षाको उन्नति गर्ने। हाम्रो मान्यता छ: शिक्षा केवल एक विषय मात्र होइन—यो संसार बुझ्ने एउटा तरिका हो, जुन संस्कृति, कला र दैनिक जीवनसँग गहिरो रूपमा जोडिएको छ।</p>
+                    <p>हामी शिक्षाका सबै धाराहरूमा केन्द्रित छौं। मुख्य रूपमा, हाम्रो कार्य नृजातीय गणित (Ethnomathematics) मा आधारित छ—सांस्कृतिक परम्पराहरू, कलाकृतिहरू र जीवन अनुभवहरूमा गाडिएको गणितीय अभ्यासहरूको अध्ययन। स्कूल गणितलाई आदिवासी ज्ञान प्रणालीहरूसँग जोडेर, हामी सबै विद्यार्थीहरूका लागि सिकाइलाई अझ अर्थपूर्ण, सुलभ र सामाजिक रूपमा न्यायसंगत बनाउँछौं।</p>
+                    <p><strong>डा. खरीका देवी पराजुली</strong>—२४ वर्षभन्दा बढी अनुभव भएकी एक प्रख्यात शिक्षक शिक्षिका—द्वारा स्थापित, GAER ले परम्परागत सांस्कृतिक ज्ञान र आधुनिक शैक्षिक अभ्यासबीचको सेतुको रूपमा काम गर्दछ। हामी विद्यालय, विश्वविद्यालय, सरकारी निकाय र अन्तर्राष्ट्रिय विकास साझेदारहरूसँग मिलेर परिवर्तनकारी शैक्षिक पहलहरूको डिजाइन र कार्यान्वयन गर्दछौं।</p>
                 </div>
                 <div class="about-story-image">
                     <div class="emoji-big">🧮</div>
-                    <p><strong>संस्कृति र गणितको सेतु</strong><br />नृजातीय गणित · नृजातीय मोडेलिङ · सांस्कृतिक-उत्तरदायी शिक्षाशास्त्र</p>
+                    <p><strong>संस्कृति र शिक्षाको सेतु</strong><br />नृजातीय शिक्षा · नृजातीय मोडेलिङ · सांस्कृतिक-उत्तरदायी शिक्षाशास्त्र</p>
                 </div>
             </div>
         </div>
@@ -741,13 +719,13 @@
     <section class="vmv-section">
         <div class="container">
             <div class="section-title" id="vmvTitleEn">
-                <h2>Vision, Mission &amp; Values</h2>
-                <p>The guiding principles that shape our work and define our commitment to mathematics education.</p>
+                <h2>Vision, Mission and Values</h2>
+                <p>The guiding principles that shape our work and define our commitment to education.</p>
                 <div class="accent-line"></div>
             </div>
             <div class="section-title" id="vmvTitleNp" style="display:none;">
                 <h2>दृष्टि, मिसन र मूल्यहरू</h2>
-                <p>हाम्रो कार्यलाई दिशा दिने र गणित शिक्षाप्रतिको हाम्रो प्रतिबद्धता परिभाषित गर्ने सिद्धान्तहरू।</p>
+                <p>हाम्रो कार्यलाई दिशा दिने र शिक्षाप्रतिको हाम्रो प्रतिबद्धता परिभाषित गर्ने सिद्धान्तहरू।</p>
                 <div class="accent-line"></div>
             </div>
 
@@ -755,19 +733,19 @@
                 <div class="vmv-card" id="visionEn">
                     <span class="icon">🔭</span>
                     <h3>Our Vision</h3>
-                    <p>To be a globally recognized center of excellence in mathematics education research, teacher professional development, and educational innovation.</p>
+                    <p>To be a globally recognized center of excellence in education research, teacher professional development, and educational innovation.</p>
                 </div>
                 <div class="vmv-card" id="visionNp" style="display:none;">
                     <span class="icon">🔭</span>
                     <h3>हाम्रो दृष्टि</h3>
-                    <p>गणित शिक्षा अनुसन्धान, शिक्षक व्यावसायिक विकास र शैक्षिक नवप्रवर्तनमा विश्वव्यापी रूपमा मान्यता प्राप्त उत्कृष्टता केन्द्र बन्ने।</p>
+                    <p>शिक्षा अनुसन्धान, शिक्षक व्यावसायिक विकास र शैक्षिक नवप्रवर्तनमा विश्वव्यापी रूपमा मान्यता प्राप्त उत्कृष्टता केन्द्र बन्ने।</p>
                 </div>
 
                 <div class="vmv-card" id="missionEn">
                     <span class="icon">🎯</span>
                     <h3>Our Mission</h3>
                     <ul>
-                        <li>Advance research in ethnomathematics, ethnomodelling, and culturally grounded pedagogy.</li>
+                        <li>Advance research in ethno-education, ethnomodelling, and culturally grounded pedagogy.</li>
                         <li>Empower teachers with practical, research‑based skills for transformative classroom practice.</li>
                         <li>Collaborate with national and international partners to shape equitable and inclusive education systems.</li>
                     </ul>
@@ -776,7 +754,7 @@
                     <span class="icon">🎯</span>
                     <h3>हाम्रो मिसन</h3>
                     <ul>
-                        <li>नृजातीय गणित, नृजातीय मोडेलिङ र सांस्कृतिक-आधारित शिक्षाशास्त्रमा अनुसन्धान अगाडि बढाउने।</li>
+                        <li>नृजातीय शिक्षा, नृजातीय मोडेलिङ र सांस्कृतिक-आधारित शिक्षाशास्त्रमा अनुसन्धान अगाडि बढाउने।</li>
                         <li>शिक्षकहरूलाई व्यावहारिक, अनुसन्धान-आधारित सीपहरू प्रदान गर्ने।</li>
                         <li>समान र समावेशी शिक्षा प्रणालीहरू आकार दिन राष्ट्रिय र अन्तर्राष्ट्रिय साझेदारहरूसँग सहकार्य गर्ने।</li>
                     </ul>
@@ -789,7 +767,7 @@
                         <li><strong>Cultural Responsiveness</strong> – Respecting and integrating indigenous knowledge.</li>
                         <li><strong>Excellence</strong> – Delivering research‑based, high‑quality services.</li>
                         <li><strong>Innovation</strong> – Embracing technology and creative pedagogy.</li>
-                        <li><strong>Social Justice</strong> – Making mathematics accessible to all.</li>
+                        <li><strong>Social Justice</strong> – Making education accessible to all.</li>
                     </ul>
                 </div>
                 <div class="vmv-card" id="valuesNp" style="display:none;">
@@ -799,7 +777,7 @@
                         <li><strong>सांस्कृतिक उत्तरदायित्व</strong> – आदिवासी ज्ञानको सम्मान र एकीकरण।</li>
                         <li><strong>उत्कृष्टता</strong> – अनुसन्धान-आधारित, उच्च-गुणस्तरीय सेवाहरू प्रदान गर्ने।</li>
                         <li><strong>नवप्रवर्तन</strong> – प्रविधि र रचनात्मक शिक्षाशास्त्रलाई अँगाल्ने।</li>
-                        <li><strong>सामाजिक न्याय</strong> – सबैको लागि गणित सुलभ बनाउने।</li>
+                        <li><strong>सामाजिक न्याय</strong> – सबैको लागि शिक्षा सुलभ बनाउने।</li>
                     </ul>
                 </div>
             </div>
@@ -810,33 +788,11 @@
     <section class="founder-detailed">
         <div class="container">
             <div class="founder-grid">
-                <!-- Sidebar -->
-                <div class="founder-sidebar" id="founderSidebarEn">
-                    <div class="avatar">👩‍🏫</div>
-                    <h3>Dr. Kharika Devi Parajuli</h3>
-                    <div class="title">Ph.D. (Mathematics Education) · Founder &amp; Director</div>
-                    <div class="contact-info">
-                        <p><strong>📧 Email:</strong> kharikaparajuli@gmail.com</p>
-                        <p><strong>📞 Phone:</strong> +977-9846650159</p>
-                        <p><strong>📍 Location:</strong> Pokhara-30, Dhungepatan, Kaski, Nepal</p>
-                    </div>
-                </div>
-                <div class="founder-sidebar" id="founderSidebarNp" style="display:none;">
-                    <div class="avatar">👩‍🏫</div>
-                    <h3>डा. खरीका देवी पराजुली</h3>
-                    <div class="title">पीएच.डी. (गणित शिक्षा) · संस्थापक तथा निर्देशक</div>
-                    <div class="contact-info">
-                        <p><strong>📧 इमेल:</strong> kharikaparajuli@gmail.com</p>
-                        <p><strong>📞 फोन:</strong> +977-9846650159</p>
-                        <p><strong>📍 ठेगाना:</strong> पोखरा-३०, ढुङ्गेपाटन, कास्की, नेपाल</p>
-                    </div>
-                </div>
-
                 <!-- Main Content -->
                 <div class="founder-main" id="founderMainEn">
                     <h2>About <span>Dr. Kharika Devi Parajuli</span></h2>
-                    <p>Dr. Parajuli is a highly accomplished mathematics teacher educator with over <strong>24 years</strong> of professional experience in mathematics education. She has served as Head of the Mathematics Department in a private secondary school, senior teacher in public secondary schools, academic trainer, and researcher.</p>
-                    <p>Her academic journey includes a <strong>Ph.D. in Mathematics Education</strong> from Tribhuvan University (2022), an <strong>M.Phil. in Mathematics Education</strong> from Kathmandu University (2017), and a Master’s degree from Tribhuvan University (2006). Her doctoral research, <em>"Connecting Vedic, Ethno, and School Mathematics,"</em> explores how local cultural knowledge and artifacts can be systematically transformed into powerful pedagogical designs.</p>
+                    <p>Dr. Parajuli is a highly accomplished teacher educator with over <strong>24 years</strong> of professional experience in education. She has served as Head of the Mathematics Department in a private secondary school, senior teacher in public secondary schools, academic trainer, and researcher.</p>
+                    <p>Her academic journey includes a <strong>Ph.D. in Mathematics Education</strong> from Tribhuvan University (2022), an <strong>M.Phil. in Mathematics Education</strong> from Kathmandu University (2017), and a Master's degree from Tribhuvan University (2006). Her doctoral research, <em>"Connecting Vedic, Ethno, and School Mathematics,"</em> explores how local cultural knowledge and artifacts can be systematically transformed into powerful pedagogical designs.</p>
 
                     <div class="credential-grid">
                         <div class="credential-item">
@@ -862,7 +818,7 @@
                 </div>
                 <div class="founder-main" id="founderMainNp" style="display:none;">
                     <h2><span>डा. खरीका देवी पराजुली</span> बारे</h2>
-                    <p>डा. पराजुली २४ वर्षभन्दा बढी व्यावसायिक अनुभव भएकी एक प्रख्यात गणित शिक्षक शिक्षिका हुनुहुन्छ। उहाँले निजी माध्यमिक विद्यालयको गणित विभाग प्रमुख, सार्वजनिक माध्यमिक विद्यालयहरूमा वरिष्ठ शिक्षक, शैक्षिक प्रशिक्षक र अनुसन्धानकर्ताको रूपमा सेवा गर्नुभएको छ।</p>
+                    <p>डा. पराजुली २४ वर्षभन्दा बढी व्यावसायिक अनुभव भएकी एक प्रख्यात शिक्षक शिक्षिका हुनुहुन्छ। उहाँले निजी माध्यमिक विद्यालयको गणित विभाग प्रमुख, सार्वजनिक माध्यमिक विद्यालयहरूमा वरिष्ठ शिक्षक, शैक्षिक प्रशिक्षक र अनुसन्धानकर्ताको रूपमा सेवा गर्नुभएको छ।</p>
                     <p>उहाँको शैक्षिक यात्रामा त्रिभुवन विश्वविद्यालयबाट <strong>गणित शिक्षामा पीएच.डी.</strong> (२०२२), काठमाडौं विश्वविद्यालयबाट <strong>एम.फिल.</strong> (२०१७) र त्रिभुवन विश्वविद्यालयबाट स्नातकोत्तर (२००६) समावेश छ। उहाँको अनुसन्धान <em>"Connecting Vedic, Ethno, and School Mathematics"</em> ले स्थानीय सांस्कृतिक ज्ञान र कलाकृतिहरूलाई शक्तिशाली शैक्षिक डिजाइनमा कसरी रूपान्तरण गर्न सकिन्छ भन्ने अन्वेषण गर्दछ।</p>
 
                     <div class="credential-grid">
@@ -896,7 +852,7 @@
         <div class="container">
             <div class="section-title" id="timelineTitleEn">
                 <h2>Our Journey</h2>
-                <p>Key milestones in the evolution of Global Academy of Education Research.</p>
+                <p>Key milestones in the evolution of GAER.</p>
                 <div class="accent-line"></div>
             </div>
             <div class="section-title" id="timelineTitleNp" style="display:none;">
@@ -906,15 +862,15 @@
             </div>
 
             <div class="timeline" id="timelineEn">
-                <div class="timeline-item"><span class="year">2005</span><span class="desc">Founded Golden Nature Secondary Boarding School and began teaching mathematics.</span></div>
-                <div class="timeline-item"><span class="year">2006</span><span class="desc">Completed Master’s Degree in Mathematics Education from Tribhuvan University.</span></div>
+                <div class="timeline-item"><span class="year">2005</span><span class="desc">Founded Golden Nature Secondary Boarding School and began teaching.</span></div>
+                <div class="timeline-item"><span class="year">2006</span><span class="desc">Completed Master's Degree in Mathematics Education from Tribhuvan University.</span></div>
                 <div class="timeline-item"><span class="year">2017</span><span class="desc">Completed M.Phil. in Mathematics Education from Kathmandu University.</span></div>
                 <div class="timeline-item"><span class="year">2022</span><span class="desc">Awarded Ph.D. in Mathematics Education from Tribhuvan University.</span></div>
                 <div class="timeline-item"><span class="year">2023</span><span class="desc">Established the Centre for Innovation, Research, Development, and Training (CIRDT).</span></div>
                 <div class="timeline-item"><span class="year">2025</span><span class="desc">Incorporated Global Academy of Education Research Private Limited.</span></div>
             </div>
             <div class="timeline" id="timelineNp" style="display:none;">
-                <div class="timeline-item"><span class="year">२००५</span><span class="desc">गोल्डेन नेचर सेकेन्डरी बोर्डिङ स्कूलको स्थापना र गणित शिक्षण सुरु।</span></div>
+                <div class="timeline-item"><span class="year">२००५</span><span class="desc">गोल्डेन नेचर सेकेन्डरी बोर्डिङ स्कूलको स्थापना र शिक्षण सुरु।</span></div>
                 <div class="timeline-item"><span class="year">२००६</span><span class="desc">त्रिभुवन विश्वविद्यालयबाट गणित शिक्षामा स्नातकोत्तर पूरा।</span></div>
                 <div class="timeline-item"><span class="year">२०१७</span><span class="desc">काठमाडौं विश्वविद्यालयबाट एम.फिल. पूरा।</span></div>
                 <div class="timeline-item"><span class="year">२०२२</span><span class="desc">त्रिभुवन विश्वविद्यालयबाट गणित शिक्षामा पीएच.डी. प्राप्त।</span></div>
@@ -928,14 +884,14 @@
     <section class="cta-banner" id="ctaEn">
         <div class="container">
             <h2>Ready to Work With Us?</h2>
-            <p>Let’s collaborate to transform mathematics education through research, training, and innovation.</p>
+            <p>Let's collaborate to transform education through research, training, and innovation.</p>
             <a href="contact.html" class="btn-primary">Contact Us Today</a>
         </div>
     </section>
     <section class="cta-banner" id="ctaNp" style="display:none;">
         <div class="container">
             <h2>हामीसँग काम गर्न तयार हुनुहुन्छ?</h2>
-            <p>अनुसन्धान, तालिम र नवप्रवर्तन मार्फत गणित शिक्षा रूपान्तरण गर्न सहकार्य गरौं।</p>
+            <p>अनुसन्धान, तालिम र नवप्रवर्तन मार्फत शिक्षा रूपान्तरण गर्न सहकार्य गरौं।</p>
             <a href="contact.html" class="btn-primary">आज सम्पर्क गर्नुहोस्</a>
         </div>
     </section>

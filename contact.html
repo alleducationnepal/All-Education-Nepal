@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact – Global Academy of Education Research</title>
     <meta name="description" content="Get in touch with Global Academy of Education Research for research, teacher training, consultancy, or conference partnerships." />
-    <meta name="keywords" content="contact mathematics education research, teacher training Nepal, Dr. Kharika Parajuli, educational consultancy Pokhara" />
+    <meta name="keywords" content="contact education research, teacher training Nepal, Dr. Kharika Parajuli, educational consultancy Pokhara" />
     <meta name="author" content="Global Academy of Education Research Private Limited" />
     <link rel="canonical" href="https://globalacademyeduresearch.com/contact.html" />
     <meta property="og:title" content="Contact – Global Academy of Education Research" />
@@ -96,6 +96,12 @@
         }
 
         /* Desktop Navigation (Black) */
+        .desktop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
         .nav-desktop ul {
             display: flex;
             list-style: none;
@@ -162,14 +168,14 @@
             color: #ffffff;
         }
         @media (max-width: 768px) {
-            .nav-desktop {
+            .desktop-header {
                 display: none;
             }
             .mobile-header {
                 display: flex;
             }
             .logo-img {
-                max-height: 60px;
+                max-height: 80px;
             }
         }
 
@@ -460,21 +466,23 @@
     <header>
         <div class="container header-inner">
             <!-- Desktop Nav -->
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
-                </a>
+            <div class="desktop-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                    </a>
+                </div>
+                <nav class="nav-desktop">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                        <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="nav-desktop">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                    <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
-                </ul>
-            </nav>
 
             <!-- Mobile Header -->
             <div class="mobile-header">
@@ -524,10 +532,18 @@
 
                     <div class="contact-details">
                         <div class="detail-card">
-                            <span class="icon">📍</span>
                             <h4>Registered Office</h4>
-                            <p>Global Academy of Education Research Private Limited<br />
-                            Dhungepatan, Pokhara Metropolitan City, Ward 20, Kaski District, Gandaki Province, Nepal</p>
+                            <p>
+                                Global Academy of Education Research Private Limited<br />
+                                Dhungepatan<br />
+                                Pokhara Metropolitan City, Ward No. 20<br />
+                                Kaski District, Gandaki Province, Nepal
+                            </p>
+                            <p style="margin-top:1rem;">
+                                <strong>Phone:</strong> <a href="tel:+9779846650159">+977-9846650159</a><br />
+                                <strong>Official Email:</strong> <a href="mailto:info@gaer.edu.np">info@gaer.edu.np</a><br />
+                                <strong>Director's Email:</strong> <a href="mailto:kharikaparajuli@gaer.edu.np">kharikaparajuli@gaer.edu.np</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -540,14 +556,14 @@
         <div class="container">
             <h2>Let's Work Together</h2>
             <p>Ready to transform education research? We're here to help.</p>
-            <a href="mailto:kharikaparajuli@gmail.com" class="btn-primary">Email Us</a>
+            <a href="mailto:info@gaer.edu.np" class="btn-primary">Email Us</a>
         </div>
     </section>
     <section class="cta-banner" id="ctaNp" style="display:none;">
         <div class="container">
             <h2>सँगै काम गरौं</h2>
             <p>शिक्षा अनुसन्धान रूपान्तरण गर्न तयार हुनुहुन्छ? हामी यहाँ सहायता गर्न तयार छौं।</p>
-            <a href="mailto:kharikaparajuli@gmail.com" class="btn-primary">इमेल गर्नुहोस्</a>
+            <a href="mailto:info@gaer.edu.np" class="btn-primary">इमेल गर्नुहोस्</a>
         </div>
     </section>
 

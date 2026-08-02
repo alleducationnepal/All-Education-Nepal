@@ -335,14 +335,14 @@
             color: var(--text-light);
         }
 
-        /* ===== VISION MISSION VALUES ===== */
+        /* ===== VISION, MISSION, VALUES AND GUIDING PRINCIPLES ===== */
         .vmv-section {
             background: var(--gray-bg);
             padding: 4rem 0;
         }
         .vmv-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
         }
         .vmv-card {
@@ -389,64 +389,66 @@
             color: var(--mint);
             font-weight: 700;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
+            .vmv-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
             .vmv-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        /* ===== FOUNDER PROFILE (DETAILED) ===== */
-        .founder-detailed {
+        /* ===== FOUNDER PROFILE (FULL WIDTH - WITH PHOTO) ===== */
+        .founder-full {
             padding: 4rem 0;
         }
-        .founder-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: start;
-        }
-        .founder-main h2 {
+        .founder-full h2 {
             font-size: 2rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
-        .founder-main h2 span {
+        .founder-full h2 span {
             color: var(--gold);
         }
-        .founder-main p {
+        .founder-full p {
             color: var(--text-light);
             margin-bottom: 1rem;
         }
-        .founder-main .credential-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 1.5rem 0;
+        .founder-full .founder-row {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
         }
-        .credential-item {
-            background: var(--gray-bg);
-            padding: 0.8rem 1.2rem;
-            border-radius: 8px;
-            font-weight: 500;
-            color: var(--primary);
-            border-left: 3px solid var(--gold);
+        .founder-full .founder-text {
+            flex: 2;
         }
-        .credential-item small {
+        .founder-full .founder-image {
+            flex: 1;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+        .founder-full .founder-image img {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
             display: block;
-            font-weight: 400;
-            color: var(--text-light);
-            font-size: 0.85rem;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
         }
         @media (max-width: 768px) {
-            .founder-grid {
-                grid-template-columns: 1fr;
+            .founder-full .founder-row {
+                flex-direction: column;
+                align-items: center;
             }
-            .credential-grid {
-                grid-template-columns: 1fr;
+            .founder-full .founder-image img {
+                max-width: 220px;
             }
         }
 
-        /* ===== RESEARCH HIGHLIGHT (N-MELODY + PUBLICATIONS + CONFERENCES) ===== */
+        /* ===== RESEARCH HIGHLIGHT (N-MELODY + PUBLICATIONS + CONFERENCES + TRAINING) ===== */
         .research-highlight {
             padding: 4rem 0;
             background: var(--primary);
@@ -514,48 +516,6 @@
         @media (max-width: 768px) {
             .highlight-grid {
                 grid-template-columns: 1fr;
-            }
-        }
-
-        /* ===== TIMELINE ===== */
-        .timeline-section {
-            background: var(--gray-bg);
-            padding: 4rem 0;
-        }
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .timeline-item {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            background: #fff;
-            padding: 1.2rem 1.8rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-            border-left: 5px solid var(--gold);
-        }
-        .timeline-item .year {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--gold-dark);
-            min-width: 80px;
-        }
-        .timeline-item .desc {
-            color: var(--text-dark);
-        }
-        @media (max-width: 600px) {
-            .timeline-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.3rem;
-            }
-            .timeline-item .year {
-                min-width: auto;
             }
         }
 
@@ -748,11 +708,11 @@
     <section class="page-hero">
         <div class="container" id="heroEn">
             <h1>About <span>GAER</span></h1>
-            <p>Learn about our vision, mission, and the story behind our commitment to advancing education through research, innovation, and culturally responsive pedagogy.</p>
+            <p>Learn about our vision, mission, values, guiding principles, and the story behind our commitment to advancing education through research, innovation, and culturally responsive pedagogy.</p>
         </div>
         <div class="container" id="heroNp" style="display:none;">
             <h1><span>GAER</span> बारे</h1>
-            <p>अनुसन्धान, नवप्रवर्तन र सांस्कृतिक-उत्तरदायी शिक्षाशास्त्र मार्फत शिक्षाको उन्नतिका लागि हाम्रो दृष्टि, मिसन र कथाको बारेमा जान्नुहोस्।</p>
+            <p>अनुसन्धान, नवप्रवर्तन र सांस्कृतिक-उत्तरदायी शिक्षाशास्त्र मार्फत शिक्षाको उन्नतिका लागि हाम्रो दृष्टि, मिसन, मूल्य र मार्गदर्शक सिद्धान्तहरूको बारेमा जान्नुहोस्।</p>
         </div>
     </section>
 
@@ -768,7 +728,7 @@
                 </div>
                 <div class="about-story-image">
                     <div class="emoji-big">🧮</div>
-                    <p><strong>Bridging Culture &amp; Education</strong><br />Ethno-Education · Ethnomodelling · Culturally Responsive Pedagogy</p>
+                    <p><strong>Bridging Culture and Education</strong><br />Ethno-Education · Ethnomodelling · Culturally Responsive Pedagogy</p>
                 </div>
             </div>
             <div class="about-story" id="storyNp" style="display:none;">
@@ -786,21 +746,22 @@
         </div>
     </section>
 
-    <!-- ===== VISION, MISSION, VALUES ===== -->
+    <!-- ===== VISION, MISSION, VALUES AND GUIDING PRINCIPLES ===== -->
     <section class="vmv-section">
         <div class="container">
             <div class="section-title" id="vmvTitleEn">
-                <h2>Vision, Mission and Values</h2>
+                <h2>Vision, Mission, Values and Guiding Principles</h2>
                 <p>The guiding principles that shape our work and define our commitment to education.</p>
                 <div class="accent-line"></div>
             </div>
             <div class="section-title" id="vmvTitleNp" style="display:none;">
-                <h2>दृष्टि, मिसन र मूल्यहरू</h2>
+                <h2>दृष्टि, मिसन, मूल्य र मार्गदर्शक सिद्धान्तहरू</h2>
                 <p>हाम्रो कार्यलाई दिशा दिने र शिक्षाप्रतिको हाम्रो प्रतिबद्धता परिभाषित गर्ने सिद्धान्तहरू।</p>
                 <div class="accent-line"></div>
             </div>
 
             <div class="vmv-grid">
+                <!-- Card 1: Vision -->
                 <div class="vmv-card" id="visionEn">
                     <span class="icon">🔭</span>
                     <h3>Our Vision</h3>
@@ -812,6 +773,7 @@
                     <p>शिक्षा अनुसन्धान, शिक्षक व्यावसायिक विकास र शैक्षिक नवप्रवर्तनमा विश्वव्यापी रूपमा मान्यता प्राप्त उत्कृष्टता केन्द्र बन्ने।</p>
                 </div>
 
+                <!-- Card 2: Mission -->
                 <div class="vmv-card" id="missionEn">
                     <span class="icon">🎯</span>
                     <h3>Our Mission</h3>
@@ -831,6 +793,7 @@
                     </ul>
                 </div>
 
+                <!-- Card 3: Values -->
                 <div class="vmv-card" id="valuesEn">
                     <span class="icon">💎</span>
                     <h3>Our Core Values</h3>
@@ -851,187 +814,206 @@
                         <li><strong>सामाजिक न्याय</strong> – सबैको लागि शिक्षा सुलभ बनाउने।</li>
                     </ul>
                 </div>
+
+                <!-- Card 4: Guiding Principles -->
+                <div class="vmv-card" id="principlesEn">
+                    <span class="icon">⚖️</span>
+                    <h3>Our Guiding Principles</h3>
+                    <ul>
+                        <li><strong>Respect</strong> – Honoring diverse cultures, knowledge systems, and perspectives.</li>
+                        <li><strong>Integrity</strong> – Conducting research and practice with honesty and transparency.</li>
+                        <li><strong>Excellence</strong> – Striving for the highest quality in all our endeavors.</li>
+                        <li><strong>Impact</strong> – Creating meaningful and lasting change in education.</li>
+                    </ul>
+                </div>
+                <div class="vmv-card" id="principlesNp" style="display:none;">
+                    <span class="icon">⚖️</span>
+                    <h3>हाम्रा मार्गदर्शक सिद्धान्तहरू</h3>
+                    <ul>
+                        <li><strong>सम्मान</strong> – विविध संस्कृतिहरू, ज्ञान प्रणालीहरू र दृष्टिकोणहरूको सम्मान गर्ने।</li>
+                        <li><strong>इमानदारी</strong> – इमानदारी र पारदर्शिताका साथ अनुसन्धान र अभ्यास सञ्चालन गर्ने।</li>
+                        <li><strong>उत्कृष्टता</strong> – हाम्रा सबै प्रयासहरूमा उच्चतम गुणस्तरको लागि प्रयास गर्ने।</li>
+                        <li><strong>प्रभाव</strong> – शिक्षामा अर्थपूर्ण र दीर्घकालीन परिवर्तन सिर्जना गर्ने।</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== FOUNDER PROFILE (DETAILED) ===== -->
-    <section class="founder-detailed">
+    <!-- ===== FOUNDER PROFILE (FULL WIDTH - WITH PHOTO) ===== -->
+    <section class="founder-full">
         <div class="container">
-            <div class="founder-grid">
-                <!-- Main Content -->
-                <div class="founder-main" id="founderMainEn">
-                    <h2>About <span>Dr. Kharika Devi Parajuli</span></h2>
-                    <p>Dr. Parajuli is a highly accomplished teacher educator with over <strong>24 years</strong> of professional experience in education. She has served as Head of the Mathematics Department in a private secondary school, senior teacher in public secondary schools, academic trainer, and researcher.</p>
-                    <p>Her academic journey includes a <strong>Ph.D. in Mathematics Education</strong> from Tribhuvan University (2022), an <strong>M.Phil. in Mathematics Education</strong> from Kathmandu University (2017), and a Master's degree from Tribhuvan University (2006). Her doctoral research, <em>"Connecting Vedic, Ethno, and School Mathematics,"</em> explores how local cultural knowledge and artifacts can be systematically transformed into powerful pedagogical designs.</p>
-
-                    <div class="credential-grid">
-                        <div class="credential-item">
-                            Ph.D. (Mathematics Education)
-                            <small>Tribhuvan University, 2022</small>
-                        </div>
-                        <div class="credential-item">
-                            M.Phil. (Mathematics Education)
-                            <small>Kathmandu University, 2017</small>
-                        </div>
-                        <div class="credential-item">
-                            M.Ed. (Mathematics Education)
-                            <small>Tribhuvan University, 2006</small>
-                        </div>
-                        <div class="credential-item">
-                            B.Ed. (Mathematics Education)
-                            <small>Tribhuvan University, 2001</small>
-                        </div>
+            <div id="founderEn">
+                <h2>About <span>Dr. Kharika Devi Parajuli</span></h2>
+                <div class="founder-row">
+                    <div class="founder-text">
+                        <p>Dr. Parajuli is a highly accomplished teacher educator with over <strong>24 years</strong> of professional experience in education. She has served as Head of the Mathematics Department in a private secondary school, senior teacher in public secondary schools, academic trainer, and researcher.</p>
+                        <p>Her academic journey includes a <strong>Ph.D. in Mathematics Education</strong> from Tribhuvan University (2022), an <strong>M.Phil. in Mathematics Education</strong> from Kathmandu University (2017), and a Master's degree from Tribhuvan University (2006). Her doctoral research, <em>"Connecting Vedic, Ethno, and School Mathematics,"</em> explores how local cultural knowledge and artifacts can be systematically transformed into powerful pedagogical designs.</p>
+                        <p><strong>Professional Leadership:</strong> Dr. Parajuli serves as Executive Member of the Nepal Mathematical Society (Gandaki Province), Director of the Centre for Innovation, Research, Development and Training (CIRDT), Treasurer of the Education Society Nepal, and Life Member of Women of Nepal in Mathematical Sciences (WoNiMS).</p>
+                        <p><strong>Research and Publications:</strong> She has published extensively in national and international journals and contributed a chapter to a prestigious <strong>Springer</strong> book on ethnomathematics. Her research focuses on the intersection of ethnomathematics, ethnomodelling, and culturally responsive pedagogy, with a particular emphasis on connecting indigenous knowledge systems with formal mathematics education.</p>
+                        <p><strong>International Presence:</strong> She has presented at conferences in India, the Philippines, and virtually with global scholars including Prof. Milton Rosa and Prof. Daniel Orey. Her work has been recognized internationally for its contribution to the field of ethnomathematics and culturally responsive education.</p>
+                        <p><strong>Commitment to Teacher Development:</strong> Beyond her research, Dr. Parajuli is deeply committed to teacher professional development. She has designed and facilitated numerous training programs for mathematics teachers across Nepal, empowering them with innovative pedagogical strategies and research-based practices to transform their classrooms.</p>
                     </div>
-
-                    <p><strong>Professional Leadership:</strong> Dr. Parajuli serves as Executive Member of the Nepal Mathematical Society (Gandaki Province), Director of the Centre for Innovation, Research, Development &amp; Training (CIRDT), Treasurer of the Education Society Nepal, and Life Member of Women of Nepal in Mathematical Sciences (WoNiMS).</p>
-                    <p>She has published extensively in national and international journals and contributed a chapter to a prestigious <strong>Springer</strong> book on ethnomathematics. She has presented at conferences in India, the Philippines, and virtually with global scholars including Prof. Milton Rosa and Prof. Daniel Orey.</p>
+                    <div class="founder-image">
+                        <img src="images/kharika.png" alt="Dr. Kharika Devi Parajuli" />
+                    </div>
                 </div>
-                <div class="founder-main" id="founderMainNp" style="display:none;">
-                    <h2><span>डा. खरीका देवी पराजुली</span> बारे</h2>
-                    <p>डा. पराजुली २४ वर्षभन्दा बढी व्यावसायिक अनुभव भएकी एक प्रख्यात शिक्षक शिक्षिका हुनुहुन्छ। उहाँले निजी माध्यमिक विद्यालयको गणित विभाग प्रमुख, सार्वजनिक माध्यमिक विद्यालयहरूमा वरिष्ठ शिक्षक, शैक्षिक प्रशिक्षक र अनुसन्धानकर्ताको रूपमा सेवा गर्नुभएको छ।</p>
-                    <p>उहाँको शैक्षिक यात्रामा त्रिभुवन विश्वविद्यालयबाट <strong>गणित शिक्षामा पीएच.डी.</strong> (२०२२), काठमाडौं विश्वविद्यालयबाट <strong>एम.फिल.</strong> (२०१७) र त्रिभुवन विश्वविद्यालयबाट स्नातकोत्तर (२००६) समावेश छ। उहाँको अनुसन्धान <em>"Connecting Vedic, Ethno, and School Mathematics"</em> ले स्थानीय सांस्कृतिक ज्ञान र कलाकृतिहरूलाई शक्तिशाली शैक्षिक डिजाइनमा कसरी रूपान्तरण गर्न सकिन्छ भन्ने अन्वेषण गर्दछ।</p>
-
-                    <div class="credential-grid">
-                        <div class="credential-item">
-                            पीएच.डी. (गणित शिक्षा)
-                            <small>त्रिभुवन विश्वविद्यालय, २०२२</small>
-                        </div>
-                        <div class="credential-item">
-                            एम.फिल. (गणित शिक्षा)
-                            <small>काठमाडौं विश्वविद्यालय, २०१७</small>
-                        </div>
-                        <div class="credential-item">
-                            एम.एड. (गणित शिक्षा)
-                            <small>त्रिभुवन विश्वविद्यालय, २००६</small>
-                        </div>
-                        <div class="credential-item">
-                            बी.एड. (गणित शिक्षा)
-                            <small>त्रिभुवन विश्वविद्यालय, २००१</small>
-                        </div>
+            </div>
+            <div id="founderNp" style="display:none;">
+                <h2><span>डा. खरीका देवी पराजुली</span> बारे</h2>
+                <div class="founder-row">
+                    <div class="founder-text">
+                        <p>डा. पराजुली २४ वर्षभन्दा बढी व्यावसायिक अनुभव भएकी एक प्रख्यात शिक्षक शिक्षिका हुनुहुन्छ। उहाँले निजी माध्यमिक विद्यालयको गणित विभाग प्रमुख, सार्वजनिक माध्यमिक विद्यालयहरूमा वरिष्ठ शिक्षक, शैक्षिक प्रशिक्षक र अनुसन्धानकर्ताको रूपमा सेवा गर्नुभएको छ।</p>
+                        <p>उहाँको शैक्षिक यात्रामा त्रिभुवन विश्वविद्यालयबाट <strong>गणित शिक्षामा पीएच.डी.</strong> (२०२२), काठमाडौं विश्वविद्यालयबाट <strong>एम.फिल.</strong> (२०१७) र त्रिभुवन विश्वविद्यालयबाट स्नातकोत्तर (२००६) समावेश छ। उहाँको अनुसन्धान <em>"Connecting Vedic, Ethno, and School Mathematics"</em> ले स्थानीय सांस्कृतिक ज्ञान र कलाकृतिहरूलाई शक्तिशाली शैक्षिक डिजाइनमा कसरी रूपान्तरण गर्न सकिन्छ भन्ने अन्वेषण गर्दछ।</p>
+                        <p><strong>व्यावसायिक नेतृत्व:</strong> डा. पराजुली नेपाल गणित समाज (गण्डकी प्रदेश) का कार्यकारी सदस्य, सेन्टर फर इनोभेसन, रिसर्च, डेभलपमेन्ट एण्ड ट्रेनिङ (CIRDT) का निर्देशक, एजुकेसन सोसाइटी नेपालका कोषाध्यक्ष र Women of Nepal in Mathematical Sciences (WoNiMS) की आजीवन सदस्य हुनुहुन्छ।</p>
+                        <p><strong>अनुसन्धान र प्रकाशनहरू:</strong> उहाँले राष्ट्रिय र अन्तर्राष्ट्रिय जर्नलहरूमा व्यापक रूपमा प्रकाशित गर्नुभएको छ र एथनोम्याथमेटिक्समा <strong>Springer</strong> पुस्तकमा अध्याय योगदान गर्नुभएको छ। उहाँको अनुसन्धान नृजातीय गणित, नृजातीय मोडेलिङ र सांस्कृतिक-उत्तरदायी शिक्षाशास्त्रको प्रतिच्छेदनमा केन्द्रित छ, विशेष गरी आदिवासी ज्ञान प्रणालीहरूलाई औपचारिक गणित शिक्षासँग जोड्ने कुरामा जोड दिइएको छ।</p>
+                        <p><strong>अन्तर्राष्ट्रिय उपस्थिति:</strong> उहाँले भारत, फिलिपिन्सका सम्मेलनहरूमा र प्रा. मिल्टन रोजा र प्रा. डेनियल ओरे सहितका विश्वव्यापी विद्वानहरूसँग प्रस्तुति दिनुभएको छ। उहाँको कार्य नृजातीय गणित र सांस्कृतिक-उत्तरदायी शिक्षाको क्षेत्रमा योगदानको लागि अन्तर्राष्ट्रिय रूपमा मान्यता प्राप्त गरेको छ।</p>
+                        <p><strong>शिक्षक विकासप्रति प्रतिबद्धता:</strong> अनुसन्धान बाहेक, डा. पराजुली शिक्षक व्यावसायिक विकासप्रति गहिरो रूपमा प्रतिबद्ध हुनुहुन्छ। उहाँले नेपालभरका गणित शिक्षकहरूका लागि धेरै तालिम कार्यक्रमहरू डिजाइन र सहजीकरण गर्नुभएको छ, जसले उनीहरूलाई नवीन शैक्षिक रणनीतिहरू र अनुसन्धान-आधारित अभ्यासहरू प्रदान गरेर उनीहरूको कक्षाकोठाहरू रूपान्तरण गर्न सशक्त बनाउँछ।</p>
                     </div>
-
-                    <p><strong>व्यावसायिक नेतृत्व:</strong> डा. पराजुली नेपाल गणित समाज (गण्डकी प्रदेश) का कार्यकारी सदस्य, सेन्टर फर इनोभेसन, रिसर्च, डेभलपमेन्ट एण्ड ट्रेनिङ (CIRDT) का निर्देशक, एजुकेसन सोसाइटी नेपालका कोषाध्यक्ष र Women of Nepal in Mathematical Sciences (WoNiMS) की आजीवन सदस्य हुनुहुन्छ।</p>
-                    <p>उहाँले राष्ट्रिय र अन्तर्राष्ट्रिय जर्नलहरूमा व्यापक रूपमा प्रकाशित गर्नुभएको छ र एथनोम्याथमेटिक्समा <strong>Springer</strong> पुस्तकमा अध्याय योगदान गर्नुभएको छ। उहाँले भारत, फिलिपिन्सका सम्मेलनहरूमा र प्रा. मिल्टन रोजा र प्रा. डेनियल ओरे सहितका विश्वव्यापी विद्वानहरूसँग प्रस्तुति दिनुभएको छ।</p>
+                    <div class="founder-image">
+                        <img src="images/kharika.png" alt="डा. खरीका देवी पराजुली" />
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== RESEARCH HIGHLIGHT (N-MELODY + PUBLICATIONS + CONFERENCES) ===== -->
+    <!-- ===== RESEARCH HIGHLIGHT (N-MELODY + PUBLICATIONS + CONFERENCES + TRAINING) ===== -->
     <section class="research-highlight">
         <div class="container">
             <div class="section-title" id="researchTitleEn">
-                <h2>Research &amp; Innovations</h2>
-                <p>Our signature frameworks, publications, and conference presentations.</p>
+                <h2>Research and Innovations</h2>
+                <p>Our signature frameworks, publications, conference presentations, and professional development programs.</p>
                 <div class="accent-line"></div>
             </div>
             <div class="section-title" id="researchTitleNp" style="display:none;">
                 <h2>अनुसन्धान र नवप्रवर्तन</h2>
-                <p>हाम्रा स्वामित्वपूर्ण ढाँचाहरू, प्रकाशनहरू र सम्मेलन प्रस्तुतिहरू।</p>
+                <p>हाम्रा स्वामित्वपूर्ण ढाँचाहरू, प्रकाशनहरू, सम्मेलन प्रस्तुतिहरू र व्यावसायिक विकास कार्यक्रमहरू।</p>
                 <div class="accent-line"></div>
             </div>
 
             <div class="highlight-grid">
+                <!-- Card 1: N-MELODY Framework -->
                 <div class="highlight-card" id="researchEn">
                     <h3>🧩 The N‑MELODY Framework</h3>
-                    <p>N‑MELODY is a pedagogical framework that integrates <strong>Critical Pedagogy, Reflective Practice, and Transformative Education</strong> to create socially just, culturally relevant, and deeply engaging mathematics learning experiences.</p>
-                    <p>It was developed through Dr. Parajuli's doctoral research and extensive classroom practice, bridging the gap between traditional cultural knowledge and modern educational theory.</p>
+                    <p><strong>N‑MELODY</strong> is a proprietary pedagogical framework developed by Dr. Kharika Devi Parajuli that integrates <strong>Critical Pedagogy, Reflective Practice, and Transformative Education</strong> to create socially just, culturally relevant, and deeply engaging mathematics learning experiences.</p>
+                    <p>The framework empowers educators to:</p>
+                    <ul>
+                        <li><strong>Nurture</strong> critical thinking and reflective practice in students</li>
+                        <li><strong>Model</strong> mathematics as a dynamic, culturally embedded discipline</li>
+                        <li><strong>Engage</strong> learners through culturally relevant contexts and real-world applications</li>
+                        <li><strong>Localize</strong> learning by connecting mathematics to indigenous knowledge systems</li>
+                        <li><strong>Observe</strong> and reflect on student learning through open inquiry</li>
+                        <li><strong>Develop</strong> inclusive, equitable, and socially just learning environments</li>
+                        <li><strong>Yield</strong> transformative educational outcomes that empower learners for life</li>
+                    </ul>
                     <span class="badge">⭐ Signature Framework</span>
                 </div>
                 <div class="highlight-card" id="researchNp" style="display:none;">
                     <h3>🧩 एन‑मेलोडी (N‑MELODY) ढाँचा</h3>
-                    <p>N‑MELODY एउटा शैक्षिक ढाँचा हो जसले <strong>आलोचनात्मक शिक्षाशास्त्र, चिन्तनशील अभ्यास र रूपान्तरणकारी शिक्षा</strong>लाई एकीकृत गर्दछ, जसले सामाजिक रूपमा न्यायसंगत, सांस्कृतिक रूपमा सान्दर्भिक र गहन रूपमा संलग्न गणित सिकाइ अनुभवहरू सिर्जना गर्दछ।</p>
-                    <p>यो डा. पराजुलीको डाक्टरेट अनुसन्धान र व्यापक कक्षा अभ्यास मार्फत विकसित गरिएको हो, जसले परम्परागत सांस्कृतिक ज्ञान र आधुनिक शैक्षिक सिद्धान्तबीचको सेतुको रूपमा काम गर्दछ।</p>
+                    <p><strong>N‑MELODY</strong> डा. खरीका देवी पराजुलीद्वारा विकसित एक स्वामित्वपूर्ण शैक्षिक ढाँचा हो जसले <strong>आलोचनात्मक शिक्षाशास्त्र, चिन्तनशील अभ्यास र रूपान्तरणकारी शिक्षा</strong>लाई एकीकृत गर्दछ, जसले सामाजिक रूपमा न्यायसंगत, सांस्कृतिक रूपमा सान्दर्भिक र गहन रूपमा संलग्न गणित सिकाइ अनुभवहरू सिर्जना गर्दछ।</p>
+                    <p>यो ढाँचा डा. पराजुलीको डाक्टरेट अनुसन्धान र व्यापक कक्षा अभ्यास मार्फत विकसित गरिएको हो, जसले परम्परागत सांस्कृतिक ज्ञान र आधुनिक शैक्षिक सिद्धान्तबीचको सेतुको रूपमा काम गर्दछ। N‑MELODY ले शिक्षकहरूलाई निम्न कार्यहरू गर्न सशक्त बनाउँछ:</p>
+                    <ul>
+                        <li><strong>पोषण</strong> – विद्यार्थीहरूमा आलोचनात्मक सोच र चिन्तनशील अभ्यास</li>
+                        <li><strong>मोडेलिङ</strong> – गणितलाई गतिशील, सांस्कृतिक रूपमा अन्तर्निहित विषयको रूपमा</li>
+                        <li><strong>संलग्नता</strong> – सांस्कृतिक रूपमा सान्दर्भिक सन्दर्भ र वास्तविक-विश्व अनुप्रयोगहरू मार्फत</li>
+                        <li><strong>स्थानीयकरण</strong> – गणितलाई आदिवासी ज्ञान प्रणाली र सांस्कृतिक कलाकृतिहरूसँग जोडेर</li>
+                        <li><strong>अवलोकन</strong> – खुला अन्वेषण र अन्वेषण मार्फत विद्यार्थी सिकाइमा प्रतिबिम्बित</li>
+                        <li><strong>विकास</strong> – समावेशी, न्यायसंगत र सामाजिक रूपमा न्यायोचित सिकाइ वातावरण</li>
+                        <li><strong>रूपान्तरण</strong> – विद्यार्थीहरूलाई जीवनको लागि सशक्त बनाउने परिवर्तनकारी शैक्षिक परिणामहरू</li>
+                    </ul>
                     <span class="badge">⭐ स्वामित्वपूर्ण ढाँचा</span>
                 </div>
 
+                <!-- Card 2: Selected Publications -->
                 <div class="highlight-card" id="pubsEn">
                     <h3>📄 Selected Publications</h3>
                     <ul>
-                        <li><strong>2025</strong> – <em>Learning mathematics through open lab</em> (Springer Book Chapter)</li>
-                        <li><strong>2024</strong> – <em>Integration of GeoGebra-Designed Models</em> (The Educator Journal)</li>
-                        <li><strong>2023</strong> – <em>Mathematical Knowledge on Changu Narayan Temples</em> (Indonesian Journal of Ethnomathematics)</li>
+                        <li><strong>2025</strong> – <em>Learning mathematics through open lab: Pedagogical action and social justice</em> (Springer Book Chapter)</li>
+                        <li><strong>2024</strong> – <em>Integration of GeoGebra-Designed Models in Constructivist Teaching and Learning Geometry</em> (The Educator Journal)</li>
+                        <li><strong>2023</strong> – <em>Mathematical Knowledge on Changu Narayan Temples' Arts and Architectures: Ethnomathematics Perspective</em> (Indonesian Journal of Ethnomathematics)</li>
                         <li><strong>2023</strong> – <em>Reciprocal Learning Mathematics through Honeycomb Patterns</em> (JMC Research Journal)</li>
                         <li><strong>2023</strong> – <em>Problem of Migrate Children in the Mathematics Classroom</em> (Journal of Mathematics Education)</li>
-                        <li><strong>2022</strong> – <em>Ethnomathematics Exploration in the Rekhi of Mandap and Havankunda</em> (Indonesian Journal of Ethnomathematics)</li>
+                        <li><strong>2022</strong> – <em>Ethnomathematics Exploration in the Rekhi of Mandap and Havankunda: An Ethnography from Hindu Rites and Rituals</em> (Indonesian Journal of Ethnomathematics)</li>
                         <li><strong>2021</strong> – <em>Challenges Encountered by Mathematics Teachers in ICTs Implementation</em> (JMC Research Journal)</li>
-                        <li><strong>2021</strong> – <em>ICT Integrated Classroom Practices</em> (SATYEM, RPM‑Nepal)</li>
+                        <li><strong>2021</strong> – <em>ICT Integrated Classroom Practices: Experiences of Secondary Level Mathematics Teacher</em> (SATYEM, RPM‑Nepal)</li>
                     </ul>
+                    <p>These publications reflect our commitment to advancing knowledge in ethnomathematics, ethnomodelling, and culturally responsive mathematics education.</p>
                     <span class="badge">Peer-Reviewed</span>
                 </div>
                 <div class="highlight-card" id="pubsNp" style="display:none;">
                     <h3>📄 चयनित प्रकाशनहरू</h3>
                     <ul>
-                        <li><strong>२०२५</strong> – <em>Learning mathematics through open lab</em> (Springer पुस्तक अध्याय)</li>
-                        <li><strong>२०२४</strong> – <em>Integration of GeoGebra-Designed Models</em> (The Educator Journal)</li>
-                        <li><strong>२०२३</strong> – <em>Mathematical Knowledge on Changu Narayan Temples</em> (Indonesian Journal of Ethnomathematics)</li>
+                        <li><strong>२०२५</strong> – <em>Learning mathematics through open lab: Pedagogical action and social justice</em> (Springer पुस्तक अध्याय)</li>
+                        <li><strong>२०२४</strong> – <em>Integration of GeoGebra-Designed Models in Constructivist Teaching and Learning Geometry</em> (The Educator Journal)</li>
+                        <li><strong>२०२३</strong> – <em>Mathematical Knowledge on Changu Narayan Temples' Arts and Architectures: Ethnomathematics Perspective</em> (Indonesian Journal of Ethnomathematics)</li>
                         <li><strong>२०२३</strong> – <em>Reciprocal Learning Mathematics through Honeycomb Patterns</em> (JMC Research Journal)</li>
                         <li><strong>२०२३</strong> – <em>Problem of Migrate Children in the Mathematics Classroom</em> (Journal of Mathematics Education)</li>
-                        <li><strong>२०२२</strong> – <em>Ethnomathematics Exploration in the Rekhi of Mandap and Havankunda</em> (Indonesian Journal of Ethnomathematics)</li>
+                        <li><strong>२०२२</strong> – <em>Ethnomathematics Exploration in the Rekhi of Mandap and Havankunda: An Ethnography from Hindu Rites and Rituals</em> (Indonesian Journal of Ethnomathematics)</li>
                         <li><strong>२०२१</strong> – <em>Challenges Encountered by Mathematics Teachers in ICTs Implementation</em> (JMC Research Journal)</li>
-                        <li><strong>२०२१</strong> – <em>ICT Integrated Classroom Practices</em> (SATYEM, RPM‑नेपाल)</li>
+                        <li><strong>२०२१</strong> – <em>ICT Integrated Classroom Practices: Experiences of Secondary Level Mathematics Teacher</em> (SATYEM, RPM‑नेपाल)</li>
                     </ul>
+                    <p>यी प्रकाशनहरू नृजातीय गणित, नृजातीय मोडेलिङ र सांस्कृतिक-उत्तरदायी गणित शिक्षामा ज्ञान अगाडि बढाउने हाम्रो प्रतिबद्धतालाई प्रतिबिम्बित गर्दछन्।</p>
                     <span class="badge">समीक्षक-समीक्षित</span>
                 </div>
 
+                <!-- Card 3: Conference Presentations -->
                 <div class="highlight-card" id="confEn">
                     <h3>🎤 Conference Presentations</h3>
                     <ul>
-                        <li><strong>ICEm‑7 (2022)</strong> – "School Geometry in the Rekhi of Mandap and Havankunda" (Philippines)</li>
+                        <li><strong>ICEm‑7 (2022)</strong> – "School Geometry in the Rekhi of Mandap and Havankunda: An Ethnography from Hindu Rites and Rituals" (Philippines)</li>
                         <li><strong>AMNS‑2023 (2023)</strong> – "Learning School Geometry Through the Rekhis of Brahmin Cultural" (Pokhara, Nepal)</li>
                         <li><strong>WoNiMS WAC‑2023 (2023)</strong> – "Empowering Students in Mathematics Learning Through Ethnomodelling" <em>(Session Chair)</em> (Kathmandu, Nepal)</li>
                         <li><strong>IWM Annual Conference (2024)</strong> – "Mathematics Practices Through Ethnomodelling on Nepali Dhaka Industries Patterns" (Goa, India)</li>
                         <li><strong>SHAF‑2025 (2025)</strong> – "Pedagogical Decolonization of Mathematics Teaching Through Nepali Artifacts" (Surkhet, Nepal)</li>
                         <li><strong>National Conference on Teacher Education‑2025 (2025)</strong> – "De‑stepping Constructivism, Re‑constructivism, and De‑constructivism in Mathematics Learning" (Pokhara, Nepal)</li>
                     </ul>
-                    <span class="badge">National &amp; International</span>
+                    <p>Our conference presentations demonstrate our active engagement with the global academic community, sharing insights and best practices in culturally responsive mathematics education.</p>
+                    <span class="badge">National and International</span>
                 </div>
                 <div class="highlight-card" id="confNp" style="display:none;">
                     <h3>🎤 सम्मेलन प्रस्तुतिहरू</h3>
                     <ul>
-                        <li><strong>ICEm‑७ (२०२२)</strong> – "School Geometry in the Rekhi of Mandap and Havankunda" (फिलिपिन्स)</li>
+                        <li><strong>ICEm‑७ (२०२२)</strong> – "School Geometry in the Rekhi of Mandap and Havankunda: An Ethnography from Hindu Rites and Rituals" (फिलिपिन्स)</li>
                         <li><strong>AMNS‑२०२३ (२०२३)</strong> – "Learning School Geometry Through the Rekhis of Brahmin Cultural" (पोखरा, नेपाल)</li>
                         <li><strong>WoNiMS WAC‑२०२३ (२०२३)</strong> – "Empowering Students in Mathematics Learning Through Ethnomodelling" <em>(अध्यक्ष)</em> (काठमाडौं, नेपाल)</li>
                         <li><strong>IWM वार्षिक सम्मेलन (२०२४)</strong> – "Mathematics Practices Through Ethnomodelling on Nepali Dhaka Industries Patterns" (गोवा, भारत)</li>
                         <li><strong>SHAF‑२०२५ (२०२५)</strong> – "Pedagogical Decolonization of Mathematics Teaching Through Nepali Artifacts" (सुर्खेत, नेपाल)</li>
                         <li><strong>शिक्षक शिक्षा राष्ट्रिय सम्मेलन‑२०२५ (२०२५)</strong> – "De‑stepping Constructivism, Re‑constructivism, and De‑constructivism in Mathematics Learning" (पोखरा, नेपाल)</li>
                     </ul>
+                    <p>हाम्रा सम्मेलन प्रस्तुतिहरूले विश्वव्यापी शैक्षिक समुदायसँग हाम्रो सक्रिय संलग्नता प्रदर्शन गर्दछ, सांस्कृतिक-उत्तरदायी गणित शिक्षामा अन्तर्दृष्टि र उत्कृष्ट अभ्यासहरू साझेदारी गर्दछ।</p>
                     <span class="badge">राष्ट्रिय र अन्तर्राष्ट्रिय</span>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===== TIMELINE ===== -->
-    <section class="timeline-section">
-        <div class="container">
-            <div class="section-title" id="timelineTitleEn">
-                <h2>Our Journey</h2>
-                <p>Key milestones in the evolution of GAER.</p>
-                <div class="accent-line"></div>
-            </div>
-            <div class="section-title" id="timelineTitleNp" style="display:none;">
-                <h2>हाम्रो यात्रा</h2>
-                <p>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्चको विकासमा प्रमुख कोसेढुङ्गाहरू।</p>
-                <div class="accent-line"></div>
-            </div>
-
-            <div class="timeline" id="timelineEn">
-                <div class="timeline-item"><span class="year">2005</span><span class="desc">Founded Golden Nature Secondary Boarding School and began teaching.</span></div>
-                <div class="timeline-item"><span class="year">2006</span><span class="desc">Completed Master's Degree in Mathematics Education from Tribhuvan University.</span></div>
-                <div class="timeline-item"><span class="year">2017</span><span class="desc">Completed M.Phil. in Mathematics Education from Kathmandu University.</span></div>
-                <div class="timeline-item"><span class="year">2022</span><span class="desc">Awarded Ph.D. in Mathematics Education from Tribhuvan University.</span></div>
-                <div class="timeline-item"><span class="year">2023</span><span class="desc">Established the Centre for Innovation, Research, Development, and Training (CIRDT).</span></div>
-                <div class="timeline-item"><span class="year">2025</span><span class="desc">Incorporated Global Academy of Education Research Private Limited.</span></div>
-            </div>
-            <div class="timeline" id="timelineNp" style="display:none;">
-                <div class="timeline-item"><span class="year">२००५</span><span class="desc">गोल्डेन नेचर सेकेन्डरी बोर्डिङ स्कूलको स्थापना र शिक्षण सुरु।</span></div>
-                <div class="timeline-item"><span class="year">२००६</span><span class="desc">त्रिभुवन विश्वविद्यालयबाट गणित शिक्षामा स्नातकोत्तर पूरा।</span></div>
-                <div class="timeline-item"><span class="year">२०१७</span><span class="desc">काठमाडौं विश्वविद्यालयबाट एम.फिल. पूरा।</span></div>
-                <div class="timeline-item"><span class="year">२०२२</span><span class="desc">त्रिभुवन विश्वविद्यालयबाट गणित शिक्षामा पीएच.डी. प्राप्त।</span></div>
-                <div class="timeline-item"><span class="year">२०२३</span><span class="desc">सेन्टर फर इनोभेसन, रिसर्च, डेभलपमेन्ट एण्ड ट्रेनिङ (CIRDT) को स्थापना।</span></div>
-                <div class="timeline-item"><span class="year">२०२५</span><span class="desc">ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेडको दर्ता।</span></div>
+                <!-- Card 4: Training and Professional Development Programs -->
+                <div class="highlight-card" id="trainingEn">
+                    <h3>🎓 Training and Professional Development</h3>
+                    <p>We design and deliver high‑impact training programs for educators across Nepal:</p>
+                    <ul>
+                        <li><strong>Capacity Building Training for Secondary Level Mathematics Teachers</strong> – Organized by Pokhara Metropolitan City (2080 B.S.)</li>
+                        <li><strong>Capacity Building Training for Basic Level Mathematics Teachers</strong> – Organized by Pokhara Metropolitan City (2080 B.S.)</li>
+                        <li><strong>Training of Trainers (TOT)</strong> – Nepal Mathematical Society and Nick Simons Foundation (S2S Project)</li>
+                        <li><strong>Teachers Training on Integrated Curriculum and Teaching Maths</strong> – SIEC Pokhara (multiple sessions)</li>
+                        <li><strong>Professional Development Workshops</strong> – Council for Mathematics Education, PABSON, and United Nepal Publication</li>
+                        <li><strong>Item Writing Training Programs</strong> – National Examinations Board (NEB) for Grade X Mathematics</li>
+                    </ul>
+                    <p>Our training programs empower teachers with innovative pedagogical strategies, technology integration skills, and research-based practices to transform their classrooms and improve student learning outcomes.</p>
+                    <span class="badge">📚 Teacher Training</span>
+                </div>
+                <div class="highlight-card" id="trainingNp" style="display:none;">
+                    <h3>🎓 तालिम र व्यावसायिक विकास</h3>
+                    <p>हामी नेपालभरका शिक्षकहरूका लागि उच्च-प्रभावी तालिम कार्यक्रमहरू डिजाइन र प्रदान गर्दछौं:</p>
+                    <ul>
+                        <li><strong>माध्यमिक तह गणित शिक्षकहरूको लागि क्षमता अभिवृद्धि तालिम</strong> – पोखरा महानगरपालिका (२०८० बी.एस.)</li>
+                        <li><strong>आधारभूत तह गणित शिक्षकहरूको लागि क्षमता अभिवृद्धि तालिम</strong> – पोखरा महानगरपालिका (२०८० बी.एस.)</li>
+                        <li><strong>प्रशिक्षक प्रशिक्षण (TOT)</strong> – नेपाल गणित समाज र निक सिमन्स फाउन्डेसन (S2S परियोजना)</li>
+                        <li><strong>एकीकृत पाठ्यक्रम र गणित शिक्षण तालिम</strong> – SIEC पोखरा (धेरै सत्रहरू)</li>
+                        <li><strong>व्यावसायिक विकास कार्यशालाहरू</strong> – गणित शिक्षा परिषद, PABSON, र युनाइटेड नेपाल प्रकाशन</li>
+                        <li><strong>प्रश्न लेखन तालिम कार्यक्रमहरू</strong> – राष्ट्रिय परीक्षा बोर्ड (NEB) कक्षा १० गणितको लागि</li>
+                    </ul>
+                    <p>हाम्रा तालिम कार्यक्रमहरूले शिक्षकहरूलाई नवीन शैक्षिक रणनीतिहरू, प्रविधि एकीकरण सीपहरू, र अनुसन्धान-आधारित अभ्यासहरू प्रदान गरेर उनीहरूको कक्षाकोठाहरू रूपान्तरण गर्न र विद्यार्थी सिकाइ परिणामहरू सुधार गर्न सशक्त बनाउँछन्।</p>
+                    <span class="badge">📚 शिक्षक तालिम</span>
+                </div>
             </div>
         </div>
     </section>

@@ -94,7 +94,7 @@
             transform: translateY(-2px);
         }
 
-        /* ===== HEADER (SCROLLS AWAY WITH PAGE) ===== */
+        /* ===== HEADER (SCROLLS AWAY) ===== */
         header {
             background: #ffffff;
             color: #000000;
@@ -119,6 +119,12 @@
         }
 
         /* Desktop Navigation (Black) */
+        .desktop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
         .nav-desktop ul {
             display: flex;
             list-style: none;
@@ -185,14 +191,14 @@
             color: #ffffff;
         }
         @media (max-width: 768px) {
-            .nav-desktop {
+            .desktop-header {
                 display: none;
             }
             .mobile-header {
                 display: flex;
             }
             .logo-img {
-                max-height: 60px;
+                max-height: 80px;
             }
         }
 
@@ -609,25 +615,27 @@
 </head>
 <body>
 
-    <!-- ===== HEADER (SCROLLS AWAY) ===== -->
+    <!-- ===== HEADER ===== -->
     <header>
         <div class="container header-inner">
-            <!-- Desktop Nav -->
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
-                </a>
+            <!-- Desktop Header -->
+            <div class="desktop-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                    </a>
+                </div>
+                <nav class="nav-desktop">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="nav-desktop">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
-                </ul>
-            </nav>
 
             <!-- Mobile Header -->
             <div class="mobile-header">

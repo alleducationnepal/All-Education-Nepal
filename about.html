@@ -446,6 +446,77 @@
             }
         }
 
+        /* ===== RESEARCH HIGHLIGHT (N-MELODY + PUBLICATIONS + CONFERENCES) ===== */
+        .research-highlight {
+            padding: 4rem 0;
+            background: var(--primary);
+            color: #fff;
+        }
+        .research-highlight .section-title h2 {
+            color: #fff;
+        }
+        .research-highlight .section-title p {
+            color: #b0c4de;
+        }
+        .research-highlight .section-title .accent-line {
+            background: var(--gold);
+        }
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
+        }
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(4px);
+            padding: 1.8rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: 0.2s;
+        }
+        .highlight-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .highlight-card h3 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .highlight-card p,
+        .highlight-card li {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        .highlight-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .highlight-card ul li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .highlight-card ul li:last-child {
+            border-bottom: none;
+        }
+        .highlight-card .badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--primary);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.6rem;
+        }
+        @media (max-width: 768px) {
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ===== TIMELINE ===== */
         .timeline-section {
             background: var(--gray-bg);
@@ -842,6 +913,91 @@
 
                     <p><strong>व्यावसायिक नेतृत्व:</strong> डा. पराजुली नेपाल गणित समाज (गण्डकी प्रदेश) का कार्यकारी सदस्य, सेन्टर फर इनोभेसन, रिसर्च, डेभलपमेन्ट एण्ड ट्रेनिङ (CIRDT) का निर्देशक, एजुकेसन सोसाइटी नेपालका कोषाध्यक्ष र Women of Nepal in Mathematical Sciences (WoNiMS) की आजीवन सदस्य हुनुहुन्छ।</p>
                     <p>उहाँले राष्ट्रिय र अन्तर्राष्ट्रिय जर्नलहरूमा व्यापक रूपमा प्रकाशित गर्नुभएको छ र एथनोम्याथमेटिक्समा <strong>Springer</strong> पुस्तकमा अध्याय योगदान गर्नुभएको छ। उहाँले भारत, फिलिपिन्सका सम्मेलनहरूमा र प्रा. मिल्टन रोजा र प्रा. डेनियल ओरे सहितका विश्वव्यापी विद्वानहरूसँग प्रस्तुति दिनुभएको छ।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RESEARCH HIGHLIGHT (N-MELODY + PUBLICATIONS + CONFERENCES) ===== -->
+    <section class="research-highlight">
+        <div class="container">
+            <div class="section-title" id="researchTitleEn">
+                <h2>Research &amp; Innovations</h2>
+                <p>Our signature frameworks, publications, and conference presentations.</p>
+                <div class="accent-line"></div>
+            </div>
+            <div class="section-title" id="researchTitleNp" style="display:none;">
+                <h2>अनुसन्धान र नवप्रवर्तन</h2>
+                <p>हाम्रा स्वामित्वपूर्ण ढाँचाहरू, प्रकाशनहरू र सम्मेलन प्रस्तुतिहरू।</p>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="highlight-grid">
+                <div class="highlight-card" id="researchEn">
+                    <h3>🧩 The N‑MELODY Framework</h3>
+                    <p>N‑MELODY is a pedagogical framework that integrates <strong>Critical Pedagogy, Reflective Practice, and Transformative Education</strong> to create socially just, culturally relevant, and deeply engaging mathematics learning experiences.</p>
+                    <p>It was developed through Dr. Parajuli's doctoral research and extensive classroom practice, bridging the gap between traditional cultural knowledge and modern educational theory.</p>
+                    <span class="badge">⭐ Signature Framework</span>
+                </div>
+                <div class="highlight-card" id="researchNp" style="display:none;">
+                    <h3>🧩 एन‑मेलोडी (N‑MELODY) ढाँचा</h3>
+                    <p>N‑MELODY एउटा शैक्षिक ढाँचा हो जसले <strong>आलोचनात्मक शिक्षाशास्त्र, चिन्तनशील अभ्यास र रूपान्तरणकारी शिक्षा</strong>लाई एकीकृत गर्दछ, जसले सामाजिक रूपमा न्यायसंगत, सांस्कृतिक रूपमा सान्दर्भिक र गहन रूपमा संलग्न गणित सिकाइ अनुभवहरू सिर्जना गर्दछ।</p>
+                    <p>यो डा. पराजुलीको डाक्टरेट अनुसन्धान र व्यापक कक्षा अभ्यास मार्फत विकसित गरिएको हो, जसले परम्परागत सांस्कृतिक ज्ञान र आधुनिक शैक्षिक सिद्धान्तबीचको सेतुको रूपमा काम गर्दछ।</p>
+                    <span class="badge">⭐ स्वामित्वपूर्ण ढाँचा</span>
+                </div>
+
+                <div class="highlight-card" id="pubsEn">
+                    <h3>📄 Selected Publications</h3>
+                    <ul>
+                        <li><strong>2025</strong> – <em>Learning mathematics through open lab</em> (Springer Book Chapter)</li>
+                        <li><strong>2024</strong> – <em>Integration of GeoGebra-Designed Models</em> (The Educator Journal)</li>
+                        <li><strong>2023</strong> – <em>Mathematical Knowledge on Changu Narayan Temples</em> (Indonesian Journal of Ethnomathematics)</li>
+                        <li><strong>2023</strong> – <em>Reciprocal Learning Mathematics through Honeycomb Patterns</em> (JMC Research Journal)</li>
+                        <li><strong>2023</strong> – <em>Problem of Migrate Children in the Mathematics Classroom</em> (Journal of Mathematics Education)</li>
+                        <li><strong>2022</strong> – <em>Ethnomathematics Exploration in the Rekhi of Mandap and Havankunda</em> (Indonesian Journal of Ethnomathematics)</li>
+                        <li><strong>2021</strong> – <em>Challenges Encountered by Mathematics Teachers in ICTs Implementation</em> (JMC Research Journal)</li>
+                        <li><strong>2021</strong> – <em>ICT Integrated Classroom Practices</em> (SATYEM, RPM‑Nepal)</li>
+                    </ul>
+                    <span class="badge">Peer-Reviewed</span>
+                </div>
+                <div class="highlight-card" id="pubsNp" style="display:none;">
+                    <h3>📄 चयनित प्रकाशनहरू</h3>
+                    <ul>
+                        <li><strong>२०२५</strong> – <em>Learning mathematics through open lab</em> (Springer पुस्तक अध्याय)</li>
+                        <li><strong>२०२४</strong> – <em>Integration of GeoGebra-Designed Models</em> (The Educator Journal)</li>
+                        <li><strong>२०२३</strong> – <em>Mathematical Knowledge on Changu Narayan Temples</em> (Indonesian Journal of Ethnomathematics)</li>
+                        <li><strong>२०२३</strong> – <em>Reciprocal Learning Mathematics through Honeycomb Patterns</em> (JMC Research Journal)</li>
+                        <li><strong>२०२३</strong> – <em>Problem of Migrate Children in the Mathematics Classroom</em> (Journal of Mathematics Education)</li>
+                        <li><strong>२०२२</strong> – <em>Ethnomathematics Exploration in the Rekhi of Mandap and Havankunda</em> (Indonesian Journal of Ethnomathematics)</li>
+                        <li><strong>२०२१</strong> – <em>Challenges Encountered by Mathematics Teachers in ICTs Implementation</em> (JMC Research Journal)</li>
+                        <li><strong>२०२१</strong> – <em>ICT Integrated Classroom Practices</em> (SATYEM, RPM‑नेपाल)</li>
+                    </ul>
+                    <span class="badge">समीक्षक-समीक्षित</span>
+                </div>
+
+                <div class="highlight-card" id="confEn">
+                    <h3>🎤 Conference Presentations</h3>
+                    <ul>
+                        <li><strong>ICEm‑7 (2022)</strong> – "School Geometry in the Rekhi of Mandap and Havankunda" (Philippines)</li>
+                        <li><strong>AMNS‑2023 (2023)</strong> – "Learning School Geometry Through the Rekhis of Brahmin Cultural" (Pokhara, Nepal)</li>
+                        <li><strong>WoNiMS WAC‑2023 (2023)</strong> – "Empowering Students in Mathematics Learning Through Ethnomodelling" <em>(Session Chair)</em> (Kathmandu, Nepal)</li>
+                        <li><strong>IWM Annual Conference (2024)</strong> – "Mathematics Practices Through Ethnomodelling on Nepali Dhaka Industries Patterns" (Goa, India)</li>
+                        <li><strong>SHAF‑2025 (2025)</strong> – "Pedagogical Decolonization of Mathematics Teaching Through Nepali Artifacts" (Surkhet, Nepal)</li>
+                        <li><strong>National Conference on Teacher Education‑2025 (2025)</strong> – "De‑stepping Constructivism, Re‑constructivism, and De‑constructivism in Mathematics Learning" (Pokhara, Nepal)</li>
+                    </ul>
+                    <span class="badge">National &amp; International</span>
+                </div>
+                <div class="highlight-card" id="confNp" style="display:none;">
+                    <h3>🎤 सम्मेलन प्रस्तुतिहरू</h3>
+                    <ul>
+                        <li><strong>ICEm‑७ (२०२२)</strong> – "School Geometry in the Rekhi of Mandap and Havankunda" (फिलिपिन्स)</li>
+                        <li><strong>AMNS‑२०२३ (२०२३)</strong> – "Learning School Geometry Through the Rekhis of Brahmin Cultural" (पोखरा, नेपाल)</li>
+                        <li><strong>WoNiMS WAC‑२०२३ (२०२३)</strong> – "Empowering Students in Mathematics Learning Through Ethnomodelling" <em>(अध्यक्ष)</em> (काठमाडौं, नेपाल)</li>
+                        <li><strong>IWM वार्षिक सम्मेलन (२०२४)</strong> – "Mathematics Practices Through Ethnomodelling on Nepali Dhaka Industries Patterns" (गोवा, भारत)</li>
+                        <li><strong>SHAF‑२०२५ (२०२५)</strong> – "Pedagogical Decolonization of Mathematics Teaching Through Nepali Artifacts" (सुर्खेत, नेपाल)</li>
+                        <li><strong>शिक्षक शिक्षा राष्ट्रिय सम्मेलन‑२०२५ (२०२५)</strong> – "De‑stepping Constructivism, Re‑constructivism, and De‑constructivism in Mathematics Learning" (पोखरा, नेपाल)</li>
+                    </ul>
+                    <span class="badge">राष्ट्रिय र अन्तर्राष्ट्रिय</span>
                 </div>
             </div>
         </div>

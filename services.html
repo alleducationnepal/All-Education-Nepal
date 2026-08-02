@@ -113,6 +113,12 @@
         }
 
         /* Desktop Navigation (Black) */
+        .desktop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
         .nav-desktop ul {
             display: flex;
             list-style: none;
@@ -179,14 +185,14 @@
             color: #ffffff;
         }
         @media (max-width: 768px) {
-            .nav-desktop {
+            .desktop-header {
                 display: none;
             }
             .mobile-header {
                 display: flex;
             }
             .logo-img {
-                max-height: 60px;
+                max-height: 80px;
             }
         }
 
@@ -567,21 +573,23 @@
     <header>
         <div class="container header-inner">
             <!-- Desktop Nav -->
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
-                </a>
+            <div class="desktop-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                    </a>
+                </div>
+                <nav class="nav-desktop">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html" class="active">Services</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="nav-desktop">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
-                </ul>
-            </nav>
 
             <!-- Mobile Header -->
             <div class="mobile-header">
@@ -611,11 +619,11 @@
     <section class="page-hero">
         <div class="container" id="heroEn">
             <h1>Our <span>Services</span></h1>
-            <p>Comprehensive solutions designed to advance mathematics education through research, training, and collaboration — tailored to your institution's needs.</p>
+            <p>Comprehensive solutions designed to advance education through research, training, and collaboration tailored to your needs.</p>
         </div>
         <div class="container" id="heroNp" style="display:none;">
             <h1>हाम्रा <span>सेवाहरू</span></h1>
-            <p>अनुसन्धान, तालिम र सहकार्य मार्फत गणित शिक्षाको उन्नतिका लागि डिजाइन गरिएका व्यापक समाधानहरू — तपाईंको संस्थाको आवश्यकता अनुसार।</p>
+            <p>तपाईंको आवश्यकता अनुसार अनुसन्धान, तालिम र सहकार्य मार्फत शिक्षाको उन्नतिका लागि डिजाइन गरिएका व्यापक समाधानहरू।</p>
         </div>
     </section>
 
@@ -627,8 +635,8 @@
             <div class="service-detail" id="service1En">
                 <div>
                     <span class="icon-big">🔬</span>
-                    <h3>Research <span>&amp; Innovation</span></h3>
-                    <p>We conduct rigorous, evidence‑based research to advance mathematics education and improve classroom practices. Our research is grounded in qualitative and quantitative methodologies, with a strong emphasis on ethnomathematics, ethnomodelling, and culturally responsive pedagogy.</p>
+                    <h3>Research <span>and Innovation</span></h3>
+                    <p>We conduct rigorous, evidence‑based research to advance education and improve classroom practices. Our research is grounded in qualitative and quantitative methodologies, with a strong emphasis on ethnomathematics, ethnomodelling, and culturally responsive pedagogy.</p>
                     <ul>
                         <li><strong>Mathematics Education Research</strong> – In‑depth academic research on ethnomathematics, ethnomodelling, Vedic mathematics, and technology‑integrated pedagogy.</li>
                         <li><strong>Action Research in the Classroom</strong> – Collaborative, reflective research conducted with teachers to identify challenges and test innovative strategies.</li>
@@ -695,17 +703,17 @@
                 </div>
             </div>
 
-            <!-- Service 3: Conferences & Events -->
+            <!-- Service 3: Conferences and Events -->
             <div class="service-detail" id="service3En">
                 <div>
                     <span class="icon-big">🗣️</span>
-                    <h3>Conferences <span>&amp; Events</span></h3>
-                    <p>We organize and manage academic events that bring together educators, researchers, and policymakers to share knowledge, collaborate, and drive innovation in mathematics education.</p>
+                    <h3>Conferences <span>and Events</span></h3>
+                    <p>We organize and manage academic events that bring together educators, researchers, and policymakers to share knowledge, collaborate, and drive innovation in education.</p>
                     <ul>
                         <li><strong>National/International Conferences</strong> – Planning and execution of large‑scale conferences on mathematics education, STEM/STEAM, ethnomathematics, and educational research.</li>
-                        <li><strong>Seminars &amp; Symposia</strong> – Smaller, focused gatherings for in‑depth discussion on ethnomodelling, Vedic mathematics, or transformative pedagogy.</li>
+                        <li><strong>Seminars and Symposia</strong> – Smaller, focused gatherings for in‑depth discussion on ethnomodelling, Vedic mathematics, or transformative pedagogy.</li>
                         <li><strong>Academic Workshops</strong> – Interactive, skill‑based workshops for teachers, researchers, and graduate students on research methodology, academic writing, and innovative practices.</li>
-                        <li><strong>Talk Series &amp; Webinars</strong> – Online and in‑person series featuring national and international experts.</li>
+                        <li><strong>Talk Series and Webinars</strong> – Online and in‑person series featuring national and international experts.</li>
                     </ul>
                 </div>
                 <div class="service-image">
@@ -731,17 +739,17 @@
                 </div>
             </div>
 
-            <!-- Service 4: Consultancy & Projects -->
+            <!-- Service 4: Consultancy and Projects -->
             <div class="service-detail" id="service4En">
                 <div>
                     <span class="icon-big">🤝</span>
-                    <h3>Consultancy <span>&amp; Projects</span></h3>
+                    <h3>Consultancy <span>and Projects</span></h3>
                     <p>We provide expert advisory services to educational institutions, government bodies, international development partners, and non‑governmental organizations.</p>
                     <ul>
                         <li><strong>Curriculum Development</strong> – Design and review of mathematics curricula aligned with national frameworks (NEB, CTEVT) and international standards.</li>
                         <li><strong>Educational Project Management</strong> – End‑to‑end management of projects, including needs assessment, program design, implementation support, and impact evaluation.</li>
                         <li><strong>Policy Advisory</strong> – Technical advice to government agencies on mathematics education policy, teacher professional development frameworks, and quality assurance.</li>
-                        <li><strong>Monitoring &amp; Evaluation (M&amp;E)</strong> – Design and implementation of M&amp;E frameworks for educational programs, ensuring accountability and evidence‑based decision‑making.</li>
+                        <li><strong>Monitoring and Evaluation (M&amp;E)</strong> – Design and implementation of M&amp;E frameworks for educational programs, ensuring accountability and evidence‑based decision‑making.</li>
                     </ul>
                 </div>
                 <div class="service-image">
@@ -797,12 +805,12 @@
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <h4>Design &amp; Development</h4>
+                    <h4>Design and Development</h4>
                     <p>We design a customized solution — whether a training program, curriculum, or research study.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">4</div>
-                    <h4>Implementation &amp; Follow‑up</h4>
+                    <h4>Implementation and Follow‑up</h4>
                     <p>We deliver the solution and provide ongoing support, monitoring, and evaluation.</p>
                 </div>
             </div>
@@ -835,14 +843,14 @@
     <section class="cta-banner" id="ctaEn">
         <div class="container">
             <h2>Ready to Transform Education Research?</h2>
-            <p>Let's discuss how we can support your institution with research, training, or consultancy.</p>
+            <p>Let's discuss how we can support you with research, training, or consultancy.</p>
             <a href="contact.html" class="btn-primary">Get in Touch</a>
         </div>
     </section>
     <section class="cta-banner" id="ctaNp" style="display:none;">
         <div class="container">
-            <h2>गणित शिक्षा रूपान्तरण गर्न तयार हुनुहुन्छ?</h2>
-            <p>हामी तपाईंको संस्थालाई अनुसन्धान, तालिम वा परामर्श मार्फत कसरी सहायता गर्न सक्छौं भनेर छलफल गरौं।</p>
+            <h2>शिक्षा अनुसन्धान रूपान्तरण गर्न तयार हुनुहुन्छ?</h2>
+            <p>हामी तपाईंलाई अनुसन्धान, तालिम वा परामर्श मार्फत कसरी सहायता गर्न सक्छौं भनेर छलफल गरौं।</p>
             <a href="contact.html" class="btn-primary">सम्पर्क गर्नुहोस्</a>
         </div>
     </section>

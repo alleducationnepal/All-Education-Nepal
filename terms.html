@@ -76,6 +76,12 @@
         }
 
         /* Desktop Navigation (Black) */
+        .desktop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
         .nav-desktop ul {
             display: flex;
             list-style: none;
@@ -141,14 +147,14 @@
             color: #ffffff;
         }
         @media (max-width: 768px) {
-            .nav-desktop {
+            .desktop-header {
                 display: none;
             }
             .mobile-header {
                 display: flex;
             }
             .logo-img {
-                max-height: 60px;
+                max-height: 80px;
             }
         }
 
@@ -230,7 +236,7 @@
         .legal-content h2 {
             font-size: 1.6rem;
             color: var(--primary);
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             margin-bottom: 0.5rem;
             border-bottom: 2px solid var(--gold);
             padding-bottom: 0.3rem;
@@ -249,11 +255,13 @@
             color: var(--text-light);
             margin-bottom: 0.8rem;
         }
-        .legal-content ul {
+        .legal-content ul,
+        .legal-content ol {
             padding-left: 1.5rem;
             margin-bottom: 1rem;
         }
-        .legal-content ul li {
+        .legal-content ul li,
+        .legal-content ol li {
             margin-bottom: 0.4rem;
         }
         .legal-content strong {
@@ -272,6 +280,13 @@
             height: 1px;
             background: #e2e8f0;
             margin: 2.5rem 0;
+        }
+        .legal-content .highlight-box {
+            background: var(--gray-bg);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            margin: 1.5rem 0;
         }
 
         /* ===== FOOTER ===== */
@@ -389,21 +404,23 @@
     <header>
         <div class="container header-inner">
             <!-- Desktop Nav -->
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
-                </a>
+            <div class="desktop-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                    </a>
+                </div>
+                <nav class="nav-desktop">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="nav-desktop">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
-                </ul>
-            </nav>
 
             <!-- Mobile Header -->
             <div class="mobile-header">
@@ -450,59 +467,177 @@
                     <strong>Last Updated:</strong> 18 June 2026
                 </div>
 
+                <!-- ===== SECTION 1 ===== -->
                 <h2>1. Acceptance of Terms</h2>
-                <p>By accessing and using the website of <strong>Global Academy of Education Research Private Limited</strong> ("we", "us", "our"), you agree to comply with and be bound by these Terms of Use. If you do not agree to these terms, please do not use our website or services.</p>
+                <p>By accessing, browsing, or using the website of <strong>Global Academy of Education Research Private Limited</strong> ("we", "us", "our"), you acknowledge that you have read, understood, and agree to be bound by these Terms of Use. These terms constitute a legally binding agreement between you and Global Academy of Education Research Private Limited regarding your use of our website and services.</p>
+                <p>If you do not agree to these terms, please do not use our website or services. We reserve the right to update or modify these terms at any time without prior notice. Your continued use of the website following any changes constitutes your acceptance of the revised terms.</p>
 
+                <!-- ===== SECTION 2 ===== -->
                 <h2>2. About Us</h2>
-                <p>Global Academy of Education Research Private Limited is a company registered in Nepal, with its registered office at Dhungepatan, Pokhara Metropolitan City, Ward 20, Kaski District, Gandaki Province, Nepal. We provide research, teacher training, consultancy, and conference services in mathematics education and related fields.</p>
-
-                <h2>3. Use of Our Website</h2>
-                <p>You may use our website for lawful purposes only. You agree not to:</p>
+                <p>Global Academy of Education Research Private Limited is a company registered in Nepal, with its registered office at Dhungepatan, Pokhara Metropolitan City, Ward No. 20, Kaski District, Gandaki Province, Nepal. We are a research, training, and consultancy organization dedicated to advancing education through innovative research, teacher professional development, and culturally responsive pedagogy.</p>
+                <p>Our services include, but are not limited to:</p>
                 <ul>
-                    <li>Use the website in any way that violates applicable local, national, or international laws.</li>
-                    <li>Transmit any material that is defamatory, offensive, or otherwise objectionable.</li>
-                    <li>Interfere with or disrupt the security, functionality, or integrity of the website.</li>
-                    <li>Attempt to gain unauthorized access to any part of the website, our systems, or networks.</li>
+                    <li>Research and development in education, with a focus on ethnomathematics, ethno-education, and ethnomodelling</li>
+                    <li>Teacher training and professional development programs</li>
+                    <li>Educational consultancy and advisory services</li>
+                    <li>Curriculum design and development</li>
+                    <li>Conference, seminar, and workshop organization</li>
+                    <li>Publication of research papers, books, and educational materials</li>
                 </ul>
 
+                <!-- ===== SECTION 3 ===== -->
+                <h2>3. Use of Our Website</h2>
+                <p>You may use our website for lawful purposes only. You agree to use the website in a manner that does not:</p>
+                <ul>
+                    <li>Violate any applicable local, national, or international laws, regulations, or ordinances</li>
+                    <li>Infringe upon the rights of any third party, including intellectual property, privacy, or proprietary rights</li>
+                    <li>Transmit any material that is defamatory, offensive, harassing, obscene, or otherwise objectionable</li>
+                    <li>Interfere with or disrupt the security, functionality, or integrity of the website, our systems, or networks</li>
+                    <li>Attempt to gain unauthorized access to any part of the website, our servers, or any connected systems</li>
+                    <li>Introduce viruses, malware, or any other harmful code that could damage or compromise the website</li>
+                    <li>Engage in any activity that could overburden or impair the website's infrastructure</li>
+                </ul>
+
+                <h3>3.1 User Accounts</h3>
+                <p>Some areas of our website may require you to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account.</p>
+
+                <h3>3.2 Prohibited Activities</h3>
+                <p>In addition to the restrictions above, you agree not to:</p>
+                <ul>
+                    <li>Use any automated system, software, or device to access, copy, or monitor the website</li>
+                    <li>Reverse engineer, decompile, or disassemble any part of the website or its underlying technology</li>
+                    <li>Frame or mirror any part of the website without our prior written consent</li>
+                    <li>Use the website for any commercial purpose without our prior written consent</li>
+                </ul>
+
+                <!-- ===== SECTION 4 ===== -->
                 <h2>4. Intellectual Property</h2>
-                <p>All content on this website—including text, graphics, logos, images, icons, and software—is the property of Global Academy of Education Research Private Limited or its content suppliers and is protected by Nepal and international copyright laws. You may not reproduce, distribute, modify, or create derivative works of any content without our prior written consent.</p>
-                <p>Our proprietary <strong>N‑MELODY Framework</strong> is a registered intellectual property of Dr. Kharika Devi Parajuli and Global Academy of Education Research Private Limited. Unauthorized use, reproduction, or commercial exploitation of this framework is strictly prohibited.</p>
+                <p>All content on this website—including but not limited to text, graphics, logos, icons, images, audio clips, video clips, digital downloads, data compilations, and software—is the property of <strong>Global Academy of Education Research Private Limited</strong> or its content suppliers and is protected by Nepal and international copyright, trademark, and other intellectual property laws.</p>
 
+                <h3>4.1 Ownership</h3>
+                <p>All rights, title, and interest in and to the website and its content are owned by Global Academy of Education Research Private Limited. The compilation of all content on this website is our exclusive property and is protected by copyright laws.</p>
+
+                <h3>4.2 N‑MELODY Framework</h3>
+                <div class="highlight-box">
+                    <p><strong>Proprietary Framework:</strong> Our <strong>N‑MELODY Framework</strong> is a registered intellectual property of Dr. Kharika Devi Parajuli and Global Academy of Education Research Private Limited. Unauthorized use, reproduction, distribution, or commercial exploitation of this framework, including its name, structure, or methodology, is strictly prohibited. Any use of the N‑MELODY Framework requires prior written authorization from us.</p>
+                </div>
+
+                <h3>4.3 Permitted Use</h3>
+                <p>You may view, download, and print content from this website for personal, non-commercial purposes only, provided that you do not remove any copyright, trademark, or other proprietary notices. You may not reproduce, distribute, modify, create derivative works of, publicly display, or commercially exploit any content without our prior written consent.</p>
+
+                <h3>4.4 Trademarks</h3>
+                <p>The name "Global Academy of Education Research," "GAER," the N‑MELODY Framework name, and all related logos, product names, and service names are trademarks of Global Academy of Education Research Private Limited. You may not use these trademarks without our prior written permission.</p>
+
+                <!-- ===== SECTION 5 ===== -->
                 <h2>5. Privacy and Data Protection</h2>
-                <p>Your privacy is important to us. Our collection and use of personal information is governed by our <a href="privacy.html" style="color:var(--gold-dark); font-weight:500;">Privacy Policy</a>, which forms part of these Terms of Use. By using our website, you consent to the collection and use of your information as described in our Privacy Policy.</p>
+                <p>Your privacy is important to us. Our collection, use, and protection of your personal information is governed by our <a href="privacy.html" style="color:var(--gold-dark); font-weight:500;">Privacy Policy</a>, which is incorporated into these Terms of Use by reference. By using our website, you consent to the collection and use of your information as described in our Privacy Policy.</p>
 
+                <h3>5.1 Data Collection</h3>
+                <p>We may collect personal information that you voluntarily provide to us, including your name, email address, phone number, organization, and any other information you choose to share. We also collect non-personal information automatically through cookies and analytics tools.</p>
+
+                <h3>5.2 Data Use</h3>
+                <p>We use your personal information to provide and improve our services, respond to your inquiries, send you updates and promotional materials (only if you have opted in), process payments, and comply with legal obligations.</p>
+
+                <h3>5.3 Data Security</h3>
+                <p>We implement appropriate technical and organizational measures to protect your personal information from unauthorized access, loss, misuse, or alteration. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p>
+
+                <!-- ===== SECTION 6 ===== -->
                 <h2>6. Third-Party Links</h2>
-                <p>Our website may contain links to third-party websites. These links are provided for your convenience only. We do not endorse or assume any responsibility for the content, privacy practices, or accuracy of third-party websites. You access such websites at your own risk.</p>
+                <p>Our website may contain links to third-party websites, applications, or services that are not owned or controlled by us. These links are provided for your convenience only. We do not endorse, assume any responsibility for, or make any representations regarding the content, privacy practices, or accuracy of third-party websites.</p>
+                <p>We encourage you to review the terms of use and privacy policies of any third-party websites you visit. Your interactions with third-party websites are solely between you and the third party, and we shall not be liable for any damages arising from such interactions.</p>
 
+                <!-- ===== SECTION 7 ===== -->
                 <h2>7. Disclaimer of Warranties</h2>
-                <p>Our website and services are provided "as is" and "as available" without any warranties of any kind, either express or implied. We do not warrant that the website will be uninterrupted, error-free, or free from viruses or other harmful components. The information provided on our website is for general informational purposes only and should not be considered professional advice.</p>
+                <p>Our website and services are provided "AS IS" and "AS AVAILABLE" without any warranties of any kind, either express or implied.</p>
 
+                <h3>7.1 No Warranties</h3>
+                <p>To the fullest extent permitted by law, we disclaim all warranties, including but not limited to:</p>
+                <ul>
+                    <li>Warranties of merchantability, fitness for a particular purpose, and non-infringement</li>
+                    <li>Warranties that the website will be uninterrupted, error-free, or free from viruses or other harmful components</li>
+                    <li>Warranties regarding the accuracy, completeness, timeliness, or reliability of any content or information provided on the website</li>
+                    <li>Warranties regarding the results that may be obtained from the use of the website or services</li>
+                </ul>
+
+                <h3>7.2 Informational Purposes Only</h3>
+                <p>The information provided on our website is for general informational purposes only and should not be considered professional advice. You should consult with appropriate professionals before making any decisions based on the information provided on our website.</p>
+
+                <!-- ===== SECTION 8 ===== -->
                 <h2>8. Limitation of Liability</h2>
-                <p>To the fullest extent permitted by law, Global Academy of Education Research Private Limited shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, arising out of or in connection with your use of our website or services.</p>
+                <p>To the fullest extent permitted by law, <strong>Global Academy of Education Research Private Limited</strong>, its directors, employees, affiliates, agents, and licensors shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+                <ul>
+                    <li>Loss of profits, revenues, data, or business opportunities</li>
+                    <li>Loss of goodwill or reputation</li>
+                    <li>Damages arising from the use or inability to use the website or services</li>
+                    <li>Damages arising from unauthorized access to or alteration of your transmissions or data</li>
+                    <li>Damages arising from statements or conduct of any third party on the website</li>
+                </ul>
+                <p>This limitation of liability applies regardless of the theory of liability, whether in contract, tort (including negligence), strict liability, or otherwise, and even if we have been advised of the possibility of such damages.</p>
 
+                <h3>8.1 Exceptions</h3>
+                <p>Some jurisdictions do not allow the exclusion or limitation of certain warranties or liability for incidental or consequential damages. In such jurisdictions, our liability shall be limited to the fullest extent permitted by law.</p>
+
+                <!-- ===== SECTION 9 ===== -->
                 <h2>9. Indemnification</h2>
-                <p>You agree to indemnify and hold Global Academy of Education Research Private Limited, its directors, employees, and affiliates harmless from any claims, damages, losses, or expenses (including reasonable legal fees) arising out of your use of our website or your violation of these Terms of Use.</p>
+                <p>You agree to indemnify, defend, and hold harmless <strong>Global Academy of Education Research Private Limited</strong>, its directors, employees, affiliates, agents, and licensors from and against any and all claims, liabilities, damages, losses, costs, or expenses (including reasonable legal fees) arising out of or in connection with:</p>
+                <ul>
+                    <li>Your use of our website or services</li>
+                    <li>Your violation of these Terms of Use</li>
+                    <li>Your violation of any rights of a third party</li>
+                    <li>Your violation of any applicable laws or regulations</li>
+                    <li>Any content you submit or transmit through our website</li>
+                </ul>
+                <p>We reserve the right to assume the exclusive defense and control of any matter subject to indemnification by you, in which case you agree to cooperate with us in asserting any available defenses.</p>
 
+                <!-- ===== SECTION 10 ===== -->
                 <h2>10. Governing Law and Jurisdiction</h2>
-                <p>These Terms of Use shall be governed by and construed in accordance with the laws of <strong>Nepal</strong>. Any disputes arising under or in connection with these terms shall be subject to the exclusive jurisdiction of the courts in <strong>Kaski District, Nepal</strong>.</p>
+                <p>These Terms of Use shall be governed by and construed in accordance with the laws of <strong>Nepal</strong>, without regard to its conflict of law provisions. Any disputes arising under or in connection with these terms shall be subject to the exclusive jurisdiction of the courts in <strong>Kaski District, Nepal</strong>.</p>
+                <p>You agree that any legal action or proceeding between you and Global Academy of Education Research Private Limited shall be brought exclusively in the courts located in Kaski District, Nepal. You waive any objection to the venue of such courts and any claim that such courts are an inconvenient forum.</p>
 
-                <h2>11. Changes to These Terms</h2>
-                <p>We reserve the right to update or modify these Terms of Use at any time without prior notice. Any changes will be effective immediately upon posting on this page. We encourage you to review these terms periodically to stay informed of any updates.</p>
+                <!-- ===== SECTION 11 ===== -->
+                <h2>11. Termination</h2>
+                <p>We reserve the right, in our sole discretion, to terminate or suspend your access to our website and services, without prior notice or liability, for any reason, including but not limited to:</p>
+                <ul>
+                    <li>Your breach of these Terms of Use</li>
+                    <li>Your violation of any applicable laws or regulations</li>
+                    <li>Your conduct that we believe is harmful to us, our users, or our business</li>
+                    <li>Your extended period of inactivity on our website</li>
+                </ul>
+                <p>Upon termination, your right to use our website and services will immediately cease. Any provisions of these Terms of Use that by their nature should survive termination shall survive, including intellectual property, disclaimer of warranties, limitation of liability, and indemnification.</p>
 
-                <h2>12. Contact Us</h2>
-                <p>If you have any questions or concerns about these Terms of Use, please contact us:</p>
-                <p style="margin-top:0.2rem;">
-                    <strong>Global Academy of Education Research Private Limited</strong><br />
-                    Dhungepatan, Pokhara Metropolitan City, Ward 20, Kaski District, Gandaki Province, Nepal<br />
-                    <strong>Email:</strong> <a href="mailto:kharikaparajuli@gmail.com" style="color:var(--gold-dark);">kharikaparajuli@gmail.com</a><br />
-                    <strong>Phone:</strong> <a href="tel:+9779846650159" style="color:var(--gold-dark);">+977-9846650159</a>
-                </p>
+                <!-- ===== SECTION 12 ===== -->
+                <h2>12. Changes to These Terms</h2>
+                <p>We reserve the right to update, modify, or replace these Terms of Use at any time without prior notice. Any changes will be effective immediately upon posting on this page. We will indicate the date of the last update at the top of this page.</p>
+                <p>We encourage you to review these Terms of Use periodically to stay informed of any changes. Your continued use of our website after any modifications constitutes your acceptance of the revised terms. If you do not agree to the changes, you should discontinue your use of our website and services.</p>
+
+                <!-- ===== SECTION 13 ===== -->
+                <h2>13. Entire Agreement</h2>
+                <p>These Terms of Use, together with our Privacy Policy and Cookie Policy, constitute the entire agreement between you and Global Academy of Education Research Private Limited regarding your use of our website and services, and supersede all prior agreements, understandings, or representations, whether written or oral.</p>
+
+                <!-- ===== SECTION 14 ===== -->
+                <h2>14. Severability</h2>
+                <p>If any provision of these Terms of Use is found to be invalid, illegal, or unenforceable by a court of competent jurisdiction, the remaining provisions shall continue in full force and effect. The invalid, illegal, or unenforceable provision shall be deemed modified to the minimum extent necessary to make it valid, legal, and enforceable.</p>
+
+                <!-- ===== SECTION 15 ===== -->
+                <h2>15. Waiver</h2>
+                <p>Our failure to enforce any right or provision of these Terms of Use shall not constitute a waiver of such right or provision. Any waiver of any provision of these Terms of Use must be in writing and signed by an authorized representative of Global Academy of Education Research Private Limited.</p>
+
+                <!-- ===== SECTION 16 ===== -->
+                <h2>16. Contact Us</h2>
+                <p>If you have any questions, concerns, or requests regarding these Terms of Use, please contact us:</p>
+                <div class="highlight-box">
+                    <p style="margin-bottom:0.2rem;">
+                        <strong>Global Academy of Education Research Private Limited</strong><br />
+                        Dhungepatan, Pokhara Metropolitan City, Ward No. 20<br />
+                        Kaski District, Gandaki Province, Nepal<br /><br />
+                        <strong>Phone:</strong> <a href="tel:+9779846650159" style="color:var(--gold-dark);">+977-9846650159</a><br />
+                        <strong>Official Email:</strong> <a href="mailto:info@gaer.edu.np" style="color:var(--gold-dark);">info@gaer.edu.np</a><br />
+                        <strong>Director's Email:</strong> <a href="mailto:kharikaparajuli@gaer.edu.np" style="color:var(--gold-dark);">kharikaparajuli@gaer.edu.np</a>
+                    </p>
+                </div>
 
                 <div class="section-divider"></div>
-                <p style="font-size:0.9rem; color:var(--text-light); text-align:center;">
-                    © 2026 Global Academy of Education Research Private Limited. All Rights Reserved.
-                </p>
+                <!-- ===== COPYRIGHT NOTICE REMOVED FROM HERE ===== -->
             </div>
 
             <!-- ===== NEPALI VERSION ===== -->
@@ -512,58 +647,160 @@
                 </div>
 
                 <h2>१. सर्तहरूको स्वीकृति</h2>
-                <p><strong>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड</strong> ("हामी") को वेबसाइटमा पहुँच र प्रयोग गरेर, तपाईं यी प्रयोगका सर्तहरूको पालना गर्न र बाध्य हुन सहमत हुनुहुन्छ। यदि तपाईं यी सर्तहरूसँग सहमत हुनुहुन्न भने, कृपया हाम्रो वेबसाइट वा सेवाहरू प्रयोग नगर्नुहोस्।</p>
+                <p><strong>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड</strong> ("हामी") को वेबसाइटमा पहुँच, ब्राउज वा प्रयोग गरेर, तपाईं यी प्रयोगका सर्तहरू पढ्नुभएको, बुझ्नुभएको र पालना गर्न सहमत हुनुहुन्छ भनी स्वीकार गर्नुहुन्छ। यी सर्तहरू तपाईं र ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड बीच हाम्रो वेबसाइट र सेवाहरूको प्रयोग सम्बन्धी कानूनी रूपमा बाध्यकारी सम्झौता हो।</p>
+                <p>यदि तपाईं यी सर्तहरूसँग सहमत हुनुहुन्न भने, कृपया हाम्रो वेबसाइट वा सेवाहरू प्रयोग नगर्नुहोस्। हामी कुनै पनि समयमा बिना पूर्व सूचना यी सर्तहरू अद्यावधिक वा परिमार्जन गर्ने अधिकार सुरक्षित राख्छौं। कुनै पनि परिवर्तन पछि वेबसाइटको निरन्तर प्रयोगले संशोधित सर्तहरूको स्वीकृति जनाउँछ।</p>
 
                 <h2>२. हाम्रो बारेमा</h2>
-                <p>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड नेपालमा दर्ता भएको कम्पनी हो, जसको दर्ता कार्यालय ढुङ्गेपाटन, पोखरा महानगरपालिका, वडा नं. २०, कास्की जिल्ला, गण्डकी प्रदेश, नेपालमा रहेको छ। हामी गणित शिक्षा र सम्बन्धित क्षेत्रहरूमा अनुसन्धान, शिक्षक तालिम, परामर्श र सम्मेलन सेवाहरू प्रदान गर्दछौं।</p>
+                <p>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड नेपालमा दर्ता भएको कम्पनी हो, जसको दर्ता कार्यालय ढुङ्गेपाटन, पोखरा महानगरपालिका, वडा नं. २०, कास्की जिल्ला, गण्डकी प्रदेश, नेपालमा रहेको छ। हामी अनुसन्धान, तालिम र परामर्श संस्था हौं जसले नवीन अनुसन्धान, शिक्षक व्यावसायिक विकास र सांस्कृतिक-उत्तरदायी शिक्षाशास्त्र मार्फत शिक्षाको उन्नतिका लागि समर्पित छ।</p>
+                <p>हाम्रा सेवाहरूमा समावेश छन्:</p>
+                <ul>
+                    <li>शिक्षामा अनुसन्धान र विकास, नृजातीय गणित, नृजातीय शिक्षा र नृजातीय मोडेलिङमा विशेष जोड</li>
+                    <li>शिक्षक तालिम र व्यावसायिक विकास कार्यक्रमहरू</li>
+                    <li>शैक्षिक परामर्श र सल्लाहकार सेवाहरू</li>
+                    <li>पाठ्यक्रम डिजाइन र विकास</li>
+                    <li>सम्मेलन, गोष्ठी र कार्यशाला आयोजना</li>
+                    <li>अनुसन्धान पत्र, पुस्तक र शैक्षिक सामग्रीहरूको प्रकाशन</li>
+                </ul>
 
                 <h2>३. हाम्रो वेबसाइटको प्रयोग</h2>
-                <p>तपाईंले हाम्रो वेबसाइट केवल कानूनी उद्देश्यका लागि मात्र प्रयोग गर्न सक्नुहुन्छ। तपाईं सहमत हुनुहुन्न:</p>
+                <p>तपाईंले हाम्रो वेबसाइट केवल कानूनी उद्देश्यका लागि मात्र प्रयोग गर्न सक्नुहुन्छ। तपाईं निम्न तरिकामा वेबसाइट प्रयोग नगर्न सहमत हुनुहुन्छ:</p>
                 <ul>
-                    <li>वेबसाइटलाई कुनै पनि स्थानीय, राष्ट्रिय, वा अन्तर्राष्ट्रिय कानूनको उल्लङ्घन गर्ने तरिकामा प्रयोग गर्ने।</li>
-                    <li>मानहानिकारक, आपत्तिजनक, वा अन्यथा अमान्य सामग्री प्रसारण गर्ने।</li>
-                    <li>वेबसाइटको सुरक्षा, कार्यक्षमता, वा अखण्डतामा हस्तक्षेप वा बाधा पुर्याउने।</li>
-                    <li>वेबसाइट, हाम्रो प्रणाली, वा सञ्जालहरूको कुनै पनि भागमा अनधिकृत पहुँच प्राप्त गर्न प्रयास गर्ने।</li>
+                    <li>कुनै पनि लागू स्थानीय, राष्ट्रिय, वा अन्तर्राष्ट्रिय कानून, नियम, वा आदेशको उल्लङ्घन गर्ने</li>
+                    <li>कुनै पनि तेस्रो पक्षको अधिकार, बौद्धिक सम्पत्ति, गोपनीयता, वा स्वामित्व अधिकारको उल्लङ्घन गर्ने</li>
+                    <li>मानहानिकारक, आपत्तिजनक, दुर्व्यवहारपूर्ण, अश्लील, वा अन्यथा अमान्य कुनै पनि सामग्री प्रसारण गर्ने</li>
+                    <li>वेबसाइटको सुरक्षा, कार्यक्षमता, वा अखण्डतामा हस्तक्षेप वा बाधा पुर्याउने</li>
+                    <li>वेबसाइटको कुनै पनि भाग, हाम्रो सर्भर, वा कुनै पनि जडान गरिएको प्रणालीमा अनधिकृत पहुँच प्राप्त गर्न प्रयास गर्ने</li>
+                    <li>भाइरस, मालवेयर, वा अन्य कुनै पनि हानिकारक कोड वेबसाइटमा परिचय गराउने जसले वेबसाइटलाई क्षति पुर्याउन वा सम्झौता गर्न सक्छ</li>
+                    <li>वेबसाइटको पूर्वाधारलाई अत्यधिक भार वा क्षति पुर्याउने कुनै पनि गतिविधिमा संलग्न हुने</li>
+                </ul>
+
+                <h3>३.१ प्रयोगकर्ता खाताहरू</h3>
+                <p>हाम्रो वेबसाइटका केही क्षेत्रहरूमा तपाईंले खाता सिर्जना गर्न आवश्यक पर्न सक्छ। तपाईं आफ्नो खाता प्रमाणपत्रहरूको गोपनीयता कायम राख्न र आफ्नो खाता अन्तर्गत हुने सबै गतिविधिहरूको लागि जिम्मेवार हुनुहुन्छ। तपाईं आफ्नो खाताको अनधिकृत प्रयोगको बारेमा तुरुन्त हामीलाई सूचित गर्न सहमत हुनुहुन्छ।</p>
+
+                <h3>३.२ निषेधित गतिविधिहरू</h3>
+                <p>माथिका प्रतिबन्धहरूका अतिरिक्त, तपाईं निम्न कार्यहरू नगर्न सहमत हुनुहुन्छ:</p>
+                <ul>
+                    <li>वेबसाइट पहुँच, प्रतिलिपि, वा अनुगमन गर्न कुनै पनि स्वचालित प्रणाली, सफ्टवेयर, वा यन्त्र प्रयोग गर्ने</li>
+                    <li>वेबसाइट वा यसको अन्तर्निहित प्रविधिको कुनै पनि भागलाई रिभर्स इन्जिनियर, डिकम्पाइल, वा डिससेम्बल गर्ने</li>
+                    <li>हाम्रो पूर्व लिखित सहमति बिना वेबसाइटको कुनै पनि भागलाई फ्रेम वा मिरर गर्ने</li>
+                    <li>हाम्रो पूर्व लिखित सहमति बिना कुनै पनि व्यावसायिक उद्देश्यका लागि वेबसाइट प्रयोग गर्ने</li>
                 </ul>
 
                 <h2>४. बौद्धिक सम्पत्ति</h2>
-                <p>यस वेबसाइटका सबै सामग्रीहरू—पाठ, ग्राफिक्स, लोगो, छविहरू, आइकनहरू, र सफ्टवेयर—ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेडको सम्पत्ति हुन् र नेपाल तथा अन्तर्राष्ट्रिय प्रतिलिपि अधिकार कानूनहरूद्वारा संरक्षित छन्। हाम्रो पूर्व लिखित सहमति बिना कुनै पनि सामग्रीको पुन: उत्पादन, वितरण, परिमार्जन, वा व्युत्पन्न कार्यहरू सिर्जना गर्न सकिँदैन।</p>
-                <p>हाम्रो स्वामित्वपूर्ण <strong>N‑MELODY ढाँचा</strong> डा. खरीका देवी पराजुली र ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेडको दर्ता गरिएको बौद्धिक सम्पत्ति हो। यस ढाँचाको अनधिकृत प्रयोग, पुन: उत्पादन, वा व्यावसायिक शोषण कडा रूपमा निषेधित छ।</p>
+                <p>यस वेबसाइटका सबै सामग्रीहरू—पाठ, ग्राफिक्स, लोगो, आइकन, छविहरू, अडियो क्लिपहरू, भिडियो क्लिपहरू, डिजिटल डाउनलोडहरू, डाटा संकलनहरू, र सफ्टवेयर—<strong>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड</strong> वा यसका सामग्री आपूर्तिकर्ताहरूको सम्पत्ति हुन् र नेपाल तथा अन्तर्राष्ट्रिय प्रतिलिपि अधिकार, ट्रेडमार्क, र अन्य बौद्धिक सम्पत्ति कानूनहरूद्वारा संरक्षित छन्।</p>
+
+                <h3>४.१ स्वामित्व</h3>
+                <p>वेबसाइट र यसको सामग्रीमा सबै अधिकार, शीर्षक, र रुचि ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेडको हो। यस वेबसाइटमा सबै सामग्रीको संकलन हाम्रो विशेष सम्पत्ति हो र प्रतिलिपि अधिकार कानूनहरूद्वारा संरक्षित छ।</p>
+
+                <h3>४.२ N‑MELODY ढाँचा</h3>
+                <div class="highlight-box">
+                    <p><strong>स्वामित्वपूर्ण ढाँचा:</strong> हाम्रो <strong>N‑MELODY ढाँचा</strong> डा. खरीका देवी पराजुली र ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेडको दर्ता गरिएको बौद्धिक सम्पत्ति हो। यस ढाँचाको अनधिकृत प्रयोग, पुन: उत्पादन, वितरण, वा व्यावसायिक शोषण, यसको नाम, संरचना, वा विधि सहित, कडा रूपमा निषेधित छ। N‑MELODY ढाँचाको कुनै पनि प्रयोगका लागि हाम्रो पूर्व लिखित स्वीकृति आवश्यक छ।</p>
+                </div>
+
+                <h3>४.३ अनुमति प्राप्त प्रयोग</h3>
+                <p>तपाईंले यस वेबसाइटबाट सामग्रीहरू व्यक्तिगत, गैर-व्यावसायिक उद्देश्यका लागि मात्र हेर्न, डाउनलोड गर्न र छाप्न सक्नुहुन्छ, बशर्ते तपाईंले कुनै पनि प्रतिलिपि अधिकार, ट्रेडमार्क, वा अन्य स्वामित्व सूचनाहरू हटाउनुहुन्न। तपाईंले हाम्रो पूर्व लिखित सहमति बिना कुनै पनि सामग्रीको पुन: उत्पादन, वितरण, परिमार्जन, व्युत्पन्न कार्यहरू सिर्जना, सार्वजनिक प्रदर्शन, वा व्यावसायिक रूपमा शोषण गर्न सक्नुहुन्न।</p>
+
+                <h3>४.४ ट्रेडमार्कहरू</h3>
+                <p>"Global Academy of Education Research," "GAER," N‑MELODY ढाँचाको नाम, र सबै सम्बन्धित लोगो, उत्पादन नाम, र सेवा नामहरू ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेडको ट्रेडमार्क हुन्। तपाईंले हाम्रो पूर्व लिखित अनुमति बिना यी ट्रेडमार्कहरू प्रयोग गर्न सक्नुहुन्न।</p>
 
                 <h2>५. गोपनीयता र डाटा संरक्षण</h2>
-                <p>तपाईंको गोपनीयता हाम्रो लागि महत्त्वपूर्ण छ। व्यक्तिगत जानकारीको हाम्रो संकलन र प्रयोग हाम्रो <a href="privacy.html" style="color:var(--gold-dark); font-weight:500;">गोपनीयता नीति</a> द्वारा नियन्त्रित छ, जुन यी प्रयोगका सर्तहरूको अंश हो। हाम्रो वेबसाइट प्रयोग गरेर, तपाईं हाम्रो गोपनीयता नीतिमा वर्णन गरिए अनुसार तपाईंको जानकारीको संकलन र प्रयोगमा सहमत हुनुहुन्छ।</p>
+                <p>तपाईंको गोपनीयता हाम्रो लागि महत्त्वपूर्ण छ। तपाईंको व्यक्तिगत जानकारीको हाम्रो संकलन, प्रयोग, र सुरक्षा हाम्रो <a href="privacy.html" style="color:var(--gold-dark); font-weight:500;">गोपनीयता नीति</a> द्वारा नियन्त्रित छ, जुन यी प्रयोगका सर्तहरूको अंश हो। हाम्रो वेबसाइट प्रयोग गरेर, तपाईं हाम्रो गोपनीयता नीतिमा वर्णन गरिए अनुसार तपाईंको जानकारीको संकलन र प्रयोगमा सहमत हुनुहुन्छ।</p>
+
+                <h3>५.१ डाटा संकलन</h3>
+                <p>हामी तपाईंले स्वेच्छिक रूपमा प्रदान गर्नुभएको व्यक्तिगत जानकारी संकलन गर्न सक्छौं, जसमा तपाईंको नाम, इमेल ठेगाना, फोन नम्बर, संगठन, र तपाईंले साझेदारी गर्न रोज्नुभएको अन्य जानकारी समावेश छ। हामी कुकीहरू र विश्लेषण उपकरणहरू मार्फत स्वचालित रूपमा गैर-व्यक्तिगत जानकारी पनि संकलन गर्दछौं।</p>
+
+                <h3>५.२ डाटा प्रयोग</h3>
+                <p>हामी हाम्रो सेवाहरू प्रदान र सुधार गर्न, तपाईंका प्रश्नहरूको जवाफ दिन, तपाईंलाई अद्यावधिक र प्रचारात्मक सामग्रीहरू पठाउन (यदि तपाईंले अप्ट-इन गर्नुभएको छ भने मात्र), भुक्तानी प्रक्रिया गर्न, र कानूनी दायित्वहरूको पालना गर्न तपाईंको व्यक्तिगत जानकारी प्रयोग गर्दछौं।</p>
+
+                <h3>५.३ डाटा सुरक्षा</h3>
+                <p>हामी तपाईंको व्यक्तिगत जानकारीलाई अनधिकृत पहुँच, हानि, दुरुपयोग, वा परिवर्तनबाट जोगाउन उचित प्राविधिक र संगठनात्मक उपायहरू लागू गर्दछौं। तथापि, इन्टरनेटमा प्रसारण वा इलेक्ट्रोनिक भण्डारणको कुनै पनि विधि पूर्ण रूपमा सुरक्षित छैन, र हामी पूर्ण सुरक्षाको ग्यारेन्टी गर्न सक्दैनौं।</p>
 
                 <h2>६. तृतीय-पक्ष लिङ्कहरू</h2>
-                <p>हाम्रो वेबसाइटमा तृतीय-पक्ष वेबसाइटहरूको लिङ्कहरू हुन सक्छ। यी लिङ्कहरू तपाईंको सुविधाको लागि मात्र प्रदान गरिएका हुन्। हामी तृतीय-पक्ष वेबसाइटहरूको सामग्री, गोपनीयता अभ्यास, वा शुद्धताको समर्थन वा कुनै जिम्मेवारी लिँदैनौं। तपाईं त्यस्ता वेबसाइटहरूमा आफ्नै जोखिममा पहुँच गर्नुहुन्छ।</p>
+                <p>हाम्रो वेबसाइटमा तृतीय-पक्ष वेबसाइटहरू, अनुप्रयोगहरू, वा सेवाहरूको लिङ्कहरू हुन सक्छन् जुन हाम्रो स्वामित्व वा नियन्त्रणमा छैनन्। यी लिङ्कहरू तपाईंको सुविधाको लागि मात्र प्रदान गरिएका हुन्। हामी तृतीय-पक्ष वेबसाइटहरूको सामग्री, गोपनीयता अभ्यास, वा शुद्धताको समर्थन, जिम्मेवारी, वा कुनै प्रतिनिधित्व गर्दैनौं।</p>
+                <p>हामी तपाईंले भ्रमण गर्नुभएको कुनै पनि तृतीय-पक्ष वेबसाइटहरूको प्रयोगका सर्तहरू र गोपनीयता नीतिहरू समीक्षा गर्न प्रोत्साहित गर्दछौं। तृतीय-पक्ष वेबसाइटहरूसँगको तपाईंको अन्तरक्रिया पूर्ण रूपमा तपाईं र तेस्रो पक्ष बीचको हो, र हामी त्यस्ता अन्तरक्रियाबाट उत्पन्न कुनै पनि क्षतिको लागि उत्तरदायी हुनेछैनौं।</p>
 
                 <h2>७. वारेन्टीको अस्वीकरण</h2>
-                <p>हाम्रो वेबसाइट र सेवाहरू "जस्ताको तस्तै" र "उपलब्धता अनुसार" कुनै पनि प्रकारको वारेन्टी बिना, व्यक्त वा निहित, प्रदान गरिएका छन्। हामी वेबसाइट निर्बाध, त्रुटि-मुक्त, वा भाइरस वा अन्य हानिकारक कम्पोनेन्टहरूबाट मुक्त हुनेछ भनी वारेन्टी गर्दैनौं। हाम्रो वेबसाइटमा प्रदान गरिएको जानकारी सामान्य जानकारीमूलक उद्देश्यका लागि मात्र हो र यसलाई व्यावसायिक सल्लाहको रूपमा लिनु हुँदैन।</p>
+                <p>हाम्रो वेबसाइट र सेवाहरू "जस्ताको तस्तै" र "उपलब्धता अनुसार" कुनै पनि प्रकारको वारेन्टी बिना, व्यक्त वा निहित, प्रदान गरिएका छन्।</p>
+
+                <h3>७.१ कुनै वारेन्टी छैन</h3>
+                <p>कानूनद्वारा अनुमति दिइएको अधिकतम सीमासम्म, हामी सबै वारेन्टीहरू अस्वीकार गर्दछौं, जसमा समावेश छन् तर सीमित छैनन्:</p>
+                <ul>
+                    <li>व्यापारिकता, कुनै विशेष उद्देश्यको लागि उपयुक्तता, र गैर-उल्लङ्घनको वारेन्टीहरू</li>
+                    <li>वेबसाइट निर्बाध, त्रुटि-मुक्त, वा भाइरस वा अन्य हानिकारक कम्पोनेन्टहरूबाट मुक्त हुनेछ भन्ने वारेन्टीहरू</li>
+                    <li>वेबसाइटमा प्रदान गरिएको कुनै पनि सामग्री वा जानकारीको शुद्धता, पूर्णता, समयोपयोगिता, वा विश्वसनीयताको बारेमा वारेन्टीहरू</li>
+                    <li>वेबसाइट वा सेवाहरूको प्रयोगबाट प्राप्त हुन सक्ने नतिजाहरूको बारेमा वारेन्टीहरू</li>
+                </ul>
+
+                <h3>७.२ केवल जानकारीमूलक उद्देश्यका लागि</h3>
+                <p>हाम्रो वेबसाइटमा प्रदान गरिएको जानकारी सामान्य जानकारीमूलक उद्देश्यका लागि मात्र हो र यसलाई व्यावसायिक सल्लाहको रूपमा लिनु हुँदैन। तपाईंले हाम्रो वेबसाइटमा प्रदान गरिएको जानकारीको आधारमा कुनै पनि निर्णय गर्नुभन्दा पहिले उपयुक्त पेशेवरहरूसँग परामर्श गर्नुपर्छ।</p>
 
                 <h2>८. दायित्वको सीमा</h2>
-                <p>कानूनद्वारा अनुमति दिइएको अधिकतम सीमासम्म, ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड तपाईंको वेबसाइट वा सेवाहरूको प्रयोगको सिलसिलामा उत्पन्न भएको कुनै पनि अप्रत्यक्ष, आकस्मिक, विशेष, परिणामात्मक, वा दण्डात्मक क्षति, वा नाफा वा राजस्वको कुनै पनि हानिको लागि उत्तरदायी हुनेछैन।</p>
+                <p>कानूनद्वारा अनुमति दिइएको अधिकतम सीमासम्म, <strong>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड</strong>, यसका निर्देशकहरू, कर्मचारीहरू, सम्बद्धहरू, एजेन्टहरू, र इजाजतपत्रदाताहरू कुनै पनि अप्रत्यक्ष, आकस्मिक, विशेष, परिणामात्मक, वा दण्डात्मक क्षतिको लागि उत्तरदायी हुनेछैनन्, जसमा समावेश छन् तर सीमित छैनन्:</p>
+                <ul>
+                    <li>नाफा, राजस्व, डाटा, वा व्यावसायिक अवसरहरूको हानि</li>
+                    <li>सद्भावना वा प्रतिष्ठाको हानि</li>
+                    <li>वेबसाइट वा सेवाहरूको प्रयोग वा प्रयोग गर्न नसक्नुबाट उत्पन्न क्षतिहरू</li>
+                    <li>तपाईंको प्रसारण वा डाटामा अनधिकृत पहुँच वा परिवर्तनबाट उत्पन्न क्षतिहरू</li>
+                    <li>वेबसाइटमा कुनै पनि तेस्रो पक्षको कथन वा व्यवहारबाट उत्पन्न क्षतिहरू</li>
+                </ul>
+                <p>दायित्वको यो सीमा दायित्वको सिद्धान्तको पर्वाह नगरी लागू हुन्छ, चाहे अनुबंध, अधिकृत कार्य (लापरवाही सहित), कठोर दायित्व, वा अन्यथा, र हामीलाई त्यस्ता क्षतिहरूको सम्भावनाको बारेमा सल्लाह दिइएको भए पनि।</p>
+
+                <h3>८.१ अपवादहरू</h3>
+                <p>केही क्षेत्राधिकारहरूले निश्चित वारेन्टीहरूको बहिष्कार वा आकस्मिक वा परिणामात्मक क्षतिहरूको लागि दायित्वको सीमालाई अनुमति दिँदैनन्। त्यस्ता क्षेत्राधिकारहरूमा, हाम्रो दायित्व कानूनद्वारा अनुमति दिइएको अधिकतम सीमामा सीमित हुनेछ।</p>
 
                 <h2>९. क्षतिपूर्ति</h2>
-                <p>तपाईं हाम्रो वेबसाइटको प्रयोग वा यी प्रयोगका सर्तहरूको उल्लङ्घनबाट उत्पन्न हुने कुनै पनि दावी, क्षति, हानि, वा खर्च (उचित कानूनी शुल्क सहित) बाट ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड, यसका निर्देशकहरू, कर्मचारीहरू, र सम्बद्धहरूलाई क्षतिपूर्ति गर्न सहमत हुनुहुन्छ।</p>
+                <p>तपाईं <strong>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड</strong>, यसका निर्देशकहरू, कर्मचारीहरू, सम्बद्धहरू, एजेन्टहरू, र इजाजतपत्रदाताहरूलाई निम्न कारणहरूबाट उत्पन्न भएका सबै दावीहरू, दायित्वहरू, क्षतिहरू, हानिहरू, लागतहरू, वा खर्चहरू (उचित कानूनी शुल्क सहित) बाट क्षतिपूर्ति, बचाव, र हानिरहित राख्न सहमत हुनुहुन्छ:</p>
+                <ul>
+                    <li>तपाईंको हाम्रो वेबसाइट वा सेवाहरूको प्रयोग</li>
+                    <li>तपाईंको यी प्रयोगका सर्तहरूको उल्लङ्घन</li>
+                    <li>तपाईंको कुनै तेस्रो पक्षको अधिकारको उल्लङ्घन</li>
+                    <li>तपाईंको कुनै पनि लागू कानून वा नियमहरूको उल्लङ्घन</li>
+                    <li>तपाईंले हाम्रो वेबसाइट मार्फत पेश वा प्रसारण गर्नुभएको कुनै पनि सामग्री</li>
+                </ul>
+                <p>हामी क्षतिपूर्तिको अधीनमा कुनै पनि विषयको विशेष बचाव र नियन्त्रण ग्रहण गर्ने अधिकार सुरक्षित राख्छौं, जसमा तपाईं कुनै पनि उपलब्ध बचावहरूको दाबी गर्न हामीसँग सहकार्य गर्न सहमत हुनुहुन्छ।</p>
 
                 <h2>१०. प्रयोज्य कानून र क्षेत्राधिकार</h2>
-                <p>यी प्रयोगका सर्तहरू <strong>नेपाल</strong> को कानूनद्वारा शासित हुनेछन् र त्यसै अनुसार व्याख्या गरिनेछ। यी सर्तहरू अन्तर्गत वा तिनीसँग सम्बन्धित कुनै पनि विवादहरू <strong>कास्की जिल्ला, नेपाल</strong> को अदालतको अनन्य क्षेत्राधिकारको अधीनमा हुनेछन्।</p>
+                <p>यी प्रयोगका सर्तहरू <strong>नेपाल</strong> को कानूनद्वारा शासित र व्याख्या गरिनेछ, यसको विरोधाभासी कानून प्रावधानहरूको पर्वाह नगरी। यी सर्तहरू अन्तर्गत वा तिनीसँग सम्बन्धित कुनै पनि विवादहरू <strong>कास्की जिल्ला, नेपाल</strong> को अदालतको अनन्य क्षेत्राधिकारको अधीनमा हुनेछन्।</p>
+                <p>तपाईं तपाईं र ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड बीचको कुनै पनि कानूनी कार्य वा कार्यवाही कास्की जिल्ला, नेपालमा अवस्थित अदालतहरूमा मात्र ल्याइनेछ भनी सहमत हुनुहुन्छ। तपाईं त्यस्ता अदालतहरूको स्थानमा कुनै पनि आपत्ति र त्यस्ता अदालतहरू असुविधाजनक फोरम हुन् भन्ने कुनै पनि दावी त्याग गर्नुहुन्छ।</p>
 
-                <h2>११. यी सर्तहरूमा परिवर्तनहरू</h2>
-                <p>हामी कुनै पनि समयमा बिना पूर्व सूचना यी प्रयोगका सर्तहरू अद्यावधिक वा परिमार्जन गर्ने अधिकार सुरक्षित राख्छौं। कुनै पनि परिवर्तन यस पृष्ठमा पोस्ट गरेपछि तुरुन्त प्रभावकारी हुनेछ। हामी तपाईंलाई कुनै पनि अद्यावधिकको बारेमा जानकारी रहन यी सर्तहरू नियमित रूपमा समीक्षा गर्न प्रोत्साहित गर्दछौं।</p>
+                <h2>११. समाप्ति</h2>
+                <p>हामी, आफ्नो एकल विवेकमा, कुनै पनि कारणले, बिना पूर्व सूचना वा दायित्व, कुनै पनि कारणले तपाईंको हाम्रो वेबसाइट र सेवाहरूमा पहुँच समाप्त वा निलम्बन गर्ने अधिकार सुरक्षित राख्छौं, जसमा समावेश छन् तर सीमित छैनन्:</p>
+                <ul>
+                    <li>तपाईंको यी प्रयोगका सर्तहरूको उल्लङ्घन</li>
+                    <li>तपाईंको कुनै पनि लागू कानून वा नियमहरूको उल्लङ्घन</li>
+                    <li>तपाईंको व्यवहार जुन हामीलाई, हाम्रा प्रयोगकर्ताहरूलाई, वा हाम्रो व्यवसायलाई हानिकारक छ भन्ने हाम्रो विश्वास</li>
+                    <li>हाम्रो वेबसाइटमा तपाईंको लामो अवधिको निष्क्रियता</li>
+                </ul>
+                <p>समाप्ति पछि, हाम्रो वेबसाइट र सेवाहरू प्रयोग गर्ने तपाईंको अधिकार तुरुन्त बन्द हुनेछ। यी प्रयोगका सर्तहरूको कुनै पनि प्रावधान जुन तिनीहरूको प्रकृतिले समाप्ति पछि बाँच्नु पर्छ, बाँच्नेछ, जसमा बौद्धिक सम्पत्ति, वारेन्टीको अस्वीकरण, दायित्वको सीमा, र क्षतिपूर्ति समावेश छ।</p>
 
-                <h2>१२. हामीलाई सम्पर्क गर्नुहोस्</h2>
-                <p>यदि तपाईंसँग यी प्रयोगका सर्तहरूको बारेमा कुनै प्रश्न वा चिन्ता छ भने, कृपया हामीलाई सम्पर्क गर्नुहोस्:</p>
-                <p style="margin-top:0.2rem;">
-                    <strong>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड</strong><br />
-                    ढुङ्गेपाटन, पोखरा महानगरपालिका, वडा नं. २०, कास्की जिल्ला, गण्डकी प्रदेश, नेपाल<br />
-                    <strong>इमेल:</strong> <a href="mailto:kharikaparajuli@gmail.com" style="color:var(--gold-dark);">kharikaparajuli@gmail.com</a><br />
-                    <strong>फोन:</strong> <a href="tel:+9779846650159" style="color:var(--gold-dark);">+977-9846650159</a>
-                </p>
+                <h2>१२. यी सर्तहरूमा परिवर्तनहरू</h2>
+                <p>हामी कुनै पनि समयमा बिना पूर्व सूचना यी प्रयोगका सर्तहरू अद्यावधिक, परिमार्जन, वा प्रतिस्थापन गर्ने अधिकार सुरक्षित राख्छौं। कुनै पनि परिवर्तन यस पृष्ठमा पोस्ट गरेपछि तुरुन्त प्रभावकारी हुनेछ। हामी यस पृष्ठको शीर्षमा अन्तिम अद्यावधिकको मिति संकेत गर्नेछौं।</p>
+                <p>हामी तपाईंलाई कुनै पनि परिवर्तनको बारेमा जानकारी रहन यी प्रयोगका सर्तहरू नियमित रूपमा समीक्षा गर्न प्रोत्साहित गर्दछौं। कुनै पनि परिमार्जन पछि हाम्रो वेबसाइटको निरन्तर प्रयोगले संशोधित सर्तहरूको स्वीकृति जनाउँछ। यदि तपाईं परिवर्तनहरूसँग सहमत हुनुहुन्न भने, तपाईंले हाम्रो वेबसाइट र सेवाहरूको प्रयोग बन्द गर्नुपर्छ।</p>
+
+                <h2>१३. सम्पूर्ण सम्झौता</h2>
+                <p>यी प्रयोगका सर्तहरू, हाम्रो गोपनीयता नीति र कुकी नीतिसँग मिलेर, तपाईं र ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड बीच हाम्रो वेबसाइट र सेवाहरूको प्रयोगको सम्बन्धमा सम्पूर्ण सम्झौता हो, र सबै पूर्व सम्झौताहरू, बुझाइहरू, वा प्रतिनिधित्वहरू, चाहे लिखित वा मौखिक, खारेज गर्दछ।</p>
+
+                <h2>१४. पृथक्करण</h2>
+                <p>यदि यी प्रयोगका सर्तहरूको कुनै पनि प्रावधान अमान्य, अवैध, वा सक्षम क्षेत्राधिकारको अदालतद्वारा लागू गर्न नसकिने पाइयो भने, बाँकी प्रावधानहरू पूर्ण बल र प्रभावमा रहनेछन्। अमान्य, अवैध, वा लागू गर्न नसकिने प्रावधानलाई यसलाई वैध, कानूनी, र लागू गर्न सकिने बनाउन न्यूनतम आवश्यक सीमासम्म परिमार्जन गरिएको मानिनेछ।</p>
+
+                <h2>१५. माफी</h2>
+                <p>हाम्रो यी प्रयोगका सर्तहरूको कुनै पनि अधिकार वा प्रावधान लागू गर्न असफल हुनुले त्यस्तो अधिकार वा प्रावधानको माफी गठन गर्दैन। यी प्रयोगका सर्तहरूको कुनै पनि प्रावधानको माफी लिखित हुनुपर्छ र ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेडको अधिकृत प्रतिनिधिद्वारा हस्ताक्षर गरिएको हुनुपर्छ।</p>
+
+                <h2>१६. हामीलाई सम्पर्क गर्नुहोस्</h2>
+                <p>यदि तपाईंसँग यी प्रयोगका सर्तहरूको बारेमा कुनै प्रश्न, चिन्ता, वा अनुरोधहरू छन् भने, कृपया हामीलाई सम्पर्क गर्नुहोस्:</p>
+                <div class="highlight-box">
+                    <p style="margin-bottom:0.2rem;">
+                        <strong>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड</strong><br />
+                        ढुङ्गेपाटन, पोखरा महानगरपालिका, वडा नं. २०<br />
+                        कास्की जिल्ला, गण्डकी प्रदेश, नेपाल<br /><br />
+                        <strong>फोन:</strong> <a href="tel:+9779846650159" style="color:var(--gold-dark);">+977-9846650159</a><br />
+                        <strong>आधिकारिक इमेल:</strong> <a href="mailto:info@gaer.edu.np" style="color:var(--gold-dark);">info@gaer.edu.np</a><br />
+                        <strong>निर्देशकको इमेल:</strong> <a href="mailto:kharikaparajuli@gaer.edu.np" style="color:var(--gold-dark);">kharikaparajuli@gaer.edu.np</a>
+                    </p>
+                </div>
 
                 <div class="section-divider"></div>
-                <p style="font-size:0.9rem; color:var(--text-light); text-align:center;">
-                    © २०२६ ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड। सबै अधिकार सुरक्षित।
-                </p>
+                <!-- ===== COPYRIGHT NOTICE REMOVED FROM HERE ===== -->
             </div>
 
         </div>

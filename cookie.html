@@ -76,6 +76,12 @@
         }
 
         /* Desktop Navigation (Black) */
+        .desktop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
         .nav-desktop ul {
             display: flex;
             list-style: none;
@@ -141,14 +147,14 @@
             color: #ffffff;
         }
         @media (max-width: 768px) {
-            .nav-desktop {
+            .desktop-header {
                 display: none;
             }
             .mobile-header {
                 display: flex;
             }
             .logo-img {
-                max-height: 60px;
+                max-height: 80px;
             }
         }
 
@@ -230,7 +236,7 @@
         .legal-content h2 {
             font-size: 1.6rem;
             color: var(--primary);
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             margin-bottom: 0.5rem;
             border-bottom: 2px solid var(--gold);
             padding-bottom: 0.3rem;
@@ -249,11 +255,13 @@
             color: var(--text-light);
             margin-bottom: 0.8rem;
         }
-        .legal-content ul {
+        .legal-content ul,
+        .legal-content ol {
             padding-left: 1.5rem;
             margin-bottom: 1rem;
         }
-        .legal-content ul li {
+        .legal-content ul li,
+        .legal-content ol li {
             margin-bottom: 0.4rem;
         }
         .legal-content strong {
@@ -293,6 +301,13 @@
             height: 1px;
             background: #e2e8f0;
             margin: 2.5rem 0;
+        }
+        .legal-content .highlight-box {
+            background: var(--gray-bg);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            margin: 1.5rem 0;
         }
 
         /* ===== FOOTER ===== */
@@ -410,21 +425,23 @@
     <header>
         <div class="container header-inner">
             <!-- Desktop Nav -->
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
-                </a>
+            <div class="desktop-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Global Academy of Education Research" class="logo-img">
+                    </a>
+                </div>
+                <nav class="nav-desktop">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="nav-desktop">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
-                </ul>
-            </nav>
 
             <!-- Mobile Header -->
             <div class="mobile-header">
@@ -471,84 +488,201 @@
                     <strong>Last Updated:</strong> 18 June 2026
                 </div>
 
-                <h2>1. What Are Cookies?</h2>
-                <p>Cookies are small text files that are placed on your computer, smartphone, or other device when you visit a website. They are widely used to make websites work more efficiently, enhance user experience, and provide information to the website owners.</p>
-                <p>Cookies are not viruses, spyware, or malware. They do not contain personal information such as your name, address, or payment details unless you have provided that information directly.</p>
+                <!-- ===== SECTION 1 ===== -->
+                <h2>1. Introduction</h2>
+                <p><strong>Global Academy of Education Research Private Limited</strong> ("we", "us", "our") is committed to transparency in our data handling practices. This Cookie Policy explains what cookies are, how we use them, your choices regarding their use, and how you can manage your preferences.</p>
+                <p>This policy is designed to help you understand our practices and to make informed decisions about your privacy when using our website. By continuing to use our website, you consent to the use of cookies as described in this policy, except where you have set your browser to reject them.</p>
 
-                <h2>2. How We Use Cookies</h2>
-                <p>At <strong>Global Academy of Education Research Private Limited</strong>, we use cookies for the following purposes:</p>
+                <!-- ===== SECTION 2 ===== -->
+                <h2>2. What Are Cookies?</h2>
+                <p>Cookies are small text files that are placed on your computer, smartphone, tablet, or other device when you visit a website. They are widely used to make websites work more efficiently, enhance user experience, and provide valuable information to website owners.</p>
+                <p>Cookies are not viruses, spyware, or malware. They cannot access your hard drive, collect personal information from your computer, or be used to deliver viruses. They do not contain personal information such as your name, address, or payment details unless you have provided that information directly.</p>
+
+                <h3>2.1 How Cookies Work</h3>
+                <p>When you visit a website, the website sends a cookie to your browser, which stores it on your device. The next time you visit the same website, your browser sends the cookie back to the website, allowing the website to recognize your device and remember your preferences, settings, and actions.</p>
+
+                <h3>2.2 Types of Cookies</h3>
+                <p>There are several types of cookies, classified by their purpose and duration:</p>
                 <ul>
-                    <li><strong>Essential Cookies:</strong> These are necessary for the basic functioning of our website. They enable you to navigate the site and use core features.</li>
-                    <li><strong>Preference Cookies:</strong> These remember your preferences, such as your language selection (English or Nepali), so you don't have to set them again on each visit.</li>
-                    <li><strong>Analytics Cookies:</strong> These help us understand how visitors interact with our website by collecting anonymous information about pages visited, time spent, and referral sources. This helps us improve the user experience.</li>
-                    <li><strong>Performance Cookies:</strong> These collect information about how you use our website, such as which pages you visit most often, to optimize site performance.</li>
+                    <li><strong>Session Cookies:</strong> These are temporary cookies that are stored on your device only for the duration of your browsing session. They are deleted when you close your browser.</li>
+                    <li><strong>Persistent Cookies:</strong> These remain on your device for a set period of time after you close your browser. They allow websites to remember your preferences and actions across multiple visits.</li>
+                    <li><strong>First-Party Cookies:</strong> These are set by the website you are visiting and can only be read by that website.</li>
+                    <li><strong>Third-Party Cookies:</strong> These are set by a domain other than the website you are visiting, often by third-party services embedded in the website (such as analytics providers).</li>
                 </ul>
 
-                <h2>3. Types of Cookies We Use</h2>
-                <p>The table below explains the types of cookies we use and their specific purposes:</p>
+                <!-- ===== SECTION 3 ===== -->
+                <h2>3. How We Use Cookies</h2>
+                <p>We use cookies for the following purposes, all of which are designed to enhance your experience on our website:</p>
+
+                <h3>3.1 Essential Cookies (Strictly Necessary)</h3>
+                <ul>
+                    <li><strong>Purpose:</strong> These cookies are necessary for the basic functioning of our website. They enable you to navigate the site, use core features, and access secure areas.</li>
+                    <li><strong>Why They Are Essential:</strong> Without these cookies, our website would not function properly, and you would not be able to use certain features.</li>
+                    <li><strong>Examples:</strong> Session management, security verification, and load balancing.</li>
+                    <li><strong>Duration:</strong> Session (expires when you close your browser).</li>
+                </ul>
+
+                <h3>3.2 Preference Cookies (Functional)</h3>
+                <ul>
+                    <li><strong>Purpose:</strong> These cookies remember your preferences and settings to enhance your user experience and provide personalized features.</li>
+                    <li><strong>Examples:</strong> Language selection (English or Nepali), font size preferences, and country or region selection.</li>
+                    <li><strong>Duration:</strong> Persistent (up to 1 year).</li>
+                </ul>
+
+                <h3>3.3 Analytics Cookies (Performance)</h3>
+                <ul>
+                    <li><strong>Purpose:</strong> These cookies help us understand how visitors interact with our website by collecting anonymous information about pages visited, time spent, referral sources, and user behavior.</li>
+                    <li><strong>Why We Use Them:</strong> This helps us analyze website traffic, identify popular content, and improve the overall user experience.</li>
+                    <li><strong>Examples:</strong> Google Analytics cookies, page visit counters, and heat mapping tools.</li>
+                    <li><strong>Duration:</strong> Persistent (up to 2 years).</li>
+                </ul>
+
+                <h3>3.4 Cookie Consent Cookies</h3>
+                <ul>
+                    <li><strong>Purpose:</strong> These cookies remember that you have accepted or rejected the cookie consent banner so that it does not reappear on every visit.</li>
+                    <li><strong>Duration:</strong> Persistent (up to 1 year).</li>
+                </ul>
+
+                <h3>3.5 What We Do NOT Use</h3>
+                <ul>
+                    <li><strong>Marketing and Advertising Cookies:</strong> We do not use cookies for targeted advertising, behavioral tracking, or retargeting purposes.</li>
+                    <li><strong>Third-Party Advertising:</strong> We do not use third-party advertising cookies or share your data with advertisers.</li>
+                    <li><strong>Social Media Cookies:</strong> We do not use cookies for social media sharing or tracking.</li>
+                </ul>
+
+                <!-- ===== SECTION 4 ===== -->
+                <h2>4. Types of Cookies We Use</h2>
+                <p>The table below provides a detailed overview of the specific cookies we use, their purposes, and their durations:</p>
 
                 <table>
                     <thead>
                         <tr>
-                            <th>Cookie Type</th>
+                            <th>Cookie Name</th>
+                            <th>Type</th>
                             <th>Purpose</th>
                             <th>Duration</th>
+                            <th>Provider</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Essential</strong></td>
-                            <td>Necessary for basic site functionality, navigation, and security.</td>
-                            <td>Session (expires when you close your browser)</td>
+                            <td><strong>session_id</strong></td>
+                            <td>Essential</td>
+                            <td>Manages user session and navigation.</td>
+                            <td>Session</td>
+                            <td>Global Academy of Education Research</td>
                         </tr>
                         <tr>
-                            <td><strong>Preference (Language)</strong></td>
-                            <td>Remembers your preferred language (English or Nepali) so you don't need to select it on every visit.</td>
-                            <td>Permanent (1 year)</td>
+                            <td><strong>language_pref</strong></td>
+                            <td>Preference</td>
+                            <td>Stores your preferred language selection (English or Nepali).</td>
+                            <td>1 year</td>
+                            <td>Global Academy of Education Research</td>
                         </tr>
                         <tr>
-                            <td><strong>Analytics (Google Analytics)</strong></td>
-                            <td>Collects anonymous usage data to help us improve our website and understand user behavior.</td>
-                            <td>Permanent (2 years)</td>
+                            <td><strong>cookie_consent</strong></td>
+                            <td>Consent</td>
+                            <td>Records your acceptance or rejection of the cookie consent banner.</td>
+                            <td>1 year</td>
+                            <td>Global Academy of Education Research</td>
                         </tr>
                         <tr>
-                            <td><strong>Cookie Consent</strong></td>
-                            <td>Remembers that you have accepted the cookie consent banner so it doesn't reappear on every visit.</td>
-                            <td>Permanent (1 year)</td>
+                            <td><strong>_ga</strong></td>
+                            <td>Analytics</td>
+                            <td>Google Analytics – distinguishes unique users.</td>
+                            <td>2 years</td>
+                            <td>Google Analytics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>_ga_*</strong></td>
+                            <td>Analytics</td>
+                            <td>Google Analytics – persists session state.</td>
+                            <td>2 years</td>
+                            <td>Google Analytics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>_gat_gtag_*</strong></td>
+                            <td>Analytics</td>
+                            <td>Google Analytics – throttles request rate.</td>
+                            <td>1 minute</td>
+                            <td>Google Analytics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>_gid</strong></td>
+                            <td>Analytics</td>
+                            <td>Google Analytics – distinguishes users.</td>
+                            <td>24 hours</td>
+                            <td>Google Analytics</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <p>We do not use marketing or advertising cookies, nor do we share your data with third-party advertisers.</p>
+                <div class="highlight-box">
+                    <p><strong>Important Note:</strong> We do not use marketing or advertising cookies, nor do we share your data with third-party advertisers. All analytics data is collected in an aggregated and anonymized form.</p>
+                </div>
 
-                <h2>4. How to Manage Cookies</h2>
-                <p>You can control and manage cookies in several ways:</p>
+                <!-- ===== SECTION 5 ===== -->
+                <h2>5. How to Manage and Control Cookies</h2>
+                <p>You have the right to accept or reject cookies. There are several ways to manage and control your cookie preferences:</p>
+
+                <h3>5.1 Browser Settings</h3>
+                <p>Most web browsers allow you to accept, reject, or delete cookies. You can configure your browser to block all cookies or to alert you when cookies are being sent. However, please note that disabling essential cookies may affect the functionality of our website.</p>
+                <p>Instructions for managing cookies in popular browsers:</p>
                 <ul>
-                    <li><strong>Browser Settings:</strong> Most web browsers allow you to accept, reject, or delete cookies. You can configure your browser to block all cookies or to alert you when cookies are being sent. However, please note that disabling essential cookies may affect the functionality of our website.</li>
-                    <li><strong>Cookie Banner:</strong> When you first visit our website, you will see a cookie consent banner. You can accept or reject non-essential cookies by adjusting your browser settings.</li>
-                    <li><strong>Opt-Out Tools:</strong> You can opt out of Google Analytics tracking by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--gold-dark); font-weight:500;">Google Analytics Opt-Out Browser Add-on</a>.</li>
+                    <li><strong>Google Chrome:</strong> Settings → Privacy and Security → Cookies and other site data → Manage cookies</li>
+                    <li><strong>Mozilla Firefox:</strong> Options → Privacy & Security → Cookies and Site Data → Manage Data</li>
+                    <li><strong>Safari:</strong> Preferences → Privacy → Manage Website Data → Remove All</li>
+                    <li><strong>Microsoft Edge:</strong> Settings → Privacy, Search, and Services → Cookies and site data → Manage and delete cookies</li>
+                    <li><strong>Opera:</strong> Preferences → Advanced → Privacy & Security → Cookies</li>
                 </ul>
-                <p>For more detailed instructions on managing cookies, please refer to the help section of your browser or visit <a href="https://www.aboutcookies.org" target="_blank" rel="noopener" style="color:var(--gold-dark); font-weight:500;">www.aboutcookies.org</a>.</p>
 
-                <h2>5. Third-Party Cookies</h2>
-                <p>Our website may contain links to third-party websites. We do not control the cookie settings of these external sites. We recommend reviewing the cookie policies of any third-party websites you visit.</p>
+                <h3>5.2 Cookie Consent Banner</h3>
+                <p>When you first visit our website, you will see a cookie consent banner. You can accept all cookies or adjust your browser settings to reject non-essential cookies. Your choice will be remembered for future visits.</p>
 
-                <h2>6. Changes to This Cookie Policy</h2>
-                <p>We may update this Cookie Policy from time to time to reflect changes in technology, legal requirements, or our practices. Any updates will be posted on this page with a revised "Last Updated" date. We encourage you to review this policy periodically.</p>
+                <h3>5.3 Opt-Out Tools</h3>
+                <p>You can opt out of Google Analytics tracking by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--gold-dark); font-weight:500;">Google Analytics Opt-Out Browser Add-on</a>. This add-on prevents Google Analytics from collecting and using your data.</p>
 
-                <h2>7. Contact Us</h2>
-                <p>If you have any questions, concerns, or requests regarding our use of cookies, please contact us:</p>
-                <p style="margin-top:0.2rem;">
-                    <strong>Global Academy of Education Research Private Limited</strong><br />
-                    Dhungepatan, Pokhara Metropolitan City, Ward 20, Kaski District, Gandaki Province, Nepal<br />
-                    <strong>Email:</strong> <a href="mailto:kharikaparajuli@gmail.com" style="color:var(--gold-dark);">kharikaparajuli@gmail.com</a><br />
-                    <strong>Phone:</strong> <a href="tel:+9779846650159" style="color:var(--gold-dark);">+977-9846650159</a>
-                </p>
+                <h3>5.4 Third-Party Management Tools</h3>
+                <p>You can also manage your cookie preferences using third-party tools such as:</p>
+                <ul>
+                    <li><a href="https://www.aboutcookies.org" target="_blank" rel="noopener" style="color:var(--gold-dark); font-weight:500;">AboutCookies.org</a> – Comprehensive guide to managing cookies</li>
+                    <li><a href="https://www.youronlinechoices.com" target="_blank" rel="noopener" style="color:var(--gold-dark); font-weight:500;">Your Online Choices</a> – Behavioral advertising opt-out</li>
+                </ul>
+
+                <!-- ===== SECTION 6 ===== -->
+                <h2>6. Third-Party Cookies</h2>
+                <p>Our website may contain links to third-party websites, applications, or services. We do not control the cookie settings of these external sites. We recommend reviewing the cookie policies of any third-party websites you visit.</p>
+                <p>Currently, the only third-party cookies we use are from <strong>Google Analytics</strong> for website performance and usage analysis. Google Analytics uses cookies to collect anonymous information about how visitors use our website. This information is aggregated and does not personally identify you.</p>
+
+                <!-- ===== SECTION 7 ===== -->
+                <h2>7. Do Not Track (DNT) Signals</h2>
+                <p>Some browsers offer a "Do Not Track" (DNT) feature that sends a signal to websites indicating that you do not wish to be tracked. We respect DNT signals and do not collect tracking data when DNT is enabled in your browser. However, please note that DNT may affect the functionality of some features on our website.</p>
+
+                <!-- ===== SECTION 8 ===== -->
+                <h2>8. Data Protection and Privacy</h2>
+                <p>Cookies used on our website do not collect personal information that identifies you directly. Any data collected through cookies is used in accordance with our <a href="privacy.html" style="color:var(--gold-dark); font-weight:500;">Privacy Policy</a>. We are committed to protecting your privacy and ensuring the security of your personal information.</p>
+
+                <!-- ===== SECTION 9 ===== -->
+                <h2>9. Changes to This Cookie Policy</h2>
+                <p>We may update this Cookie Policy from time to time to reflect changes in technology, legal requirements, our practices, or user feedback. Any updates will be posted on this page with a revised "Last Updated" date. We encourage you to review this policy periodically to stay informed about our use of cookies.</p>
+                <p>If you continue to use our website after changes are posted, you agree to the updated policy. If you do not agree to the changes, you should adjust your cookie settings or discontinue use of our website.</p>
+
+                <!-- ===== SECTION 10 ===== -->
+                <h2>10. Contact Us</h2>
+                <p>If you have any questions, concerns, or requests regarding our use of cookies, this Cookie Policy, or your privacy, please contact us:</p>
+                <div class="highlight-box">
+                    <p style="margin-bottom:0.2rem;">
+                        <strong>Global Academy of Education Research Private Limited</strong><br />
+                        Dhungepatan, Pokhara Metropolitan City, Ward No. 20<br />
+                        Kaski District, Gandaki Province, Nepal<br /><br />
+                        <strong>Phone:</strong> <a href="tel:+9779846650159" style="color:var(--gold-dark);">+977-9846650159</a><br />
+                        <strong>Official Email:</strong> <a href="mailto:info@gaer.edu.np" style="color:var(--gold-dark);">info@gaer.edu.np</a><br />
+                        <strong>Director's Email:</strong> <a href="mailto:kharikaparajuli@gaer.edu.np" style="color:var(--gold-dark);">kharikaparajuli@gaer.edu.np</a>
+                    </p>
+                </div>
 
                 <div class="section-divider"></div>
-                <p style="font-size:0.9rem; color:var(--text-light); text-align:center;">
-                    © 2026 Global Academy of Education Research Private Limited. All Rights Reserved.
-                </p>
+                <!-- ===== COPYRIGHT NOTICE REMOVED FROM HERE ===== -->
             </div>
 
             <!-- ===== NEPALI VERSION ===== -->
@@ -557,84 +691,191 @@
                     <strong>अन्तिम मिति:</strong> १८ जुन २०२६
                 </div>
 
-                <h2>१. कुकीहरू के हुन्?</h2>
-                <p>कुकीहरू साना पाठ फाइलहरू हुन् जुन तपाईंले कुनै वेबसाइट भ्रमण गर्दा तपाईंको कम्प्युटर, स्मार्टफोन, वा अन्य यन्त्रमा राखिन्छन्। तिनीहरू वेबसाइटहरूलाई अझ प्रभावकारी रूपमा काम गर्न, प्रयोगकर्ता अनुभव बढाउन, र वेबसाइट मालिकहरूलाई जानकारी प्रदान गर्न व्यापक रूपमा प्रयोग गरिन्छ।</p>
-                <p>कुकीहरू भाइरस, स्पाइवेयर, वा मालवेयर होइनन्। तिनीहरूमा तपाईंको नाम, ठेगाना, वा भुक्तानी विवरणहरू जस्ता व्यक्तिगत जानकारी हुँदैन जबसम्म तपाईंले त्यो जानकारी प्रत्यक्ष रूपमा प्रदान गर्नुभएको छैन।</p>
+                <h2>१. परिचय</h2>
+                <p><strong>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड</strong> ("हामी") हाम्रो डाटा व्यवस्थापन अभ्यासहरूमा पारदर्शिताको लागि प्रतिबद्ध छ। यो कुकी नीतिले कुकीहरू के हुन्, हामी तिनीहरूलाई कसरी प्रयोग गर्दछौं, तपाईंको तिनीहरूको प्रयोगको सम्बन्धमा विकल्पहरू, र तपाईं कसरी आफ्नो प्राथमिकताहरू व्यवस्थापन गर्न सक्नुहुन्छ भनेर व्याख्या गर्दछ।</p>
+                <p>यो नीति हाम्रो अभ्यासहरू बुझ्न र हाम्रो वेबसाइट प्रयोग गर्दा तपाईंको गोपनीयताको बारेमा सूचित निर्णयहरू गर्न मद्दत गर्न डिजाइन गरिएको हो। हाम्रो वेबसाइट प्रयोग गर्न जारी राखेर, तपाईं यस नीतिमा वर्णन गरिए अनुसार कुकीहरूको प्रयोगमा सहमत हुनुहुन्छ, जबसम्म तपाईंले तिनीहरूलाई अस्वीकार गर्न आफ्नो ब्राउजर सेट गर्नुभएको छैन।</p>
 
-                <h2>२. हामी कसरी कुकीहरू प्रयोग गर्दछौं</h2>
-                <p><strong>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड</strong> मा, हामी निम्न उद्देश्यका लागि कुकीहरू प्रयोग गर्दछौं:</p>
+                <h2>२. कुकीहरू के हुन्?</h2>
+                <p>कुकीहरू साना पाठ फाइलहरू हुन् जुन तपाईंले कुनै वेबसाइट भ्रमण गर्दा तपाईंको कम्प्युटर, स्मार्टफोन, ट्याब्लेट, वा अन्य यन्त्रमा राखिन्छन्। तिनीहरू वेबसाइटहरूलाई अझ प्रभावकारी रूपमा काम गर्न, प्रयोगकर्ता अनुभव बढाउन, र वेबसाइट मालिकहरूलाई बहुमूल्य जानकारी प्रदान गर्न व्यापक रूपमा प्रयोग गरिन्छ।</p>
+                <p>कुकीहरू भाइरस, स्पाइवेयर, वा मालवेयर होइनन्। तिनीहरूले तपाईंको हार्ड ड्राइभमा पहुँच गर्न, तपाईंको कम्प्युटरबाट व्यक्तिगत जानकारी संकलन गर्न, वा भाइरस प्रदान गर्न प्रयोग गर्न सक्दैनन्। तिनीहरूमा तपाईंको नाम, ठेगाना, वा भुक्तानी विवरणहरू जस्ता व्यक्तिगत जानकारी हुँदैन जबसम्म तपाईंले त्यो जानकारी प्रत्यक्ष रूपमा प्रदान गर्नुभएको छैन।</p>
+
+                <h3>२.१ कुकीहरू कसरी काम गर्दछन्</h3>
+                <p>जब तपाईं कुनै वेबसाइट भ्रमण गर्नुहुन्छ, वेबसाइटले तपाईंको ब्राउजरमा कुकी पठाउँछ, जसले यसलाई तपाईंको यन्त्रमा भण्डारण गर्दछ। अर्को पटक तपाईंले सोही वेबसाइट भ्रमण गर्दा, तपाईंको ब्राउजरले कुकीलाई वेबसाइटमा फिर्ता पठाउँछ, जसले वेबसाइटलाई तपाईंको यन्त्र पहिचान गर्न र तपाईंको प्राथमिकताहरू, सेटिङहरू, र कार्यहरू सम्झन अनुमति दिन्छ।</p>
+
+                <h3>२.२ कुकीहरूका प्रकारहरू</h3>
+                <p>कुकीहरू तिनीहरूको उद्देश्य र अवधि अनुसार विभिन्न प्रकारका हुन्छन्:</p>
                 <ul>
-                    <li><strong>आवश्यक कुकीहरू:</strong> यी हाम्रो वेबसाइटको आधारभूत कार्यक्षमताको लागि आवश्यक छन्। तिनीहरूले तपाईंलाई साइटमा नेभिगेट गर्न र मुख्य सुविधाहरू प्रयोग गर्न सक्षम बनाउँछन्।</li>
-                    <li><strong>प्राथमिकता कुकीहरू:</strong> यी तपाईंको प्राथमिकताहरू, जस्तै तपाईंको भाषा चयन (अंग्रेजी वा नेपाली) सम्झन्छन्, ताकि तपाईंले प्रत्येक भ्रमणमा तिनीहरू फेरि सेट गर्नु पर्दैन।</li>
-                    <li><strong>विश्लेषण कुकीहरू:</strong> यी भ्रमण गरिएका पृष्ठहरू, बिताएको समय, र सन्दर्भ स्रोतहरूको बारेमा अज्ञात जानकारी सङ्कलन गरेर आगन्तुकहरूले हाम्रो वेबसाइटसँग कसरी अन्तरक्रिया गर्छन् भनेर बुझ्न मद्दत गर्दछन्। यसले हामीलाई प्रयोगकर्ता अनुभव सुधार गर्न मद्दत गर्दछ।</li>
-                    <li><strong>प्रदर्शन कुकीहरू:</strong> यी तपाईंले हाम्रो वेबसाइट कसरी प्रयोग गर्नुहुन्छ भन्ने जानकारी सङ्कलन गर्दछन्, जस्तै तपाईंले कुन पृष्ठहरू धेरै पटक भ्रमण गर्नुहुन्छ, साइटको प्रदर्शन अनुकूलन गर्न।</li>
+                    <li><strong>सत्र कुकीहरू:</strong> यी अस्थायी कुकीहरू हुन् जुन तपाईंको ब्राउजिङ सत्रको अवधिको लागि मात्र तपाईंको यन्त्रमा भण्डारण गरिन्छन्। तपाईंले आफ्नो ब्राउजर बन्द गर्दा तिनीहरू मेटिन्छन्।</li>
+                    <li><strong>स्थायी कुकीहरू:</strong> यी तपाईंले आफ्नो ब्राउजर बन्द गरेपछि निर्धारित अवधिको लागि तपाईंको यन्त्रमा रहन्छन्। तिनीहरूले वेबसाइटहरूलाई धेरै भ्रमणहरूमा तपाईंको प्राथमिकताहरू र कार्यहरू सम्झन अनुमति दिन्छन्।</li>
+                    <li><strong>प्रथम-पक्ष कुकीहरू:</strong> यी तपाईंले भ्रमण गरिरहनुभएको वेबसाइटद्वारा सेट गरिन्छन् र केवल त्यो वेबसाइटले मात्र पढ्न सक्छ।</li>
+                    <li><strong>तृतीय-पक्ष कुकीहरू:</strong> यी तपाईंले भ्रमण गरिरहनुभएको वेबसाइट बाहेक अन्य डोमेनद्वारा सेट गरिन्छन्, प्रायः वेबसाइटमा इम्बेड गरिएका तृतीय-पक्ष सेवाहरू (जस्तै एनालिटिक्स प्रदायकहरू) द्वारा।</li>
                 </ul>
 
-                <h2>३. हामीले प्रयोग गर्ने कुकीहरूका प्रकारहरू</h2>
-                <p>तलको तालिकाले हामीले प्रयोग गर्ने कुकीहरूका प्रकार र तिनीहरूका विशिष्ट उद्देश्यहरू व्याख्या गर्दछ:</p>
+                <h2>३. हामी कसरी कुकीहरू प्रयोग गर्दछौं</h2>
+                <p>हामी निम्न उद्देश्यका लागि कुकीहरू प्रयोग गर्दछौं, यी सबै हाम्रो वेबसाइटमा तपाईंको अनुभव बढाउन डिजाइन गरिएका हुन्:</p>
+
+                <h3>३.१ आवश्यक कुकीहरू (कडा रूपमा आवश्यक)</h3>
+                <ul>
+                    <li><strong>उद्देश्य:</strong> यी कुकीहरू हाम्रो वेबसाइटको आधारभूत कार्यक्षमताको लागि आवश्यक छन्। तिनीहरूले तपाईंलाई साइटमा नेभिगेट गर्न, मुख्य सुविधाहरू प्रयोग गर्न र सुरक्षित क्षेत्रहरूमा पहुँच गर्न सक्षम बनाउँछन्।</li>
+                    <li><strong>किन आवश्यक:</strong> यी कुकीहरू बिना, हाम्रो वेबसाइट राम्रोसँग काम गर्दैन, र तपाईं निश्चित सुविधाहरू प्रयोग गर्न सक्नुहुन्न।</li>
+                    <li><strong>उदाहरणहरू:</strong> सत्र व्यवस्थापन, सुरक्षा प्रमाणीकरण, र लोड सन्तुलन।</li>
+                    <li><strong>अवधि:</strong> सत्र (ब्राउजर बन्द गरेपछि समाप्त हुन्छ)।</li>
+                </ul>
+
+                <h3>३.२ प्राथमिकता कुकीहरू (कार्यात्मक)</h3>
+                <ul>
+                    <li><strong>उद्देश्य:</strong> यी कुकीहरूले तपाईंको प्राथमिकताहरू र सेटिङहरू सम्झन्छन् जसले तपाईंको प्रयोगकर्ता अनुभव बढाउँछ र व्यक्तिगत सुविधाहरू प्रदान गर्दछ।</li>
+                    <li><strong>उदाहरणहरू:</strong> भाषा चयन (अंग्रेजी वा नेपाली), फन्ट साइज प्राथमिकताहरू, र देश वा क्षेत्र चयन।</li>
+                    <li><strong>अवधि:</strong> स्थायी (१ वर्ष सम्म)।</li>
+                </ul>
+
+                <h3>३.३ विश्लेषण कुकीहरू (प्रदर्शन)</h3>
+                <ul>
+                    <li><strong>उद्देश्य:</strong> यी कुकीहरूले भ्रमण गरिएका पृष्ठहरू, बिताएको समय, सन्दर्भ स्रोतहरू, र प्रयोगकर्ता व्यवहारको बारेमा अज्ञात जानकारी संकलन गरेर आगन्तुकहरूले हाम्रो वेबसाइटसँग कसरी अन्तरक्रिया गर्छन् भनेर बुझ्न मद्दत गर्दछन्।</li>
+                    <li><strong>किन प्रयोग:</strong> यसले हामीलाई वेबसाइट ट्राफिकको विश्लेषण गर्न, लोकप्रिय सामग्री पहिचान गर्न, र समग्र प्रयोगकर्ता अनुभव सुधार गर्न मद्दत गर्दछ।</li>
+                    <li><strong>उदाहरणहरू:</strong> Google Analytics कुकीहरू, पृष्ठ भ्रमण काउन्टरहरू, र हीट म्यापिङ उपकरणहरू।</li>
+                    <li><strong>अवधि:</strong> स्थायी (२ वर्ष सम्म)।</li>
+                </ul>
+
+                <h3>३.४ कुकी सहमति कुकीहरू</h3>
+                <ul>
+                    <li><strong>उद्देश्य:</strong> यी कुकीहरूले तपाईंले कुकी सहमति ब्यानर स्वीकार वा अस्वीकार गर्नुभएको सम्झन्छ ताकि यो प्रत्येक भ्रमणमा पुन: देखा नपरोस्।</li>
+                    <li><strong>अवधि:</strong> स्थायी (१ वर्ष सम्म)।</li>
+                </ul>
+
+                <h3>३.५ हामी के प्रयोग गर्दैनौं</h3>
+                <ul>
+                    <li><strong>मार्केटिङ र विज्ञापन कुकीहरू:</strong> हामी लक्षित विज्ञापन, व्यवहारिक ट्र्याकिङ, वा पुन: लक्ष्यीकरण उद्देश्यका लागि कुकीहरू प्रयोग गर्दैनौं।</li>
+                    <li><strong>तृतीय-पक्ष विज्ञापन:</strong> हामी तृतीय-पक्ष विज्ञापन कुकीहरू प्रयोग गर्दैनौं वा तपाईंको डाटा विज्ञापनदाताहरूसँग साझेदारी गर्दैनौं।</li>
+                    <li><strong>सोशल मिडिया कुकीहरू:</strong> हामी सोशल मिडिया साझेदारी वा ट्र्याकिङको लागि कुकीहरू प्रयोग गर्दैनौं।</li>
+                </ul>
+
+                <h2>४. हामीले प्रयोग गर्ने कुकीहरूका प्रकारहरू</h2>
+                <p>तलको तालिकाले हामीले प्रयोग गर्ने विशिष्ट कुकीहरू, तिनीहरूका उद्देश्यहरू, र अवधिहरूको विस्तृत सिंहावलोकन प्रदान गर्दछ:</p>
 
                 <table>
                     <thead>
                         <tr>
-                            <th>कुकी प्रकार</th>
+                            <th>कुकी नाम</th>
+                            <th>प्रकार</th>
                             <th>उद्देश्य</th>
                             <th>अवधि</th>
+                            <th>प्रदायक</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>आवश्यक</strong></td>
-                            <td>आधारभूत साइट कार्यक्षमता, नेभिगेसन, र सुरक्षाको लागि आवश्यक।</td>
-                            <td>सत्र (ब्राउजर बन्द गरेपछि समाप्त हुन्छ)</td>
+                            <td><strong>session_id</strong></td>
+                            <td>आवश्यक</td>
+                            <td>प्रयोगकर्ता सत्र र नेभिगेसन व्यवस्थापन गर्दछ।</td>
+                            <td>सत्र</td>
+                            <td>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च</td>
                         </tr>
                         <tr>
-                            <td><strong>प्राथमिकता (भाषा)</strong></td>
-                            <td>तपाईंको रुचाइएको भाषा (अंग्रेजी वा नेपाली) सम्झन्छ, ताकि तपाईंले प्रत्येक भ्रमणमा यसलाई चयन गर्नु पर्दैन।</td>
-                            <td>स्थायी (१ वर्ष)</td>
+                            <td><strong>language_pref</strong></td>
+                            <td>प्राथमिकता</td>
+                            <td>तपाईंको रुचाइएको भाषा चयन (अंग्रेजी वा नेपाली) भण्डारण गर्दछ।</td>
+                            <td>१ वर्ष</td>
+                            <td>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च</td>
                         </tr>
                         <tr>
-                            <td><strong>विश्लेषण (Google Analytics)</strong></td>
-                            <td>हामीलाई हाम्रो वेबसाइट सुधार गर्न र प्रयोगकर्ता व्यवहार बुझ्न मद्दत गर्न अज्ञात प्रयोग डाटा सङ्कलन गर्दछ।</td>
-                            <td>स्थायी (२ वर्ष)</td>
+                            <td><strong>cookie_consent</strong></td>
+                            <td>सहमति</td>
+                            <td>तपाईंको कुकी सहमति ब्यानरको स्वीकृति वा अस्वीकृति अभिलेख गर्दछ।</td>
+                            <td>१ वर्ष</td>
+                            <td>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च</td>
                         </tr>
                         <tr>
-                            <td><strong>कुकी सहमति</strong></td>
-                            <td>तपाईंले कुकी सहमति ब्यानर स्वीकार गर्नुभएको सम्झन्छ ताकि यो प्रत्येक भ्रमणमा पुन: देखा नपरोस्।</td>
-                            <td>स्थायी (१ वर्ष)</td>
+                            <td><strong>_ga</strong></td>
+                            <td>विश्लेषण</td>
+                            <td>Google Analytics – अद्वितीय प्रयोगकर्ताहरू छुट्याउँछ।</td>
+                            <td>२ वर्ष</td>
+                            <td>Google Analytics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>_ga_*</strong></td>
+                            <td>विश्लेषण</td>
+                            <td>Google Analytics – सत्र स्थिति कायम राख्छ।</td>
+                            <td>२ वर्ष</td>
+                            <td>Google Analytics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>_gat_gtag_*</strong></td>
+                            <td>विश्लेषण</td>
+                            <td>Google Analytics – अनुरोध दर सीमित गर्दछ।</td>
+                            <td>१ मिनेट</td>
+                            <td>Google Analytics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>_gid</strong></td>
+                            <td>विश्लेषण</td>
+                            <td>Google Analytics – प्रयोगकर्ताहरू छुट्याउँछ।</td>
+                            <td>२४ घण्टा</td>
+                            <td>Google Analytics</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <p>हामी मार्केटिङ वा विज्ञापन कुकीहरू प्रयोग गर्दैनौं, न त हामी तपाईंको डाटा तेस्रो-पक्ष विज्ञापनदाताहरूसँग साझेदारी गर्दछौं।</p>
+                <div class="highlight-box">
+                    <p><strong>महत्त्वपूर्ण सूचना:</strong> हामी मार्केटिङ वा विज्ञापन कुकीहरू प्रयोग गर्दैनौं, न त हामी तपाईंको डाटा तेस्रो-पक्ष विज्ञापनदाताहरूसँग साझेदारी गर्दछौं। सबै विश्लेषण डाटा सङ्कलित र अज्ञात रूपमा संकलन गरिन्छ।</p>
+                </div>
 
-                <h2>४. कुकीहरू कसरी व्यवस्थापन गर्ने</h2>
-                <p>तपाईं धेरै तरिकामा कुकीहरू नियन्त्रण र व्यवस्थापन गर्न सक्नुहुन्छ:</p>
+                <h2>५. कुकीहरू कसरी व्यवस्थापन र नियन्त्रण गर्ने</h2>
+                <p>तपाईंलाई कुकीहरू स्वीकार वा अस्वीकार गर्ने अधिकार छ। तपाईंको कुकी प्राथमिकताहरू व्यवस्थापन र नियन्त्रण गर्न धेरै तरिकाहरू छन्:</p>
+
+                <h3>५.१ ब्राउजर सेटिङहरू</h3>
+                <p>धेरैजसो वेब ब्राउजरहरूले तपाईंलाई कुकीहरू स्वीकार, अस्वीकार, वा मेटाउन अनुमति दिन्छन्। तपाईंले सबै कुकीहरू ब्लक गर्न वा कुकीहरू पठाउँदा तपाईंलाई सचेत गराउन आफ्नो ब्राउजर कन्फिगर गर्न सक्नुहुन्छ। तथापि, कृपया ध्यान दिनुहोस् कि आवश्यक कुकीहरू असक्षम गर्दा हाम्रो वेबसाइटको कार्यक्षमतालाई असर गर्न सक्छ।</p>
+                <p>लोकप्रिय ब्राउजरहरूमा कुकीहरू व्यवस्थापन गर्ने निर्देशनहरू:</p>
                 <ul>
-                    <li><strong>ब्राउजर सेटिङहरू:</strong> धेरैजसो वेब ब्राउजरहरूले तपाईंलाई कुकीहरू स्वीकार, अस्वीकार, वा मेटाउन अनुमति दिन्छन्। तपाईंले सबै कुकीहरू ब्लक गर्न वा कुकीहरू पठाउँदा तपाईंलाई सचेत गराउन आफ्नो ब्राउजर कन्फिगर गर्न सक्नुहुन्छ। तथापि, कृपया ध्यान दिनुहोस् कि आवश्यक कुकीहरू असक्षम गर्दा हाम्रो वेबसाइटको कार्यक्षमतालाई असर गर्न सक्छ।</li>
-                    <li><strong>कुकी ब्यानर:</strong> जब तपाईं पहिलो पटक हाम्रो वेबसाइट भ्रमण गर्नुहुन्छ, तपाईंले कुकी सहमति ब्यानर देख्नुहुनेछ। तपाईं आफ्नो ब्राउजर सेटिङहरू समायोजन गरेर गैर-आवश्यक कुकीहरू स्वीकार वा अस्वीकार गर्न सक्नुहुन्छ।</li>
-                    <li><strong>अप्ट-आउट उपकरणहरू:</strong> तपाईं <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--gold-dark); font-weight:500;">Google Analytics Opt-Out Browser Add-on</a> स्थापना गरेर Google Analytics ट्र्याकिङ अप्ट-आउट गर्न सक्नुहुन्छ।</li>
+                    <li><strong>Google Chrome:</strong> Settings → Privacy and Security → Cookies and other site data → Manage cookies</li>
+                    <li><strong>Mozilla Firefox:</strong> Options → Privacy & Security → Cookies and Site Data → Manage Data</li>
+                    <li><strong>Safari:</strong> Preferences → Privacy → Manage Website Data → Remove All</li>
+                    <li><strong>Microsoft Edge:</strong> Settings → Privacy, Search, and Services → Cookies and site data → Manage and delete cookies</li>
+                    <li><strong>Opera:</strong> Preferences → Advanced → Privacy & Security → Cookies</li>
                 </ul>
-                <p>कुकीहरू व्यवस्थापन गर्ने बारे थप विस्तृत निर्देशनहरूको लागि, कृपया आफ्नो ब्राउजरको सहायता खण्ड हेर्नुहोस् वा <a href="https://www.aboutcookies.org" target="_blank" rel="noopener" style="color:var(--gold-dark); font-weight:500;">www.aboutcookies.org</a> भ्रमण गर्नुहोस्।</p>
 
-                <h2>५. तृतीय-पक्ष कुकीहरू</h2>
-                <p>हाम्रो वेबसाइटमा तृतीय-पक्ष वेबसाइटहरूको लिङ्कहरू हुन सक्छन्। हामी यी बाह्य साइटहरूको कुकी सेटिङहरू नियन्त्रण गर्दैनौं। हामी तपाईंले भ्रमण गर्नुभएको कुनै पनि तृतीय-पक्ष वेबसाइटहरूको कुकी नीतिहरू समीक्षा गर्न सिफारिस गर्दछौं।</p>
+                <h3>५.२ कुकी सहमति ब्यानर</h3>
+                <p>जब तपाईं पहिलो पटक हाम्रो वेबसाइट भ्रमण गर्नुहुन्छ, तपाईंले कुकी सहमति ब्यानर देख्नुहुनेछ। तपाईं सबै कुकीहरू स्वीकार गर्न सक्नुहुन्छ वा गैर-आवश्यक कुकीहरू अस्वीकार गर्न आफ्नो ब्राउजर सेटिङहरू समायोजन गर्न सक्नुहुन्छ। तपाईंको छनोट भविष्यका भ्रमणहरूको लागि सम्झिनेछ।</p>
 
-                <h2>६. यस कुकी नीतिमा परिवर्तनहरू</h2>
-                <p>हामी प्रविधि, कानूनी आवश्यकताहरू, वा हाम्रो अभ्यासहरूमा परिवर्तनहरू प्रतिबिम्बित गर्न समय-समयमा यस कुकी नीति अद्यावधिक गर्न सक्छौं। कुनै पनि अद्यावधिकहरू संशोधित "अन्तिम मिति" सहित यस पृष्ठमा पोस्ट गरिनेछ। हामी तपाईंलाई यो नीति नियमित रूपमा समीक्षा गर्न प्रोत्साहित गर्दछौं।</p>
+                <h3>५.३ अप्ट-आउट उपकरणहरू</h3>
+                <p>तपाईं <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--gold-dark); font-weight:500;">Google Analytics Opt-Out Browser Add-on</a> स्थापना गरेर Google Analytics ट्र्याकिङ अप्ट-आउट गर्न सक्नुहुन्छ। यो एड-अनले Google Analytics लाई तपाईंको डाटा संकलन र प्रयोग गर्नबाट रोक्छ।</p>
 
-                <h2>७. हामीलाई सम्पर्क गर्नुहोस्</h2>
-                <p>यदि तपाईंसँग हाम्रो कुकीहरूको प्रयोगको बारेमा कुनै प्रश्न, चिन्ता, वा अनुरोधहरू छन् भने, कृपया हामीलाई सम्पर्क गर्नुहोस्:</p>
-                <p style="margin-top:0.2rem;">
-                    <strong>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड</strong><br />
-                    ढुङ्गेपाटन, पोखरा महानगरपालिका, वडा नं. २०, कास्की जिल्ला, गण्डकी प्रदेश, नेपाल<br />
-                    <strong>इमेल:</strong> <a href="mailto:kharikaparajuli@gmail.com" style="color:var(--gold-dark);">kharikaparajuli@gmail.com</a><br />
-                    <strong>फोन:</strong> <a href="tel:+9779846650159" style="color:var(--gold-dark);">+977-9846650159</a>
-                </p>
+                <h3>५.४ तृतीय-पक्ष व्यवस्थापन उपकरणहरू</h3>
+                <p>तपाईं निम्न तृतीय-पक्ष उपकरणहरू प्रयोग गरेर पनि आफ्नो कुकी प्राथमिकताहरू व्यवस्थापन गर्न सक्नुहुन्छ:</p>
+                <ul>
+                    <li><a href="https://www.aboutcookies.org" target="_blank" rel="noopener" style="color:var(--gold-dark); font-weight:500;">AboutCookies.org</a> – कुकीहरू व्यवस्थापन गर्ने व्यापक गाइड</li>
+                    <li><a href="https://www.youronlinechoices.com" target="_blank" rel="noopener" style="color:var(--gold-dark); font-weight:500;">Your Online Choices</a> – व्यवहारिक विज्ञापन अप्ट-आउट</li>
+                </ul>
+
+                <h2>६. तृतीय-पक्ष कुकीहरू</h2>
+                <p>हाम्रो वेबसाइटमा तृतीय-पक्ष वेबसाइटहरू, अनुप्रयोगहरू, वा सेवाहरूको लिङ्कहरू हुन सक्छन्। हामी यी बाह्य साइटहरूको कुकी सेटिङहरू नियन्त्रण गर्दैनौं। हामी तपाईंले भ्रमण गर्नुभएको कुनै पनि तृतीय-पक्ष वेबसाइटहरूको कुकी नीतिहरू समीक्षा गर्न सिफारिस गर्दछौं।</p>
+                <p>हाल, हामी प्रयोग गर्ने मात्र तृतीय-पक्ष कुकीहरू वेबसाइट प्रदर्शन र प्रयोग विश्लेषणको लागि <strong>Google Analytics</strong> बाट हुन्। Google Analytics ले आगन्तुकहरूले हाम्रो वेबसाइट कसरी प्रयोग गर्छन् भन्ने बारे अज्ञात जानकारी संकलन गर्न कुकीहरू प्रयोग गर्दछ। यो जानकारी सङ्कलित छ र तपाईंलाई व्यक्तिगत रूपमा पहिचान गर्दैन।</p>
+
+                <h2>७. ट्र्याक नगर्नुहोस् (DNT) सिग्नलहरू</h2>
+                <p>केही ब्राउजरहरूले "ट्र्याक नगर्नुहोस्" (DNT) सुविधा प्रदान गर्दछन् जसले वेबसाइटहरूलाई सिग्नल पठाउँछ कि तपाईं ट्र्याक गर्न चाहनुहुन्न। हामी DNT सिग्नलहरूको सम्मान गर्दछौं र जब DNT तपाईंको ब्राउजरमा सक्षम हुन्छ, ट्र्याकिङ डाटा संकलन गर्दैनौं। तथापि, कृपया ध्यान दिनुहोस् कि DNT ले हाम्रो वेबसाइटमा केही सुविधाहरूको कार्यक्षमतालाई असर गर्न सक्छ।</p>
+
+                <h2>८. डाटा संरक्षण र गोपनीयता</h2>
+                <p>हाम्रो वेबसाइटमा प्रयोग गरिएका कुकीहरूले तपाईंलाई प्रत्यक्ष रूपमा पहिचान गर्ने व्यक्तिगत जानकारी संकलन गर्दैनन्। कुकीहरू मार्फत संकलन गरिएको कुनै पनि डाटा हाम्रो <a href="privacy.html" style="color:var(--gold-dark); font-weight:500;">गोपनीयता नीति</a> अनुसार प्रयोग गरिन्छ। हामी तपाईंको गोपनीयता सुरक्षित गर्न र तपाईंको व्यक्तिगत जानकारीको सुरक्षा सुनिश्चित गर्न प्रतिबद्ध छौं।</p>
+
+                <h2>९. यस कुकी नीतिमा परिवर्तनहरू</h2>
+                <p>हामी प्रविधि, कानूनी आवश्यकताहरू, हाम्रो अभ्यासहरू, वा प्रयोगकर्ता प्रतिक्रियामा परिवर्तनहरू प्रतिबिम्बित गर्न समय-समयमा यस कुकी नीति अद्यावधिक गर्न सक्छौं। कुनै पनि अद्यावधिकहरू संशोधित "अन्तिम मिति" सहित यस पृष्ठमा पोस्ट गरिनेछ। हामी तपाईंलाई हाम्रो कुकीहरूको प्रयोगको बारेमा जानकारी रहन यो नीति नियमित रूपमा समीक्षा गर्न प्रोत्साहित गर्दछौं।</p>
+                <p>यदि तपाईं परिवर्तनहरू पोस्ट गरेपछि हाम्रो वेबसाइट प्रयोग गर्न जारी राख्नुहुन्छ भने, तपाईं अद्यावधिक गरिएको नीतिमा सहमत हुनुहुन्छ। यदि तपाईं परिवर्तनहरूसँग सहमत हुनुहुन्न भने, तपाईंले आफ्नो कुकी सेटिङहरू समायोजन गर्नुपर्छ वा हाम्रो वेबसाइटको प्रयोग बन्द गर्नुपर्छ।</p>
+
+                <h2>१०. हामीलाई सम्पर्क गर्नुहोस्</h2>
+                <p>यदि तपाईंसँग हाम्रो कुकीहरूको प्रयोग, यस कुकी नीति, वा तपाईंको गोपनीयताको बारेमा कुनै प्रश्न, चिन्ता, वा अनुरोधहरू छन् भने, कृपया हामीलाई सम्पर्क गर्नुहोस्:</p>
+                <div class="highlight-box">
+                    <p style="margin-bottom:0.2rem;">
+                        <strong>ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड</strong><br />
+                        ढुङ्गेपाटन, पोखरा महानगरपालिका, वडा नं. २०<br />
+                        कास्की जिल्ला, गण्डकी प्रदेश, नेपाल<br /><br />
+                        <strong>फोन:</strong> <a href="tel:+9779846650159" style="color:var(--gold-dark);">+977-9846650159</a><br />
+                        <strong>आधिकारिक इमेल:</strong> <a href="mailto:info@gaer.edu.np" style="color:var(--gold-dark);">info@gaer.edu.np</a><br />
+                        <strong>निर्देशकको इमेल:</strong> <a href="mailto:kharikaparajuli@gaer.edu.np" style="color:var(--gold-dark);">kharikaparajuli@gaer.edu.np</a>
+                    </p>
+                </div>
 
                 <div class="section-divider"></div>
-                <p style="font-size:0.9rem; color:var(--text-light); text-align:center;">
-                    © २०२६ ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड। सबै अधिकार सुरक्षित।
-                </p>
+                <!-- ===== COPYRIGHT NOTICE REMOVED FROM HERE ===== -->
             </div>
 
         </div>

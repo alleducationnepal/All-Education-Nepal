@@ -94,6 +94,8 @@
             color: #000000;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
             border-bottom: 1px solid #e2e8f0;
+            position: relative;
+            z-index: 100;
         }
         .header-inner {
             display: flex;
@@ -158,17 +160,41 @@
             align-items: center;
             width: 100%;
         }
+
+        /* ===== ANIMATED HAMBURGER ===== */
         .hamburger {
             background: none;
             border: none;
-            font-size: 2rem;
-            color: #000000;
             cursor: pointer;
-            padding: 0 4px;
+            padding: 8px 4px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            transition: all 0.3s ease;
         }
-        .hamburger.open {
-            transform: rotate(90deg);
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #000000;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            transform-origin: center;
         }
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
         .mobile-lang {
             background: transparent;
             border: 1px solid #000000;
@@ -184,6 +210,7 @@
             background: #000000;
             color: #ffffff;
         }
+
         @media (max-width: 768px) {
             .desktop-header {
                 display: none;
@@ -196,31 +223,37 @@
             }
         }
 
-        /* Mobile Slide Menu (White Background, Black Text) */
+        /* ===== MOBILE SLIDE MENU (REDUCED HEIGHT) ===== */
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 0;
+            top: 70px;
             left: 0;
             width: 100%;
-            height: 100vh;
+            height: calc(100vh - 70px);
             background: #ffffff;
             z-index: 99;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            gap: 1.5rem;
-            padding: 2rem;
-            top: 70px;
-            height: calc(100vh - 70px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 2rem 1.5rem;
+            gap: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow-y: auto;
+            border-top: 1px solid #e2e8f0;
         }
         .mobile-menu a {
             color: #000000;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 500;
             transition: color 0.2s;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1rem;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .mobile-menu a:last-child {
+            border-bottom: none;
         }
         .mobile-menu a:hover {
             color: var(--gold);
@@ -581,11 +614,11 @@
                 </div>
                 <nav class="nav-desktop">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html" class="active">Services</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" data-key="home">Home</a></li>
+                        <li><a href="about.html" data-key="about">About</a></li>
+                        <li><a href="services.html" class="active" data-key="services">Services</a></li>
+                        <li><a href="research.html" data-key="research">Research</a></li>
+                        <li><a href="contact.html" data-key="contact">Contact</a></li>
                         <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
                     </ul>
                 </nav>
@@ -600,7 +633,11 @@
                 </div>
                 <div style="display:flex; align-items:center;">
                     <button class="mobile-lang" id="langToggleMobile">ने</button>
-                    <button class="hamburger" id="hamburgerBtn">☰</button>
+                    <button class="hamburger" id="hamburgerBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -608,11 +645,11 @@
 
     <!-- ===== MOBILE MENU ===== -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="research.html">Research</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-key="home">Home</a>
+        <a href="about.html" data-key="about">About</a>
+        <a href="services.html" data-key="services">Services</a>
+        <a href="research.html" data-key="research">Research</a>
+        <a href="contact.html" data-key="contact">Contact</a>
     </div>
 
     <!-- ===== PAGE HERO ===== -->
@@ -649,6 +686,23 @@
                     <p><strong>Ethnomathematics · Ethnomodelling · Action Research</strong><br />Advancing knowledge through rigorous inquiry.</p>
                 </div>
             </div>
+            <div class="service-detail" id="service1Np" style="display:none;">
+                <div>
+                    <span class="icon-big">🔬</span>
+                    <h3>अनुसन्धान <span>र नवप्रवर्तन</span></h3>
+                    <p>हामी शिक्षा अगाडि बढाउन र कक्षा अभ्यासहरू सुधार गर्न कठोर, प्रमाण-आधारित अनुसन्धान सञ्चालन गर्दछौं। हाम्रो अनुसन्धान गुणात्मक र मात्रात्मक विधिहरूमा आधारित छ, नृजातीय गणित, नृजातीय मोडेलिङ र सांस्कृतिक-उत्तरदायी शिक्षाशास्त्रमा विशेष जोड दिइएको छ।</p>
+                    <ul>
+                        <li><strong>गणित शिक्षा अनुसन्धान</strong> – नृजातीय गणित, नृजातीय मोडेलिङ, वैदिक गणित र प्रविधि-एकीकृत शिक्षाशास्त्रमा गहन शैक्षिक अनुसन्धान।</li>
+                        <li><strong>कक्षामा कार्य-अनुसन्धान</strong> – चुनौतीहरू पहिचान गर्न र नवीन रणनीतिहरू परीक्षण गर्न शिक्षकहरूसँग गरिने सहयोगात्मक अनुसन्धान।</li>
+                        <li><strong>शैक्षिक नवप्रवर्तन</strong> – <strong>N‑MELODY ढाँचा</strong> सहित नयाँ शैक्षिक मोडेलहरूको डिजाइन र परीक्षण।</li>
+                        <li><strong>जातीय-अध्ययन</strong> – सांस्कृतिक कलाकृतिहरू, अनुष्ठानहरू र सामुदायिक परम्पराहरूमा गाडिएका गणितीय अभ्यासहरूको दस्तावेजीकरण।</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <div class="emoji-big">🧪</div>
+                    <p><strong>नृजातीय गणित · नृजातीय मोडेलिङ · कार्य-अनुसन्धान</strong><br />कठोर अन्वेषण मार्फत ज्ञान अगाडि बढाउँदै।</p>
+                </div>
+            </div>
 
             <!-- Service 2: Teacher Training -->
             <div class="service-detail" id="service2En">
@@ -666,6 +720,23 @@
                 <div class="service-image">
                     <div class="emoji-big">👩‍🏫</div>
                     <p><strong>GeoGebra · ICT Integration · N‑MELODY</strong><br />Empowering educators for transformative teaching.</p>
+                </div>
+            </div>
+            <div class="service-detail" id="service2Np" style="display:none;">
+                <div>
+                    <span class="icon-big">🎓</span>
+                    <h3>शिक्षक <span>तालिम</span></h3>
+                    <p>हामी शिक्षकहरूलाई व्यावहारिक, अनुसन्धान-आधारित सीपहरू प्रदान गर्ने उच्च-गुणस्तरीय तालिम कार्यक्रमहरू सञ्चालन गर्दछौं, जसले कक्षाकोठाको अभ्यासलाई रूपान्तरण गर्दछ।</p>
+                    <ul>
+                        <li><strong>शिक्षक तालिम कार्यक्रमहरू</strong> – प्राथमिक, माध्यमिक र उच्च माध्यमिक गणित शिक्षकहरूका लागि शिक्षाशास्त्र, मूल्याङ्कन र विद्यार्थी संलग्नतामा व्यापक तालिम।</li>
+                        <li><strong>व्यावसायिक विकास पाठ्यक्रमहरू</strong> – पाठ्यक्रम डिजाइन, ICT एकीकरण, समावेशी शिक्षा र चिन्तनशील शिक्षणमा निरन्तर शिक्षा।</li>
+                        <li><strong>गणित शिक्षामा ICT</strong> – <strong>GeoGebra</strong>, गणितीय मोडेलिङ सफ्टवेयर र अनलाइन सहयोगी प्लेटफर्महरूमा व्यावहारिक कार्यशालाहरू।</li>
+                        <li><strong>N‑MELODY ढाँचा तालिम</strong> – आलोचनात्मक, चिन्तनशील र रूपान्तरणकारी दृष्टिकोणहरू एकीकृत गर्ने हाम्रो स्वामित्वपूर्ण शैक्षिक मोडेलमा गहन तालिम।</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <div class="emoji-big">👩‍🏫</div>
+                    <p><strong>GeoGebra · ICT एकीकरण · N‑MELODY</strong><br />रूपान्तरणकारी शिक्षणका लागि शिक्षकहरूलाई सशक्त बनाउँदै।</p>
                 </div>
             </div>
 
@@ -687,6 +758,23 @@
                     <p><strong>Conferences · Seminars · Webinars</strong><br />Connecting minds across borders.</p>
                 </div>
             </div>
+            <div class="service-detail" id="service3Np" style="display:none;">
+                <div>
+                    <span class="icon-big">🗣️</span>
+                    <h3>सम्मेलन <span>र कार्यक्रमहरू</span></h3>
+                    <p>हामी शिक्षकहरू, अनुसन्धानकर्ताहरू र नीति-निर्माताहरूलाई एकै ठाउँमा ल्याउने शैक्षिक कार्यक्रमहरूको आयोजना र व्यवस्थापन गर्दछौं।</p>
+                    <ul>
+                        <li><strong>राष्ट्रिय/अन्तर्राष्ट्रिय सम्मेलनहरू</strong> – गणित शिक्षा, STEM/STEAM, नृजातीय गणित र शैक्षिक अनुसन्धानमा ठूला-स्तरीय सम्मेलनहरूको योजना र कार्यान्वयन।</li>
+                        <li><strong>गोष्ठी र संगोष्ठीहरू</strong> – नृजातीय मोडेलिङ, वैदिक गणित वा रूपान्तरणकारी शिक्षाशास्त्रमा गहन छलफलका लागि साना, केन्द्रित सभाहरू।</li>
+                        <li><strong>शैक्षिक कार्यशालाहरू</strong> – शिक्षकहरू, अनुसन्धानकर्ताहरू र स्नातकोत्तर विद्यार्थीहरूका लागि अनुसन्धान विधि, शैक्षिक लेखन र नवीन अभ्यासहरूमा अन्तरक्रियात्मक कार्यशालाहरू।</li>
+                        <li><strong>वार्ता श्रृंखला र वेबिनारहरू</strong> – राष्ट्रिय र अन्तर्राष्ट्रिय विज्ञहरू समावेश गरिएका अनलाइन र भौतिक कार्यक्रमहरू।</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <div class="emoji-big">🎤</div>
+                    <p><strong>सम्मेलन · गोष्ठी · वेबिनार</strong><br />सिमानापारि दिमागहरू जोड्दै।</p>
+                </div>
+            </div>
 
             <!-- Service 4: Consultancy and Projects -->
             <div class="service-detail" id="service4En">
@@ -706,8 +794,25 @@
                     <p><strong>Curriculum · Policy · M&amp;E</strong><br />Strategic advisory for lasting impact.</p>
                 </div>
             </div>
+            <div class="service-detail" id="service4Np" style="display:none;">
+                <div>
+                    <span class="icon-big">🤝</span>
+                    <h3>परामर्श <span>र परियोजनाहरू</span></h3>
+                    <p>हामी शैक्षिक संस्थाहरू, सरकारी निकायहरू, अन्तर्राष्ट्रिय विकास साझेदारहरू र गैर-सरकारी संस्थाहरूलाई विज्ञ सल्लाहकार सेवाहरू प्रदान गर्दछौं।</p>
+                    <ul>
+                        <li><strong>पाठ्यक्रम विकास</strong> – राष्ट्रिय ढाँचाहरू (NEB, CTEVT) र अन्तर्राष्ट्रिय मापदण्डहरूसँग मिल्दो गणित पाठ्यक्रमको डिजाइन र समीक्षा।</li>
+                        <li><strong>शैक्षिक परियोजना व्यवस्थापन</strong> – आवश्यकता मूल्याङ्कन, कार्यक्रम डिजाइन, कार्यान्वयन सहायता र प्रभाव मूल्याङ्कन सहित परियोजनाहरूको अन्त-देखि-अन्त व्यवस्थापन।</li>
+                        <li><strong>नीति सल्लाह</strong> – गणित शिक्षा नीति, शिक्षक व्यावसायिक विकास ढाँचा र गुणस्तर आश्वासनमा सरकारी निकायहरूलाई प्राविधिक सल्लाह।</li>
+                        <li><strong>अनुगमन र मूल्याङ्कन (M&amp;E)</strong> – शैक्षिक कार्यक्रमहरूको लागि M&amp;E ढाँचाको डिजाइन र कार्यान्वयन, जवाफदेहिता र प्रमाण-आधारित निर्णय सुनिश्चित गर्ने।</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <div class="emoji-big">📋</div>
+                    <p><strong>पाठ्यक्रम · नीति · M&amp;E</strong><br />स्थायी प्रभावका लागि रणनीतिक सल्लाह।</p>
+                </div>
+            </div>
 
-            <!-- Service 5: Educational Research and Program Evaluation (Option 2 - NEW) -->
+            <!-- Service 5: Educational Research and Program Evaluation (Option 2) -->
             <div class="service-detail" id="service5En">
                 <div>
                     <span class="icon-big">📊</span>
@@ -726,8 +831,26 @@
                     <p><strong>Program Evaluation · Impact Studies · Policy Research</strong><br />Evidence‑based insights for informed decisions.</p>
                 </div>
             </div>
+            <div class="service-detail" id="service5Np" style="display:none;">
+                <div>
+                    <span class="icon-big">📊</span>
+                    <h3>शैक्षिक अनुसन्धान <span>र कार्यक्रम मूल्याङ्कन</span></h3>
+                    <p>हामी नीति, अभ्यास र कार्यक्रम विकासलाई सूचित गर्न कठोर शैक्षिक अनुसन्धान डिजाइन र सञ्चालन गर्दछौं। हाम्रो प्रमाण-आधारित दृष्टिकोणले तपाईंका कार्यक्रमहरू प्रभावकारी, प्रभावशाली र तपाईंका सरोकारवालाहरूको आवश्यकतासँग मिल्दो छ भनी सुनिश्चित गर्दछ।</p>
+                    <ul>
+                        <li><strong>कार्यक्रम मूल्याङ्कन</strong> – मिश्रित-विधि दृष्टिकोणहरू प्रयोग गरी शैक्षिक कार्यक्रम र हस्तक्षेपहरूको प्रभावकारिता, प्रभाव र दक्षताको मूल्याङ्कन।</li>
+                        <li><strong>आवश्यकता मूल्याङ्कन</strong> – सहभागी र डाटा-संचालित विधिहरू मार्फत शिक्षा प्रणालीहरू, विद्यालयहरू, र समुदायहरूमा खाडल र अवसरहरू पहिचान गर्ने।</li>
+                        <li><strong>प्रभाव अध्ययनहरू</strong> – शैक्षिक पहलहरूको नतिजा र प्रभाव विद्यार्थी सिकाइ, शिक्षक अभ्यास, र संस्थागत प्रदर्शनमा मापन गर्ने।</li>
+                        <li><strong>सर्वेक्षण डिजाइन र विश्लेषण</strong> – विविध सरोकारवालाहरूबाट अर्थपूर्ण अन्तर्दृष्टिहरू सङ्कलन गर्न सर्वेक्षण, प्रश्नावली र मूल्याङ्कनहरू डिजाइन र विश्लेषण गर्ने।</li>
+                        <li><strong>नीति अनुसन्धान</strong> – स्थानीय, राष्ट्रिय र अन्तर्राष्ट्रिय स्तरमा प्रमाण-आधारित शैक्षिक नीति र निर्णय-निर्माण सूचित गर्न अनुसन्धान सञ्चालन गर्ने।</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <div class="emoji-big">📈</div>
+                    <p><strong>कार्यक्रम मूल्याङ्कन · प्रभाव अध्ययन · नीति अनुसन्धान</strong><br />सूचित निर्णयहरूका लागि प्रमाण-आधारित अन्तर्दृष्टिहरू।</p>
+                </div>
+            </div>
 
-            <!-- Service 6: Educational Leadership and Institutional Development (Option 4 - NEW) -->
+            <!-- Service 6: Educational Leadership and Institutional Development (Option 4) -->
             <div class="service-detail" id="service6En">
                 <div>
                     <span class="icon-big">🏛️</span>
@@ -746,8 +869,26 @@
                     <p><strong>Leadership Training · Capacity Building · School Improvement</strong><br />Empowering leaders for institutional excellence.</p>
                 </div>
             </div>
+            <div class="service-detail" id="service6Np" style="display:none;">
+                <div>
+                    <span class="icon-big">🏛️</span>
+                    <h3>शैक्षिक नेतृत्व <span>र संस्थागत विकास</span></h3>
+                    <p>हामी शैक्षिक नेताहरू र संस्थाहरूलाई क्षमता निर्माण, दिगो परिवर्तन चलाउन, र उत्कृष्टता र निरन्तर सुधारको संस्कृतिलाई बढावा दिन सहयोग गर्दछौं।</p>
+                    <ul>
+                        <li><strong>नेतृत्व तालिम</strong> – विद्यालय प्रधानाध्यापकहरू, शैक्षिक प्रमुखहरू, र शिक्षा प्रशासकहरूका लागि रणनीतिक नेतृत्व र व्यवस्थापनमा व्यावसायिक विकास कार्यक्रमहरू।</li>
+                        <li><strong>संस्थागत क्षमता निर्माण</strong> – रणनीतिक योजना, सुशासन, र गुणस्तर आश्वासन प्रणालीहरू मार्फत शैक्षिक संस्थाहरूको क्षमता सुदृढ गर्ने।</li>
+                        <li><strong>विद्यालय सुधार योजना</strong> – विद्यार्थी सिकाइ परिणाम र समग्र विकासमा केन्द्रित विद्यालय सुधार योजनाहरू विकास र कार्यान्वयन गर्ने।</li>
+                        <li><strong>अनुगमन र मूल्याङ्कन प्रणालीहरू</strong> – शैक्षिक संस्था र कार्यक्रमहरूको लागि प्रगति ट्र्याक गर्न र जवाफदेहिता सुनिश्चित गर्न M&amp;E ढाँचा र प्रणालीहरू डिजाइन गर्ने।</li>
+                        <li><strong>परिवर्तन व्यवस्थापन</strong> – दिगो र रूपान्तरणकारी परिवर्तन प्राप्त गर्न संक्रमण, सुधार, र नवप्रवर्तनको अवधिहरूमा संस्थाहरूलाई सहयोग गर्ने।</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <div class="emoji-big">🏫</div>
+                    <p><strong>नेतृत्व तालिम · क्षमता निर्माण · विद्यालय सुधार</strong><br />संस्थागत उत्कृष्टताका लागि नेताहरूलाई सशक्त बनाउँदै।</p>
+                </div>
+            </div>
 
-            <!-- Service 7: Community and Parent Engagement (Option 6 - NEW) -->
+            <!-- Service 7: Community and Parent Engagement (Option 6) -->
             <div class="service-detail" id="service7En">
                 <div>
                     <span class="icon-big">👨‍👩‍👧‍👦</span>
@@ -764,6 +905,24 @@
                 <div class="service-image">
                     <div class="emoji-big">🤗</div>
                     <p><strong>Parent Education · Community Engagement · Student Motivation</strong><br />Building partnerships for student success.</p>
+                </div>
+            </div>
+            <div class="service-detail" id="service7Np" style="display:none;">
+                <div>
+                    <span class="icon-big">👨‍👩‍👧‍👦</span>
+                    <h3>सामुदायिक <span>र अभिभावक संलग्नता</span></h3>
+                    <p>हामी शिक्षा प्रक्रियामा समुदाय र अभिभावकहरूलाई सक्रिय रूपमा संलग्न गराउन कार्यक्रमहरू डिजाइन र कार्यान्वयन गर्दछौं, जसले विद्यार्थी सफलता र समग्र विकासलाई समर्थन गर्ने साझेदारीहरूलाई बढावा दिन्छ।</p>
+                    <ul>
+                        <li><strong>अभिभावक शिक्षा कार्यक्रमहरू</strong> – अभिभावकहरूलाई घर र विद्यालयमा आफ्ना बच्चाहरूको सिकाइ, विकास र कल्याणलाई समर्थन गर्न सशक्त बनाउने कार्यशाला र कार्यक्रमहरू।</li>
+                        <li><strong>सामुदायिक संलग्नता</strong> – शिक्षाको लागि सहायक पारिस्थितिकी प्रणाली सिर्जना गर्न विद्यालय, समुदाय र स्थानीय संस्थाहरू बीच साझेदारी निर्माण गर्ने।</li>
+                        <li><strong>जागरूकता अभियानहरू</strong> – शिक्षा, साक्षरता, विद्यार्थी कल्याण, र सामुदायिक संलग्नताको महत्त्वमा जागरूकता अभियानहरू डिजाइन र कार्यान्वयन गर्ने।</li>
+                        <li><strong>विद्यालय-समुदाय साझेदारी</strong> – शैक्षिक सुधारको लागि स्थानीय स्रोत र विशेषज्ञताको लाभ उठाउन विद्यालय र सामुदायिक सरोकारवालाहरू बीच सहकार्यलाई सहज बनाउने।</li>
+                        <li><strong>विद्यार्थी प्रेरणा कार्यक्रमहरू</strong> – विद्यार्थीहरूलाई उनीहरूको शैक्षिक लक्ष्य र आकांक्षाहरू प्राप्त गर्न प्रेरित र उत्प्रेरित गर्न कार्यक्रमहरू डिजाइन र वितरण गर्ने।</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <div class="emoji-big">🤗</div>
+                    <p><strong>अभिभावक शिक्षा · सामुदायिक संलग्नता · विद्यार्थी प्रेरणा</strong><br />विद्यार्थी सफलताका लागि साझेदारी निर्माण गर्दै।</p>
                 </div>
             </div>
 
@@ -852,30 +1011,35 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h4>Global Academy of Education Research</h4>
-                    <p><i>Advancing Education Research, Innovation, and Professional Development for a Transformative Future</i></p>
+                    <h4 id="footerCompanyEn">Global Academy of Education Research</h4>
+                    <h4 id="footerCompanyNp" style="display:none;">ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च</h4>
+                    <p id="footerTaglineEn"><i>Advancing Education Research, Innovation, and Professional Development for a Transformative Future</i></p>
+                    <p id="footerTaglineNp" style="display:none;"><i>शिक्षा अनुसन्धान, नवप्रवर्तन, र व्यावसायिक विकास रूपान्तरणकारी भविष्यको लागि</i></p>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" data-key="home">Home</a></li>
+                        <li><a href="about.html" data-key="about">About</a></li>
+                        <li><a href="services.html" data-key="services">Services</a></li>
+                        <li><a href="research.html" data-key="research">Research</a></li>
+                        <li><a href="contact.html" data-key="contact">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Policies</h4>
                     <ul>
-                        <li><a href="terms.html">Terms of Use</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="cookie.html">Cookie Policy</a></li>
+                        <li><a href="terms.html" data-key="terms">Terms of Use</a></li>
+                        <li><a href="privacy.html" data-key="privacy">Privacy Policy</a></li>
+                        <li><a href="cookie.html" data-key="cookie">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div class="footer-bottom" id="footerCopyEn">
                 &copy; 2026 Global Academy of Education Research Private Limited. All rights reserved.
+            </div>
+            <div class="footer-bottom" id="footerCopyNp" style="display:none;">
+                &copy; २०२६ ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड। सबै अधिकार सुरक्षित।
             </div>
         </div>
     </footer>
@@ -883,26 +1047,91 @@
     <!-- ===== COOKIE CONSENT ===== -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="container cookie-inner">
-            <p>We use cookies to remember your language preference and improve your experience. By continuing, you consent to our <a href="cookie.html">Cookie Policy</a>.</p>
+            <p id="cookieEn">We use cookies to remember your language preference and improve your experience. By continuing, you consent to our <a href="cookie.html">Cookie Policy</a>.</p>
+            <p id="cookieNp" style="display:none;">हामी तपाईंको भाषा प्राथमिकता सम्झन र तपाईंको अनुभव सुधार गर्न कुकीहरू प्रयोग गर्दछौं। जारी राखेर, तपाईं हाम्रो <a href="cookie.html">कुकी नीति</a> मा सहमत हुनुहुन्छ।</p>
             <button class="btn-cookie" id="acceptCookie">Accept</button>
         </div>
     </div>
 
     <!-- ===== SCRIPTS ===== -->
     <script>
-        // ----- LANGUAGE TOGGLE -----
+        // ========================================
+        // LANGUAGE TOGGLE WITH FULL PAGE TRANSLATION
+        // ========================================
         let currentLang = localStorage.getItem('selectedLanguage') || 'en';
+
+        // Navigation translations
+        const navTranslations = {
+            en: {
+                home: "Home",
+                about: "About",
+                services: "Services",
+                research: "Research",
+                contact: "Contact",
+                terms: "Terms of Use",
+                privacy: "Privacy Policy",
+                cookie: "Cookie Policy"
+            },
+            ne: {
+                home: "गृह",
+                about: "बारेमा",
+                services: "सेवाहरू",
+                research: "अनुसन्धान",
+                contact: "सम्पर्क",
+                terms: "प्रयोगका सर्तहरू",
+                privacy: "गोपनीयता नीति",
+                cookie: "कुकी नीति"
+            }
+        };
 
         function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('selectedLanguage', lang);
 
-            document.querySelectorAll('[id$="En"]').forEach(el => el.style.display = (lang === 'en') ? '' : 'none');
-            document.querySelectorAll('[id$="Np"]').forEach(el => el.style.display = (lang === 'ne') ? '' : 'none');
+            // ===== TOGGLE MAIN CONTENT BLOCKS =====
+            document.querySelectorAll('[id$="En"]').forEach(el => {
+                el.style.display = (lang === 'en') ? '' : 'none';
+            });
+            document.querySelectorAll('[id$="Np"]').forEach(el => {
+                el.style.display = (lang === 'ne') ? '' : 'none';
+            });
 
+            // ===== NAVIGATION LINKS =====
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (navTranslations[lang] && navTranslations[lang][key]) {
+                    el.textContent = navTranslations[lang][key];
+                }
+            });
+
+            // ===== LANGUAGE TOGGLE BUTTONS =====
             document.querySelectorAll('.lang-btn, .mobile-lang').forEach(btn => {
                 btn.textContent = (lang === 'en') ? 'ने' : 'E';
             });
+
+            // ===== FOOTER =====
+            const footerCompanyEn = document.getElementById('footerCompanyEn');
+            const footerCompanyNp = document.getElementById('footerCompanyNp');
+            const footerTaglineEn = document.getElementById('footerTaglineEn');
+            const footerTaglineNp = document.getElementById('footerTaglineNp');
+            const footerCopyEn = document.getElementById('footerCopyEn');
+            const footerCopyNp = document.getElementById('footerCopyNp');
+
+            if (footerCompanyEn) footerCompanyEn.style.display = (lang === 'en') ? '' : 'none';
+            if (footerCompanyNp) footerCompanyNp.style.display = (lang === 'ne') ? '' : 'none';
+            if (footerTaglineEn) footerTaglineEn.style.display = (lang === 'en') ? '' : 'none';
+            if (footerTaglineNp) footerTaglineNp.style.display = (lang === 'ne') ? '' : 'none';
+            if (footerCopyEn) footerCopyEn.style.display = (lang === 'en') ? '' : 'none';
+            if (footerCopyNp) footerCopyNp.style.display = (lang === 'ne') ? '' : 'none';
+
+            // ===== COOKIE BANNER =====
+            const cookieEn = document.getElementById('cookieEn');
+            const cookieNp = document.getElementById('cookieNp');
+            const acceptBtn = document.getElementById('acceptCookie');
+
+            if (cookieEn) cookieEn.style.display = (lang === 'en') ? '' : 'none';
+            if (cookieNp) cookieNp.style.display = (lang === 'ne') ? '' : 'none';
+            if (acceptBtn) acceptBtn.textContent = (lang === 'en') ? 'Accept' : 'स्वीकार गर्नुहोस्';
 
             document.documentElement.lang = lang;
         }
@@ -917,7 +1146,9 @@
             btn.addEventListener('click', toggleLang);
         });
 
-        // ----- MOBILE MENU -----
+        // ========================================
+        // ANIMATED HAMBURGER MENU
+        // ========================================
         const hamburger = document.getElementById('hamburgerBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         let menuOpen = false;
@@ -926,7 +1157,6 @@
             menuOpen = !menuOpen;
             mobileMenu.classList.toggle('open', menuOpen);
             hamburger.classList.toggle('open', menuOpen);
-            hamburger.textContent = menuOpen ? '✕' : '☰';
             document.body.style.overflow = menuOpen ? 'hidden' : '';
         });
 
@@ -935,12 +1165,23 @@
                 menuOpen = false;
                 mobileMenu.classList.remove('open');
                 hamburger.classList.remove('open');
-                hamburger.textContent = '☰';
                 document.body.style.overflow = '';
             });
         });
 
-        // ----- COOKIE CONSENT -----
+        // Close menu on window resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && menuOpen) {
+                menuOpen = false;
+                mobileMenu.classList.remove('open');
+                hamburger.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ========================================
+        // COOKIE CONSENT
+        // ========================================
         (function() {
             const consent = localStorage.getItem('cookieConsent');
             const banner = document.getElementById('cookieBanner');

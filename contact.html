@@ -77,6 +77,8 @@
             color: #000000;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
             border-bottom: 1px solid #e2e8f0;
+            position: relative;
+            z-index: 100;
         }
         .header-inner {
             display: flex;
@@ -141,17 +143,41 @@
             align-items: center;
             width: 100%;
         }
+
+        /* ===== ANIMATED HAMBURGER ===== */
         .hamburger {
             background: none;
             border: none;
-            font-size: 2rem;
-            color: #000000;
             cursor: pointer;
-            padding: 0 4px;
+            padding: 8px 4px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            transition: all 0.3s ease;
         }
-        .hamburger.open {
-            transform: rotate(90deg);
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #000000;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            transform-origin: center;
         }
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
         .mobile-lang {
             background: transparent;
             border: 1px solid #000000;
@@ -167,6 +193,7 @@
             background: #000000;
             color: #ffffff;
         }
+
         @media (max-width: 768px) {
             .desktop-header {
                 display: none;
@@ -179,31 +206,37 @@
             }
         }
 
-        /* Mobile Slide Menu (White Background, Black Text) */
+        /* ===== MOBILE SLIDE MENU (REDUCED HEIGHT) ===== */
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 0;
+            top: 70px;
             left: 0;
             width: 100%;
-            height: 100vh;
+            height: calc(100vh - 70px);
             background: #ffffff;
             z-index: 99;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            gap: 1.5rem;
-            padding: 2rem;
-            top: 70px;
-            height: calc(100vh - 70px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 2rem 1.5rem;
+            gap: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow-y: auto;
+            border-top: 1px solid #e2e8f0;
         }
         .mobile-menu a {
             color: #000000;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 500;
             transition: color 0.2s;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1rem;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .mobile-menu a:last-child {
+            border-bottom: none;
         }
         .mobile-menu a:hover {
             color: var(--gold);
@@ -474,11 +507,11 @@
                 </div>
                 <nav class="nav-desktop">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="contact.html" class="active">Contact</a></li>
+                        <li><a href="index.html" data-key="home">Home</a></li>
+                        <li><a href="about.html" data-key="about">About</a></li>
+                        <li><a href="services.html" data-key="services">Services</a></li>
+                        <li><a href="research.html" data-key="research">Research</a></li>
+                        <li><a href="contact.html" class="active" data-key="contact">Contact</a></li>
                         <li><button class="lang-btn" id="langToggleDesktop">ने</button></li>
                     </ul>
                 </nav>
@@ -493,7 +526,11 @@
                 </div>
                 <div style="display:flex; align-items:center;">
                     <button class="mobile-lang" id="langToggleMobile">ने</button>
-                    <button class="hamburger" id="hamburgerBtn">☰</button>
+                    <button class="hamburger" id="hamburgerBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -501,11 +538,11 @@
 
     <!-- ===== MOBILE MENU ===== -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="research.html">Research</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-key="home">Home</a>
+        <a href="about.html" data-key="about">About</a>
+        <a href="services.html" data-key="services">Services</a>
+        <a href="research.html" data-key="research">Research</a>
+        <a href="contact.html" data-key="contact">Contact</a>
     </div>
 
     <!-- ===== PAGE HERO ===== -->
@@ -526,23 +563,37 @@
             <div class="contact-grid">
                 <div>
                     <div class="section-title" style="text-align:left; margin-bottom:1.5rem;">
-                        <h2 style="font-size:1.6rem; margin-bottom:0.2rem;">Contact Information</h2>
+                        <h2 id="contactTitleEn" style="font-size:1.6rem; margin-bottom:0.2rem;">Contact Information</h2>
+                        <h2 id="contactTitleNp" style="display:none; font-size:1.6rem; margin-bottom:0.2rem;">सम्पर्क विवरण</h2>
                         <div class="accent-line" style="margin:0.4rem 0 0 0;"></div>
                     </div>
 
                     <div class="contact-details">
                         <div class="detail-card">
-                            <h4>Registered Office</h4>
-                            <p>
+                            <h4 id="officeTitleEn">Registered Office</h4>
+                            <h4 id="officeTitleNp" style="display:none;">दर्ता कार्यालय</h4>
+                            <p id="officeAddressEn">
                                 Global Academy of Education Research Private Limited<br />
                                 Dhungepatan<br />
                                 Pokhara Metropolitan City, Ward No. 20<br />
                                 Kaski District, Gandaki Province, Nepal
                             </p>
+                            <p id="officeAddressNp" style="display:none;">
+                                ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड<br />
+                                ढुङ्गेपाटन<br />
+                                पोखरा महानगरपालिका, वडा नं. २०<br />
+                                कास्की जिल्ला, गण्डकी प्रदेश, नेपाल
+                            </p>
                             <p style="margin-top:1rem;">
-                                <strong>Phone:</strong> <a href="tel:+9779846650159">+977-9846650159</a><br />
-                                <strong>Official Email:</strong> <a href="mailto:info@gaer.edu.np">info@gaer.edu.np</a><br />
-                                <strong>Director's Email:</strong> <a href="mailto:kharikaparajuli@gaer.edu.np">kharikaparajuli@gaer.edu.np</a>
+                                <strong id="phoneEn">Phone:</strong>
+                                <strong id="phoneNp" style="display:none;">फोन:</strong>
+                                <a href="tel:+9779846650159">+977-9846650159</a><br />
+                                <strong id="officialEmailEn">Official Email:</strong>
+                                <strong id="officialEmailNp" style="display:none;">आधिकारिक इमेल:</strong>
+                                <a href="mailto:info@gaer.edu.np">info@gaer.edu.np</a><br />
+                                <strong id="directorEmailEn">Director's Email:</strong>
+                                <strong id="directorEmailNp" style="display:none;">निर्देशकको इमेल:</strong>
+                                <a href="mailto:kharikaparajuli@gaer.edu.np">kharikaparajuli@gaer.edu.np</a>
                             </p>
                         </div>
                     </div>
@@ -572,30 +623,35 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h4>Global Academy of Education Research</h4>
-                    <p><i>Advancing Education Research, Innovation, and Professional Development for a Transformative Future</i></p>
+                    <h4 id="footerCompanyEn">Global Academy of Education Research</h4>
+                    <h4 id="footerCompanyNp" style="display:none;">ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च</h4>
+                    <p id="footerTaglineEn"><i>Advancing Education Research, Innovation, and Professional Development for a Transformative Future</i></p>
+                    <p id="footerTaglineNp" style="display:none;"><i>शिक्षा अनुसन्धान, नवप्रवर्तन, र व्यावसायिक विकास रूपान्तरणकारी भविष्यको लागि</i></p>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" data-key="home">Home</a></li>
+                        <li><a href="about.html" data-key="about">About</a></li>
+                        <li><a href="services.html" data-key="services">Services</a></li>
+                        <li><a href="research.html" data-key="research">Research</a></li>
+                        <li><a href="contact.html" data-key="contact">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Policies</h4>
                     <ul>
-                        <li><a href="terms.html">Terms of Use</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="cookie.html">Cookie Policy</a></li>
+                        <li><a href="terms.html" data-key="terms">Terms of Use</a></li>
+                        <li><a href="privacy.html" data-key="privacy">Privacy Policy</a></li>
+                        <li><a href="cookie.html" data-key="cookie">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div class="footer-bottom" id="footerCopyEn">
                 &copy; 2026 Global Academy of Education Research Private Limited. All rights reserved.
+            </div>
+            <div class="footer-bottom" id="footerCopyNp" style="display:none;">
+                &copy; २०२६ ग्लोबल एकेडेमी अफ एजुकेसन रिसर्च प्राइभेट लिमिटेड। सबै अधिकार सुरक्षित।
             </div>
         </div>
     </footer>
@@ -603,26 +659,119 @@
     <!-- ===== COOKIE CONSENT ===== -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="container cookie-inner">
-            <p>We use cookies to remember your language preference and improve your experience. By continuing, you consent to our <a href="cookie.html">Cookie Policy</a>.</p>
+            <p id="cookieEn">We use cookies to remember your language preference and improve your experience. By continuing, you consent to our <a href="cookie.html">Cookie Policy</a>.</p>
+            <p id="cookieNp" style="display:none;">हामी तपाईंको भाषा प्राथमिकता सम्झन र तपाईंको अनुभव सुधार गर्न कुकीहरू प्रयोग गर्दछौं। जारी राखेर, तपाईं हाम्रो <a href="cookie.html">कुकी नीति</a> मा सहमत हुनुहुन्छ।</p>
             <button class="btn-cookie" id="acceptCookie">Accept</button>
         </div>
     </div>
 
     <!-- ===== SCRIPTS ===== -->
     <script>
-        // ----- LANGUAGE TOGGLE -----
+        // ========================================
+        // LANGUAGE TOGGLE WITH FULL PAGE TRANSLATION
+        // ========================================
         let currentLang = localStorage.getItem('selectedLanguage') || 'en';
+
+        // Navigation translations
+        const navTranslations = {
+            en: {
+                home: "Home",
+                about: "About",
+                services: "Services",
+                research: "Research",
+                contact: "Contact",
+                terms: "Terms of Use",
+                privacy: "Privacy Policy",
+                cookie: "Cookie Policy"
+            },
+            ne: {
+                home: "गृह",
+                about: "बारेमा",
+                services: "सेवाहरू",
+                research: "अनुसन्धान",
+                contact: "सम्पर्क",
+                terms: "प्रयोगका सर्तहरू",
+                privacy: "गोपनीयता नीति",
+                cookie: "कुकी नीति"
+            }
+        };
 
         function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('selectedLanguage', lang);
 
-            document.querySelectorAll('[id$="En"]').forEach(el => el.style.display = (lang === 'en') ? '' : 'none');
-            document.querySelectorAll('[id$="Np"]').forEach(el => el.style.display = (lang === 'ne') ? '' : 'none');
+            // ===== TOGGLE MAIN CONTENT BLOCKS =====
+            document.querySelectorAll('[id$="En"]').forEach(el => {
+                el.style.display = (lang === 'en') ? '' : 'none';
+            });
+            document.querySelectorAll('[id$="Np"]').forEach(el => {
+                el.style.display = (lang === 'ne') ? '' : 'none';
+            });
 
+            // ===== TOGGLE INDIVIDUAL ELEMENTS =====
+            // Contact Section
+            const contactTitleEn = document.getElementById('contactTitleEn');
+            const contactTitleNp = document.getElementById('contactTitleNp');
+            const officeTitleEn = document.getElementById('officeTitleEn');
+            const officeTitleNp = document.getElementById('officeTitleNp');
+            const officeAddressEn = document.getElementById('officeAddressEn');
+            const officeAddressNp = document.getElementById('officeAddressNp');
+            const phoneEn = document.getElementById('phoneEn');
+            const phoneNp = document.getElementById('phoneNp');
+            const officialEmailEn = document.getElementById('officialEmailEn');
+            const officialEmailNp = document.getElementById('officialEmailNp');
+            const directorEmailEn = document.getElementById('directorEmailEn');
+            const directorEmailNp = document.getElementById('directorEmailNp');
+
+            if (contactTitleEn) contactTitleEn.style.display = (lang === 'en') ? '' : 'none';
+            if (contactTitleNp) contactTitleNp.style.display = (lang === 'ne') ? '' : 'none';
+            if (officeTitleEn) officeTitleEn.style.display = (lang === 'en') ? '' : 'none';
+            if (officeTitleNp) officeTitleNp.style.display = (lang === 'ne') ? '' : 'none';
+            if (officeAddressEn) officeAddressEn.style.display = (lang === 'en') ? '' : 'none';
+            if (officeAddressNp) officeAddressNp.style.display = (lang === 'ne') ? '' : 'none';
+            if (phoneEn) phoneEn.style.display = (lang === 'en') ? '' : 'none';
+            if (phoneNp) phoneNp.style.display = (lang === 'ne') ? '' : 'none';
+            if (officialEmailEn) officialEmailEn.style.display = (lang === 'en') ? '' : 'none';
+            if (officialEmailNp) officialEmailNp.style.display = (lang === 'ne') ? '' : 'none';
+            if (directorEmailEn) directorEmailEn.style.display = (lang === 'en') ? '' : 'none';
+            if (directorEmailNp) directorEmailNp.style.display = (lang === 'ne') ? '' : 'none';
+
+            // ===== NAVIGATION LINKS =====
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (navTranslations[lang] && navTranslations[lang][key]) {
+                    el.textContent = navTranslations[lang][key];
+                }
+            });
+
+            // ===== LANGUAGE TOGGLE BUTTONS =====
             document.querySelectorAll('.lang-btn, .mobile-lang').forEach(btn => {
                 btn.textContent = (lang === 'en') ? 'ने' : 'E';
             });
+
+            // ===== FOOTER =====
+            const footerCompanyEn = document.getElementById('footerCompanyEn');
+            const footerCompanyNp = document.getElementById('footerCompanyNp');
+            const footerTaglineEn = document.getElementById('footerTaglineEn');
+            const footerTaglineNp = document.getElementById('footerTaglineNp');
+            const footerCopyEn = document.getElementById('footerCopyEn');
+            const footerCopyNp = document.getElementById('footerCopyNp');
+
+            if (footerCompanyEn) footerCompanyEn.style.display = (lang === 'en') ? '' : 'none';
+            if (footerCompanyNp) footerCompanyNp.style.display = (lang === 'ne') ? '' : 'none';
+            if (footerTaglineEn) footerTaglineEn.style.display = (lang === 'en') ? '' : 'none';
+            if (footerTaglineNp) footerTaglineNp.style.display = (lang === 'ne') ? '' : 'none';
+            if (footerCopyEn) footerCopyEn.style.display = (lang === 'en') ? '' : 'none';
+            if (footerCopyNp) footerCopyNp.style.display = (lang === 'ne') ? '' : 'none';
+
+            // ===== COOKIE BANNER =====
+            const cookieEn = document.getElementById('cookieEn');
+            const cookieNp = document.getElementById('cookieNp');
+            const acceptBtn = document.getElementById('acceptCookie');
+
+            if (cookieEn) cookieEn.style.display = (lang === 'en') ? '' : 'none';
+            if (cookieNp) cookieNp.style.display = (lang === 'ne') ? '' : 'none';
+            if (acceptBtn) acceptBtn.textContent = (lang === 'en') ? 'Accept' : 'स्वीकार गर्नुहोस्';
 
             document.documentElement.lang = lang;
         }
@@ -637,7 +786,9 @@
             btn.addEventListener('click', toggleLang);
         });
 
-        // ----- MOBILE MENU -----
+        // ========================================
+        // ANIMATED HAMBURGER MENU
+        // ========================================
         const hamburger = document.getElementById('hamburgerBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         let menuOpen = false;
@@ -646,7 +797,6 @@
             menuOpen = !menuOpen;
             mobileMenu.classList.toggle('open', menuOpen);
             hamburger.classList.toggle('open', menuOpen);
-            hamburger.textContent = menuOpen ? '✕' : '☰';
             document.body.style.overflow = menuOpen ? 'hidden' : '';
         });
 
@@ -655,12 +805,23 @@
                 menuOpen = false;
                 mobileMenu.classList.remove('open');
                 hamburger.classList.remove('open');
-                hamburger.textContent = '☰';
                 document.body.style.overflow = '';
             });
         });
 
-        // ----- COOKIE CONSENT -----
+        // Close menu on window resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && menuOpen) {
+                menuOpen = false;
+                mobileMenu.classList.remove('open');
+                hamburger.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ========================================
+        // COOKIE CONSENT
+        // ========================================
         (function() {
             const consent = localStorage.getItem('cookieConsent');
             const banner = document.getElementById('cookieBanner');
